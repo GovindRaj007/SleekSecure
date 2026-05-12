@@ -75,7 +75,8 @@ const Navbar = () => {
             <img 
               src={scrolled ? logoAlt : logo}
               alt="Sleek Secure Logo"
-              className="h-[4rem] w-auto"
+              className={`h-[4rem] w-auto transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-90"}`}
+              loading="lazy"
             />
           </a>
 
