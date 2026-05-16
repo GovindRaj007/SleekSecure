@@ -16,14 +16,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const assetsDir = path.join(__dirname, '../src/assets');
 const backupDir = path.join(__dirname, '../src/assets-backup');
 
-// Image optimization settings
-const JPEG_QUALITY = 75; // 0-100, lower = smaller file
+// Image optimization settings - ORIGINAL compression
+const JPEG_QUALITY = 75; // 0-100, default compression for most images
 const WEBP_QUALITY = 75;
 const PNG_QUALITY = 80;
 
-// Size thresholds for different optimizations
-const LARGE_IMAGE_KB = 500;
-const MEDIUM_IMAGE_KB = 200;
+// Images with PREMIUM quality settings (less compression, maintain highest quality)
+const PREMIUM_QUALITY_IMAGES = [
+  'Offer-Poster.jpg',
+  'home-after-installation.jpg'
+];
+
+const PREMIUM_JPEG_QUALITY = 80; // Premium quality for important images
+const PREMIUM_WEBP_QUALITY = 80;
 
 async function ensureBackupDir() {
   if (!fs.existsSync(backupDir)) {
@@ -58,24 +63,33 @@ async function compressImage(filename) {
     // Get original size
     const originalStats = await getImageStats(inputPath);
     
-    // Determine quality based on file size
-    let quality = JPEG_QUALITY;
-    if (parseFloat(originalStats.sizeMb) > 1.5) {
-      quality = 65; // Reduce quality for very large files
-    } else if (parseFloat(originalStats.sizeMb) > 1) {
-      quality = 70;
+    // Check if this image gets premium quality (less compression, better quality)
+    const isPremiumImage = PREMIUM_QUALITY_IMAGES.includes(filename);
+    
+    // Determine quality based on file size and image type
+    let quality = isPremiumImage ? PREMIUM_JPEG_QUALITY : JPEG_QUALITY;
+    
+    // For non-premium images, apply size-based adjustments
+    if (!isPremiumImage) {
+      if (parseFloat(originalStats.sizeMb) > 1.5) {
+        quality = 65; // Reduce quality for very large files
+      } else if (parseFloat(originalStats.sizeMb) > 1) {
+        quality = 70;
+      }
     }
 
     // Compress JPEG
     if (['.jpg', '.jpeg'].includes(ext)) {
       const outputPath = inputPath; // Overwrite original
       
+      const webpQuality = isPremiumImage ? PREMIUM_WEBP_QUALITY : WEBP_QUALITY;
+      
       await sharp(inputPath)
         .resize(1920, 1440, { // Max dimensions
           fit: 'inside',
           withoutEnlargement: true
         })
-        .jpeg({ quality, progressive: true })
+        .jpeg({ quality, progressive: true, mozjpeg: true })
         .toFile(outputPath + '.temp');
       
       fs.renameSync(outputPath + '.temp', outputPath);
@@ -83,13 +97,14 @@ async function compressImage(filename) {
       const compressedStats = await getImageStats(outputPath);
       const savings = ((1 - compressedStats.sizeKb / originalStats.sizeKb) * 100).toFixed(1);
       
-      console.log(`✓ ${filename}`);
+      const qualityLabel = isPremiumImage ? ' [PREMIUM QUALITY]' : '';
+      console.log(`✓ ${filename}${qualityLabel}`);
       console.log(`  Original: ${originalStats.sizeKb} KB → Compressed: ${compressedStats.sizeKb} KB (${savings}% saved)`);
 
       // Create WebP version
       const webpPath = path.join(assetsDir, nameWithoutExt + '.webp');
       await sharp(outputPath)
-        .webp({ quality: WEBP_QUALITY })
+        .webp({ quality: webpQuality })
         .toFile(webpPath);
       
       const webpStats = await getImageStats(webpPath);

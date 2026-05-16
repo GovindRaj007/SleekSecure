@@ -42,14 +42,14 @@ const LocationPage = () => {
   const isAP = loc.state === "Andhra Pradesh";
 
   const path = `/invisible-grills-${loc.slug}`;
-  const title = `Best Invisible Grills in ${loc.name} | Stainless Steel Safety Solutions - SleekSecure`;
-  const description = `Best Invisible Grills in ${loc.name} - Premium stainless steel safety solutions for balconies & windows. Child-safe, rust-proof & 100% transparent. Call ${displayPhone} for free installation quote.`;
-  const keywords = `Invisible Grills in ${loc.name}, Best Invisible Grills, SS316 Invisible Grills, Stainless Steel Grills, Premium Invisible Grills, Apartment Grills, Child-safe Grills, Invisible Grill Installation, ${loc.name} Safety Solutions`;
+  const title = `Best Invisible Grills in ${loc.name} | Premium SS316 Safety Solutions - SleekSecure`;
+  const description = `Premium invisible grills & ceiling cloth hangers in ${loc.name}. SS316 marine-grade, child-safe 25mm spacing, 10-year warranty. Free site visit & quote. Call ${displayPhone}.`;
+  const keywords = `invisible grills ${loc.name}, best invisible grills, SS316 grills ${loc.name}, child-safe grills, ceiling cloth hangers, balcony safety, apartment grills installation ${loc.name}`;
 
   const nearby = getNearbyLocations(loc.slug, 4);
 
-  const ogImageUrl = `${SITE_URL}/src/assets/hero-luxury-balcony.jpg`;
-  const wa = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi, I'd like a quote for invisible grills in ${loc.name}.`)}`;
+  const ogImageUrl = `${SITE_URL}/assets/hero-luxury-balcony.jpg`;
+  const wa = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi, I'm interested in invisible grills and ceiling cloth hangers for ${loc.name}. Please share details and quote.`)}`;
 
   const locationLabel = isAP ? `${loc.name}, ${loc.state}` : `${loc.name}, Hyderabad`;
 

@@ -13,12 +13,6 @@ import {
   Phone,
   ArrowRight,
   MapPin,
-  ArrowUpDown,
-  Maximize2,
-  Droplets,
-  Hammer,
-  Shirt,
-  Timer,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import Layout from "@/components/layout/Layout";
@@ -26,6 +20,7 @@ import Seo, { SITE_URL } from "@/components/shared/Seo";
 import { breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema } from "@/lib/seo";
 import FAQAccordion from "@/components/shared/FAQAccordian";
 import LayeredImageGallery from "@/components/service/LayeredImageGallery";
+import BeforeAfterSlider from "@/components/service/BeforeAfterSlider";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -40,30 +35,6 @@ import { SERVICE_CONTENT } from "@/lib/serviceContent";
 
 const trustIcons = [Shield, Eye, Award, CloudSun, Wrench, Sparkles];
 
-const benefits = [
-  "Space-saving pulley system for small balconies",
-  "Heavy-duty capacity - holds 40+ kg of wet clothes",
-  "Rust-proof stainless steel construction",
-  "Easy lift-and-lower mechanism",
-  "Dries clothes faster with ceiling height airflow",
-  "5-year warranty on all components",
-];
-
-const features = [
-  { icon: ArrowUpDown, title: "Pulley Lift System", description: "Smooth pulley mechanism to easily raise and lower the hanger." },
-  { icon: Maximize2, title: "Space Optimization", description: "Utilize ceiling space efficiently for small apartments." },
-  { icon: Droplets, title: "Quick Drying", description: "Elevated position allows better air circulation." },
-  { icon: Hammer, title: "Durable Construction", description: "Heavy-gauge stainless steel pipes with rust-proof finish." },
-  { icon: Shirt, title: "Multiple Rods", description: "Available in 4-rod, 6-rod, and 8-rod configurations." },
-  { icon: Timer, title: "Quick Installation", description: "Professional installation completed in 2-3 hours." },
-];
-
-const configurations = [
-  { title: "4-Rod Economy", size: "4 feet × 2 feet", capacity: "Up to 25 kg", ideal: "1-2 BHK apartments" },
-  { title: "6-Rod Standard", size: "5 feet × 2.5 feet", capacity: "Up to 35 kg", ideal: "2-3 BHK apartments" },
-  { title: "8-Rod Premium", size: "6 feet × 3 feet", capacity: "Up to 50 kg", ideal: "Large families/villas" },
-];
-
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -71,8 +42,8 @@ const fadeUp = {
   transition: { duration: 0.55, ease: "easeOut" as const },
 };
 
-const CeilingClothHangersPage = () => {
-  const data = SERVICE_CONTENT["ceiling-cloth-hangers"];
+const ChildSafetyGrillsPage = () => {
+  const data = SERVICE_CONTENT["child-safety-grills"];
   
   if (!data) {
     return (
@@ -98,7 +69,7 @@ const CeilingClothHangersPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/assets/cloth-hanger.jpg`}
+        ogImage={`${SITE_URL}/assets/showcase-pet-safety.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[
@@ -116,7 +87,7 @@ const CeilingClothHangersPage = () => {
       {/* HERO */}
       <section className="relative min-h-[88vh] md:min-h-[92vh] flex items-end overflow-hidden pb-20 md:pb-24 pt-24">
         <div className="absolute inset-0">
-          <img src={data.heroImage} alt={`${data.title} — premium Ceiling Cloth Hangers`} className="w-full h-full object-cover" />
+          <img src={data.heroImage} alt={`${data.title} — certified child-safe invisible grills`} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/70 to-foreground/30" />
         </div>
 
@@ -128,13 +99,13 @@ const CeilingClothHangersPage = () => {
                   <Link to="/" className="text-primary-foreground/70 hover:text-primary-foreground text-xs">Home</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-primary-foreground/40" />
+              <BreadcrumbSeparator className="text-primary-foreground/50" />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
                   <Link to="/#services" className="text-primary-foreground/70 hover:text-primary-foreground text-xs">Services</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-primary-foreground/40" />
+              <BreadcrumbSeparator className="text-primary-foreground/50" />
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-primary-foreground text-xs">{data.title}</BreadcrumbPage>
               </BreadcrumbItem>
@@ -173,64 +144,23 @@ const CeilingClothHangersPage = () => {
 
       {/* INTRO SECTION */}
       <section className="py-14 md:py-20 bg-background">
-        <div className="container-custom">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <motion.div {...fadeUp}>
-              <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">Why Cloth Hangers</span>
-              <h2 className="mb-6 font-heading text-3xl font-bold text-foreground md:text-4xl">Smart Drying Solution for Modern Homes</h2>
-              <p className="mb-8 text-lg text-muted-foreground">Our ceiling cloth hangers are the perfect solution for apartments with limited balcony space.</p>
-              <ul className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                    <span className="text-foreground">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div {...fadeUp} className="grid gap-4 sm:grid-cols-2">
-              {features.slice(0, 4).map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={index} className="rounded-xl bg-gradient-to-br from-primary/5 via-primary/3 to-accent/5 p-6 border border-primary/20 hover:border-accent/40 transition-colors">
-                    <Icon className="mb-4 h-8 w-8 text-primary" />
-                    <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </div>
-                );
-              })}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONFIGURATIONS SECTION */}
-      <section className="py-14 md:py-20 bg-background">
-        <div className="container-custom">
-          <motion.div {...fadeUp} className="mx-auto mb-12 max-w-3xl text-center">
-            <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">Configurations</span>
-            <h2 className="mb-4 font-heading text-3xl font-bold text-foreground md:text-4xl">Choose Your Perfect Size</h2>
+        <div className="container-custom max-w-4xl">
+          <motion.div {...fadeUp} className="mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
+              ISO Certified Child-Safe Invisible Grills – Maximum Protection With Premium Design
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
+              Sleek Secure Grills provides <strong>ISO 13126 certified child-safe invisible grills in Hyderabad</strong> that offer <strong>complete protection</strong> while preserving your beautiful interior views. Our <strong>hospital-grade stainless steel safety solutions</strong> are perfect for nurseries, bedrooms, and living areas across modern homes.
+            </p>
           </motion.div>
-          <motion.div {...fadeUp} className="grid gap-6 md:grid-cols-3">
-            {configurations.map((config, index) => (
-              <div key={index} className="rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 p-6 border border-primary/20 hover:border-accent/50 hover:shadow-lg transition-all">
-                <h3 className="mb-4 font-heading text-xl font-semibold text-foreground">{config.title}</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Size:</span>
-                    <span className="text-foreground font-medium">{config.size}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Capacity:</span>
-                    <span className="text-foreground font-medium">{config.capacity}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Ideal for:</span>
-                    <span className="text-foreground font-medium">{config.ideal}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+
+          <motion.div {...fadeUp} className="space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-4">
+              Hyderabad's Trusted Child Safety Grill Specialists
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              As <strong>leading child-safety grill experts in Hyderabad</strong>, we specialize in <strong>ISO-certified window and balcony grills</strong> that protect your children while maintaining your home's elegance. Our grills offer a <strong>seamless blend of certified safety and premium aesthetics</strong> for families across residential properties in Telangana and Andhra Pradesh.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -248,7 +178,7 @@ const CeilingClothHangersPage = () => {
             Why Families Trust Us
           </motion.h2>
           <motion.p {...fadeUp} className="text-muted-foreground text-center max-w-xl mx-auto mb-10 text-sm md:text-base">
-            Premium materials. Certified installation. Built for the way you live today.
+            Certified safety. Professional installation. Built for your child's protection.
           </motion.p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
             {data.trustItems.map((t, i) => {
@@ -275,12 +205,12 @@ const CeilingClothHangersPage = () => {
       </section>
 
       {/* PROBLEM / SOLUTION */}
-      <section className="pt-14 md:pt-20 bg-secondary">
+      <section className="py-14 md:py-20 bg-secondary">
         <div className="container-custom">
           <motion.div {...fadeUp} className="text-center mb-10">
             <span className="text-xs font-semibold text-accent uppercase tracking-wider">The Upgrade</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
-              From Risky & Outdated → Safe & Beautiful
+              From Unsafe & Unprotected → Certified & Secure
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
@@ -314,11 +244,54 @@ const CeilingClothHangersPage = () => {
         </div>
       </section>
 
-      {/* BENEFITS - APPLICATIONS & SPECIFICATIONS */}
+      {/* BEFORE / AFTER */}
+      <section className="bg-secondary">
+        <div className="container-custom">
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Before and After</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
+              See the Transformation
+            </h2>
+          </motion.div>
+          <div className="w-full md:w-4/5 lg:w-3/5 mx-auto">
+            <BeforeAfterSlider
+              beforeImg={data.beforeAfter.before}
+              afterImg={data.beforeAfter.after}
+              beforeLabel="Before"
+              afterLabel="After"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* BENEFITS */}
       <section className="py-14 md:py-20 bg-secondary">
         <div className="container-custom">
+          <motion.div {...fadeUp} className="text-center mb-10">
+            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Why It's Worth It</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
+              Premium Benefits, Built In
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {data.benefits.map((b, i) => (
+              <motion.div
+                key={b.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}
+                className="card-gradient rounded-2xl p-5 md:p-6 hover-lift"
+              >
+                <CheckCircle2 className="w-6 h-6 text-primary mb-3" />
+                <h3 className="font-heading font-bold text-foreground text-base md:text-lg mb-1.5">{b.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
           {/* Applications */}
-          <motion.div {...fadeUp} className="">
+          <motion.div {...fadeUp} className="mt-16">
             <h3 className="font-heading font-bold text-foreground text-xl md:text-2xl mb-6 text-center">Common Applications</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
               {data.applications.map((a) => (
@@ -392,9 +365,9 @@ const CeilingClothHangersPage = () => {
       <section className="py-14 md:py-20 bg-background">
         <div className="container-custom">
           <motion.div {...fadeUp} className="text-center mb-10">
-            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Loved by Families</span>
+            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Loved by Parents</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
-              4.9★ from 320+ Happy Homes
+              4.9★ from Satisfied Families
             </h2>
           </motion.div>
           <div className="-mx-4 px-4 md:mx-0 md:px-0 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
@@ -474,7 +447,7 @@ const CeilingClothHangersPage = () => {
         <div className="relative z-10 container-custom text-center">
           <motion.div {...fadeUp}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-4 leading-tight">
-              Upgrade Your Safety Today
+              Protect Your Child Today
             </h2>
             <p className="text-base md:text-lg text-primary-foreground/85 max-w-xl mx-auto mb-8">
               Book your free site visit & quote in under 60 seconds. No obligation, fully transparent pricing.
@@ -503,4 +476,4 @@ const CeilingClothHangersPage = () => {
   );
 };
 
-export default CeilingClothHangersPage;
+export default ChildSafetyGrillsPage;

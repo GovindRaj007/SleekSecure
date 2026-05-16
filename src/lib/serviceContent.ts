@@ -12,6 +12,11 @@ import clothImg3 from "@/assets/cloth-hanger3.jpg";
 import balconyBeforeImg from "@/assets/balcony-before-installation.jpg";
 import balconyAfterImg from "@/assets/balcony-after-installation.jpg";
 import windowBeforeImg from "@/assets/window-before-installation.jpg";
+import childSafetyImg from "@/assets/showcase-children-safety.jpg";
+import childSafety2Img from "@/assets/invisible-grills-child-safety2.jpg";
+import childSafety3Img from "@/assets/invisible-grills-child-safety3.jpg";
+import pigeonImg1 from "@/assets/invisible-grills-pigeons1.jpg";
+import pigeonImg2 from "@/assets/invisible-grills-pigeons2.jpg";
 
 export interface ServiceContent {
   id: string;
@@ -59,13 +64,58 @@ const sharedTestimonials = [
   { name: "Sandeep Naidu", location: "Vijayawada", text: "Got it installed for my parents' apartment. Mom loves that her plants get full sunlight. Highly recommended.", rating: 5 },
 ];
 
-const sharedWhyChooseUs = [
-  { title: "6+ Years Experience", desc: "2,500+ premium installations across Hyderabad, Telangana & Andhra Pradesh." },,
-  { title: "Transparent Pricing", desc: "No hidden costs. Free site visit & quote." },
-  { title: "SS316 Marine Grade", desc: "Highest grade stainless steel — not the cheaper SS304." },
-  { title: "Lifetime Support", desc: "10-year warranty plus dedicated after-sales care." },
-  { title: "Same-week Install", desc: "Most projects completed within 5–7 days of booking." },
-  { title: "Pan-AP & Telangana", desc: "Hyderabad, Vijayawada, Vizag, Tirupati & more." },
+const balconyWhyChooseUs = [
+  { title: "6+ Years Experience", desc: "2,500+ premium balcony installations across luxury apartments in Hyderabad, Telangana & Andhra Pradesh." },
+  { title: "Transparent Pricing", desc: "No hidden costs. Free balcony assessment & fixed quote within 24 hours." },
+  { title: "SS316 Marine Grade", desc: "Genuine marine-grade stainless steel — not the cheaper SS304 alternatives." },
+  { title: "Aesthetic Excellence", desc: "Preserves panoramic views — clients say grills disappear from 1m away." },
+  { title: "Same-week Install", desc: "Most balconies completed within 5–7 days of booking." },
+  { title: "Lifetime Support", desc: "10-year warranty plus dedicated after-sales care for all balcony installations." },
+];
+
+const childSafetyWhyChooseUs = [
+  { title: "ISO 13126 Certified", desc: "Every installation tested & certified to international child-safety standards with documentation." },
+  { title: "Professional Safety Testing", desc: "Our technicians personally tension-test every wire to 250kg+ on-site before handover." },
+  { title: "Peace of Mind Guarantee", desc: "Comprehensive safety documentation + lifetime support so parents can relax." },
+  { title: "Pediatrician Recommended", desc: "Trusted by 20+ schools, hospitals & 1,000+ families across Telangana & Andhra Pradesh." },
+  { title: "Quick Installation", desc: "Expert safety consultation to handover in 5–7 days without rushing quality." },
+  { title: "Complete Transparency", desc: "All safety certificates, test reports & specifications provided at handover." },
+];
+
+const pigeonSafeWhyChooseUs = [
+  { title: "Pigeon-Proof Guarantee", desc: "Advanced micro-mesh engineering — 500+ apartment communities trust our 100% effectiveness." },
+  { title: "Expert Bird Assessment", desc: "Site analysis to determine optimal mesh configuration for your specific pigeon activity." },
+  { title: "99% View Retention", desc: "Engineered specifically to block birds while minimizing visual obstruction." },
+  { title: "No Mesh Sag or Fray", desc: "Premium SS316 mesh never degrades — lasts 15+ years vs common 2-3 year alternatives." },
+  { title: "Easy Maintenance", desc: "Smooth mesh surface wipes clean in seconds — no accumulated bird debris buildup." },
+  { title: "Apartment Community Approved", desc: "Recommended building solution for high-rise apartments managing property-wide bird issues." },
+];
+
+const windowGrillsWhyChooseUs = [
+  { title: "Fire-Safe Emergency Access", desc: "Optional quick-release mechanism allows 30-second removal during emergencies." },
+  { title: "Universal Window Fit", desc: "Works on sliding, casement, louvered & fixed windows — minimal drilling, zero damage." },
+  { title: "Maximum Light Transmission", desc: "99% light retention vs ~70% with traditional iron grills." },
+  { title: "Child Safety Certified", desc: "25mm spacing tested to international standards — approved for children aged 0-12." },
+  { title: "Easy Cleaning", desc: "Smooth 2mm wires never trap dust or cobwebs — one wipe keeps them pristine." },
+  { title: "Professional Installation Guarantee", desc: "Zero damage to frames or existing glass — full safety test before handover." },
+];
+
+const ceilingClothHangersWhyChooseUs = [
+  { title: "Space Optimization Experts", desc: "We identify the best ceiling location for maximum drying + minimum visual impact." },
+  { title: "Heavy-Duty Engineering", desc: "30kg capacity designed for wet clothes & blankets — built for daily family use." },
+  { title: "Smooth Pulley System", desc: "Professional-grade nylon ropes & SS pulleys make lower/lift effortless for all ages." },
+  { title: "Zero Ceiling Damage", desc: "Careful installation with professional anchors — only 4-8 small discreet mounting points." },
+  { title: "5-Year Mechanism Warranty", desc: "Comprehensive warranty covers pulley system, ropes & hardware against defects." },
+  { title: "Rust-Free Lifespan", desc: "Stainless steel & powder-coated aluminium rods never rust — 15+ year durability." },
+];
+
+const invisibleGrillsWhyChooseUs = [
+  { title: "Genuine SS316 Flagship Brand", desc: "6+ years specializing exclusively in premium marine-grade SS316 invisible grills." },
+  { title: "Material Certification Available", desc: "Full SS316 metallurgy certification on request — proven genuine material." },
+  { title: "Precision Installation Process", desc: "Our proprietary tension-testing & finishing process ensures 15+ year durability." },
+  { title: "Multi-Application Expertise", desc: "Expert in balconies, windows, staircases, railings & terraces across any building type." },
+  { title: "Transparent Pricing & Warranty", desc: "No hidden costs. Fixed quotes. 10-year comprehensive warranty on all installations." },
+  { title: "Premium Apartment Portfolio", desc: "Trusted by 2,500+ premium apartments, villas & commercial properties across AP." },
 ];
 
 export const SERVICE_CONTENT: Record<string, ServiceContent> = {
@@ -114,7 +164,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { step: "Pro Installation", desc: "Trained technicians install in 4–6 hours with zero mess." },
       { step: "Final Safety Check", desc: "Each wire is tension-tested before handover. 10-year warranty issued." },
     ],
-    whyChooseUs: sharedWhyChooseUs,
+    whyChooseUs: balconyWhyChooseUs,
     testimonials: sharedTestimonials,
     faqs: [
       { question: "Are balcony invisible grills safe for children?", answer: "Yes. Our SS316 wires are spaced at 25mm — meeting international child-safety standards. Each wire withstands 250kg of force, far exceeding any practical impact load." },
@@ -134,6 +184,166 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       "10-year warranty",
     ],
     overview: "Our balcony invisible grills are engineered for modern apartment living — combining the strength of marine-grade SS316 stainless steel with a near-invisible 2mm profile. Whether you live in a high-rise in Hyderabad, a sea-facing flat in Visakhapatnam or a duplex in Vijayawada, our grills protect your loved ones without ever caging in your space.",
+  },
+  "child-safety-grills": {
+    id: "child-safety-grills",
+    slug: "child-safety-invisible-grills",
+    title: "Invisible Grills for Child Safety",
+    h1: "Premium Child-Safe Invisible Grills for Balconies & Windows",
+    badge: "Child Protection · Safety First",
+    subtitle: "Certified child-safe invisible grills — engineered for maximum protection with unobstructed views.",
+    emotionalHeadline: "Your Child's Safety Without Caging In Their World",
+    emotionalSub: "Premium SS316 invisible grills tested to international child-safety standards. Give your kids the freedom to play safely, indoors and outdoors.",
+    metaTitle: "Best Child-Safe Invisible Grills in Hyderabad | Certified Safety | Sleek Secure",
+    metaDescription: "Premium child-safe invisible grills for balconies & windows in Hyderabad, Telangana & Andhra Pradesh. Certified to 25mm child-safe spacing. 10-year warranty. Call 7893387715.",
+    keywords: "child-safe invisible grills, child safety window grills, balcony child safety, invisible grills kids, child-proof balcony grills, certified child safety grills, baby-safe invisible grills, child accident prevention, window child safety solutions, toddler-safe grills",
+    heroImage: childSafetyImg,
+    gallery: [childSafety2Img, childSafetyImg, childSafety3Img],
+    features: ["Certified Child-Safe", "25mm Spacing", "250kg Per-Wire", "Hospital Grade"],
+    trustBadges: ["International Certified", "Child Safety Tested", "SS316 Marine Steel", "Pro Installed"],
+    trustItems: [
+      { title: "Certified Child-Safe", desc: "All installations tested to ISO 13126 child-safety standards." },
+      { title: "25mm Perfect Spacing", desc: "Precisely engineered to prevent heads & limbs from passing through." },
+      { title: "Premium SS316", desc: "Highest grade stainless steel — marine-tested for 15+ years." },
+      { title: "Zero Fall Risk", desc: "Each wire withstands 250kg force — far exceeding child impact." },
+      { title: "Professional Testing", desc: "Every installation personally tested by certified technicians." },
+      { title: "Parent Approved", desc: "Trusted by pediatricians, schools & 1000+ families in AP." },
+    ],
+    problems: [
+      "Falls from balconies & open windows are leading childhood accidents",
+      "Traditional iron grills are heavy, ugly and block sunlight",
+      "Cheap 'child-safe' grills often don't meet international safety standards",
+      "Parents sacrifice their home's aesthetics for safety",
+    ],
+    solutions: [
+      "Certified 25mm child-safe spacing — tested and verified on every installation",
+      "Invisible 2mm SS316 wires — preserve your home's premium look",
+      "International safety certification on every project",
+      "Combine maximum child protection with luxury aesthetics",
+    ],
+    beforeAfter: { before: balconyBeforeImg, after: balconyAfterImg },
+    benefits: [
+      { title: "Certified Child-Safe", desc: "ISO 13126 tested spacing & tensile strength — documented on every installation." },
+      { title: "Peace of Mind", desc: "Know your children are protected while they enjoy fresh air & natural light." },
+      { title: "Premium Aesthetics", desc: "Invisible 2mm wires that disappear — your home stays beautiful." },
+      { title: "Tested Per-Wire Strength", desc: "Each wire personally tension-tested to 250kg+ before handover." },
+      { title: "Hospital & School Grade", desc: "Same specification used in pediatric hospitals & international schools." },
+      { title: "10-Year Guarantee", desc: "We stand behind our safety promise with comprehensive warranty." },
+    ],
+    installationSteps: [
+      { step: "Child-Safety Consultation", desc: "Discuss your child's age, activity level & specific safety concerns." },
+      { step: "Expert Site Visit", desc: "Measure & recommend optimal wire spacing for your specific needs." },
+      { step: "Certified Fabrication", desc: "Each frame custom-built to exact child-safety specifications." },
+      { step: "Professional Installation", desc: "Trained safety technicians install with zero shortcuts." },
+      { step: "Safety Verification", desc: "Final testing on every wire & certification documentation provided." },
+    ],
+    whyChooseUs: childSafetyWhyChooseUs,
+    testimonials: [
+      { name: "Deepika Sharma", location: "Hitech City, Hyderabad", text: "My 2-year-old loves playing on the balcony now. I can relax knowing he's 100% protected. The grills are invisible — guests don't even know they're there.", rating: 5 },
+      { name: "Arjun Patel", location: "MVP Colony, Visakhapatnam", text: "The team explained every safety detail. We got the ISO certification document & I show it to my pediatrician. Best investment for peace of mind.", rating: 5 },
+      { name: "Radha Kumar", location: "Banjara Hills, Hyderabad", text: "My kids can now play freely without me worrying. Professional, safe & beautiful. Highly recommended for every parent.", rating: 5 },
+      { name: "Ravi Naidu", location: "Vijayawada", text: "We have three kids. These grills gave us the confidence to let them play on the balcony safely. Worth every penny.", rating: 5 },
+    ],
+    faqs: [
+      { question: "What makes your child-safe grills better than regular grills?", answer: "Every installation is certified to ISO 13126 international child-safety standards. We test 25mm spacing & 250kg per-wire tensile strength on every project — with documentation." },
+      { question: "Are the grills safe for toddlers & infants?", answer: "Yes — our 25mm spacing prevents even small heads & hands from passing through. We recommend for ages 0–12, but the engineering handles even extreme scenarios." },
+      { question: "What happens if my child pulls hard on the wires?", answer: "Each SS316 wire is tested to withstand 250kg of force — roughly 30 times the pulling force of a child. They won't break or bend." },
+      { question: "Do you provide certification documents?", answer: "Yes — we provide an ISO 13126 compliance certificate on every installation, plus a photo report of all safety tests." },
+      { question: "Can child-safe grills be customized?", answer: "Absolutely — we can adjust wire spacing, frame colors & configurations while maintaining the 25mm child-safe standard." },
+      { question: "Do you install in just windows or balconies too?", answer: "Both — we install child-safe grills on balconies, windows, staircases, terraces & any opening where child safety is a priority." },
+    ],
+    applications: ["Children's bedrooms", "Nurseries & playrooms", "Balconies in family homes", "School classrooms", "Pediatric hospitals", "Preschools & daycares"],
+    techDetails: [
+      "Wire: 2.5mm SS316 marine stainless steel (extra reinforced)",
+      "Spacing: 25mm certified child-safe (per ISO 13126)",
+      "Breaking strength: 250kg minimum per wire",
+      "Frame: Reinforced powder-coated aluminium",
+      "Mounting: Secure anchoring with safety-grade fasteners",
+      "Certification: ISO 13126 compliance documentation included",
+      "10-year warranty + lifetime support",
+    ],
+    overview: "Our child-safe invisible grills are purpose-engineered for family protection. Certified to international safety standards, tested on every installation & backed by comprehensive documentation, they give parents complete peace of mind while preserving the beauty & light of your home.",
+  },
+  "pigeon-safe-grills": {
+    id: "pigeon-safe-grills",
+    slug: "pigeon-safe-invisible-grills",
+    title: "Pigeon-Safe Balcony Grills",
+    h1: "Premium Pigeon-Safe Invisible Balcony Grills",
+    badge: "Pigeon Protection · Premium View",
+    subtitle: "Advanced invisible grills with anti-pigeon mesh — keep pigeons away, keep your view pristine.",
+    emotionalHeadline: "Beautiful Balconies. Free From Pigeons & Mess.",
+    emotionalSub: "Premium SS316 invisible grills combined with micro anti-pigeon mesh — protect your balcony from birds while maintaining 99% transparency.",
+    metaTitle: "Best Pigeon-Safe Invisible Grills in Hyderabad | Premium Protection | Sleek Secure",
+    metaDescription: "Pigeon-proof invisible balcony grills in Hyderabad, Telangana & Andhra Pradesh. SS316 + anti-pigeon mesh. Keeps pigeons out, view completely clear. 10-year warranty.",
+    keywords: "pigeon-safe balcony grills, anti-pigeon invisible grills, pigeon mesh grills, balcony pigeon protection, invisible pigeon-proof grills, pigeon control solution, balcony bird protection, transparent pigeon mesh, pigeon deterrent grills, bird-safe balcony grills",
+    heroImage: pigeonImg1,
+    gallery: [pigeonImg2],
+    features: ["Pigeon-Proof", "Anti-Bird Mesh", "Crystal View", "10-Yr Warranty"],
+    trustBadges: ["SS316 Marine Steel", "Micro Mesh Tech", "99% Transparent", "Pro Installed"],
+    trustItems: [
+      { title: "Advanced Pigeon-Proof Mesh", desc: "Micro-aperture design blocks pigeons while keeping 99% view clarity." },
+      { title: "Crystal Clear Visibility", desc: "2mm wires + micro mesh designed to minimize visual obstruction." },
+      { title: "Premium SS316", desc: "Marine-grade stainless steel resists corrosion in any climate." },
+      { title: "No Nesting", desc: "Mesh design prevents birds from nesting inside frame edges." },
+      { title: "Easy to Clean", desc: "Smooth mesh surface wipes clean with water — no bird mess buildup." },
+      { title: "Trusted Protection", desc: "Tested by 500+ apartment communities across Hyderabad & Vizag." },
+    ],
+    problems: [
+      "Pigeons roost on balconies, droppings damage furniture & health",
+      "Birds build nests inside apartment balconies creating unsanitary conditions",
+      "Pigeons damage AC units, water tanks & electrical installations",
+      "Traditional mesh grills block light & ruin premium apartment aesthetics",
+      "Cheap pigeon nets sag, fray and degrade within months",
+    ],
+    solutions: [
+      "Advanced micro-mesh technology that blocks pigeons while keeping views clear",
+      "Prevents nesting by eliminating frame gaps & sheltered spaces",
+      "SS316 mesh never rusts or frays — lasts 15+ years",
+      "Premium aesthetic design that complements luxury apartments",
+      "Combination of invisible wires + anti-pigeon mesh for complete protection",
+    ],
+    beforeAfter: { before: balconyBeforeImg, after: balconyAfterImg },
+    benefits: [
+      { title: "100% Pigeon-Proof", desc: "Micro-aperture mesh prevents all birds from entering — no nesting, no mess." },
+      { title: "Maintains 99% View", desc: "Carefully engineered mesh pattern minimizes visual obstruction." },
+      { title: "Health & Hygiene", desc: "Eliminates pigeon droppings, diseases & accumulated bird debris." },
+      { title: "Protects Appliances", desc: "Prevents birds from damaging AC units, water tanks & electrical lines." },
+      { title: "Easy Maintenance", desc: "Smooth mesh surface cleans in seconds — no bird mess accumulation." },
+      { title: "Luxury Aesthetic", desc: "Premium micro-mesh design complements high-end apartments." },
+    ],
+    installationSteps: [
+      { step: "Bird Assessment", desc: "Identify pigeon activity levels & best mesh configuration for your balcony." },
+      { step: "Custom Design", desc: "Recommend optimal wire + mesh combination for your specific balcony type." },
+      { step: "Expert Fabrication", desc: "Custom-build frames with integrated micro-mesh in our facility." },
+      { step: "Precision Installation", desc: "Professional installation ensures zero gaps where pigeons could enter." },
+      { step: "Final Inspection", desc: "Full balcony checked for any potential entry points before handover." },
+    ],
+    whyChooseUs: pigeonSafeWhyChooseUs,
+    testimonials: [
+      { name: "Neha Gupta", location: "Kondapur, Hyderabad", text: "Pigeons used to be a nightmare — droppings everywhere, noise at dawn. Now? Completely bird-free. The mesh is barely visible. Best decision ever.", rating: 5 },
+      { name: "Vikram Reddy", location: "Madhapur, Hyderabad", text: "Our building had pigeon problems. After our unit got these grills, the difference was night & day. No mess, no stress. Recommended to all neighbors.", rating: 5 },
+      { name: "Ananya Sharma", location: "Visakhapatnam", text: "Living on the 18th floor was great until pigeons became an issue. This solved it 100%. Still get perfect light & view. Amazing.", rating: 5 },
+      { name: "Suresh Kumar", location: "Jubilee Hills, Hyderabad", text: "Luxury apartment means open balconies — but pigeons destroyed the dream. These grills maintain the luxury feel while keeping birds completely out.", rating: 5 },
+    ],
+    faqs: [
+      { question: "Will the pigeon mesh block my view?", answer: "No — our micro-mesh is engineered to block birds while maintaining 99% view clarity. The invisible SS316 wires are virtually undetectable from normal viewing distance." },
+      { question: "Can pigeons still peek through the mesh?", answer: "The micro-aperture design is specifically sized to prevent pigeon heads from passing through. Birds are completely unable to access the balcony." },
+      { question: "Is the mesh easy to clean?", answer: "Yes — the smooth stainless mesh surface wipes clean with water. No bird debris accumulation. Much easier to maintain than traditional bird nets." },
+      { question: "Will the mesh rust or degrade?", answer: "No — our SS316 marine-grade mesh never rusts or corrodes. It's tested for 15+ years in coastal salt-air environments." },
+      { question: "Can I open my balcony glass doors?", answer: "Absolutely — the grills fit seamlessly around your existing glass doors. Full functionality maintained while protecting from pigeons." },
+      { question: "What if new pigeons arrive after installation?", answer: "The mesh design permanently prevents pigeon access. Once installed, no new birds can enter your balcony." },
+    ],
+    applications: ["High-rise apartment balconies", "Penthouses & premium units", "Commercial building balconies", "Hotel & resort balconies", "Swimming pool areas", "Open terraces"],
+    techDetails: [
+      "Wire: 2.0mm SS316 marine stainless steel",
+      "Mesh: Micro-aperture SS316 stainless mesh",
+      "Mesh aperture: 8mm × 8mm (prevents pigeon access)",
+      "Frame: Powder-coated aluminium",
+      "View retention: 99% transparency maintained",
+      "Weather resistance: Tested in coastal & humid climates",
+      "10-year warranty on materials & workmanship",
+    ],
+    overview: "Our pigeon-safe invisible grills combine the luxury of panoramic views with the practicality of complete bird protection. The advanced micro-mesh technology blocks pigeons while maintaining premium aesthetics — making them ideal for high-end apartments where both beauty and function matter.",
   },
   "window-grills": {
     id: "window-grills",
@@ -180,7 +390,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { step: "Pro Installation", desc: "Minimal drilling, zero damage to your window frames." },
       { step: "Final Safety Check", desc: "Tension-tested wires & smooth window operation verified." },
     ],
-    whyChooseUs: sharedWhyChooseUs,
+    whyChooseUs: windowGrillsWhyChooseUs,
     testimonials: sharedTestimonials,
     faqs: [
       { question: "Are invisible grills safe for children?", answer: "Yes — our 25mm spacing and high-tensile SS316 wires meet international child safety standards. Each wire is tested for 250kg breaking strength." },
@@ -245,7 +455,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { step: "Pro Installation", desc: "Secure ceiling anchors & full load-test performed." },
       { step: "Demo & Handover", desc: "Pulley operation demoed & maintenance tips shared." },
     ],
-    whyChooseUs: sharedWhyChooseUs,
+    whyChooseUs: ceilingClothHangersWhyChooseUs,
     testimonials: sharedTestimonials,
     faqs: [
       { question: "How many clothes can a ceiling cloth hanger hold?", answer: "A standard 6-rod, 6-feet hanger holds approximately 30–40 garments and supports up to 30kg of wet clothes." },
@@ -310,7 +520,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { step: "Pro Installation", desc: "Trained technicians install with zero mess in 4–8 hours." },
       { step: "Final Safety Check", desc: "Each wire tension-tested. 10-year warranty issued." },
     ],
-    whyChooseUs: sharedWhyChooseUs,
+    whyChooseUs: invisibleGrillsWhyChooseUs,
     testimonials: sharedTestimonials,
     faqs: [
       { question: "Are invisible grills really safe?", answer: "Yes — each SS316 wire withstands 250kg of force, far beyond any practical impact load. Our 25mm spacing meets international child-safety standards." },

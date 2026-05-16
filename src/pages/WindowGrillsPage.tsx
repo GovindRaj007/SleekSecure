@@ -69,7 +69,7 @@ const WindowGrillsPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/src/assets/window-invisible-grills2.jpg`}
+        ogImage={`${SITE_URL}/assets/window-invisible-grills2.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[

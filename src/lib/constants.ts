@@ -43,6 +43,9 @@ export const LOCATION_BUSINESS_DATA: Record<string, {
   kompally: { name: "SleekSecure Kompally", phone: "7893387715", whatsapp: "917893387715" },
   attapur: { name: "SleekSecure Attapur", phone: "7893387715", whatsapp: "917893387715" },
   malkajgiri: { name: "SleekSecure Malkajgiri", phone: "7893387715", whatsapp: "917893387715" },
+  patancheruvu: { name: "SleekSecure Patancheruvu", phone: "7893387715", whatsapp: "917893387715" },
+  sangareddy: { name: "SleekSecure Sangareddy", phone: "7893387715", whatsapp: "917893387715" },
+  medchal: { name: "SleekSecure Medchal", phone: "7893387715", whatsapp: "917893387715" },
   mehboobnagar: { name: "SleekSecure Mehboobnagar", phone: "7893387715", whatsapp: "917893387715" },
   visakhapatnam: { name: "SleekSecure Visakhapatnam", phone: "7893387715", whatsapp: "917893387715" },
   vijayawada: { name: "SleekSecure Vijayawada", phone: "7893387715", whatsapp: "917893387715" },
@@ -72,6 +75,9 @@ export const SERVICE_AREAS = [
   { name: "Kompally", slug: "kompally" },
   { name: "Attapur", slug: "attapur" },
   { name: "Malkajgiri", slug: "malkajgiri" },
+  { name: "Patancheruvu", slug: "patancheruvu" },
+  { name: "Sangareddy", slug: "sangareddy" },
+  { name: "Medchal", slug: "medchal" },
   { name: "Mehboobnagar", slug: "mehboobnagar" },
   // Regional Service Areas
   { name: "Hyderabad", slug: "hyderabad" },
@@ -121,6 +127,9 @@ export const TELANGANA_LOCATIONS = [
   { name: "Kompally", slug: "kompally" },
   { name: "Attapur", slug: "attapur" },
   { name: "Malkajgiri", slug: "malkajgiri" },
+  { name: "Patancheruvu", slug: "patancheruvu" },
+  { name: "Sangareddy", slug: "sangareddy" },
+  { name: "Medchal", slug: "medchal" },
   { name: "Mehboobnagar", slug: "mehboobnagar" },
 ];
 
@@ -136,6 +145,18 @@ export const SERVICES = [
     title: "Invisible Grills for Balcony",
     shortDesc: "Keep your balcony safe and beautiful with nearly invisible safety grills.",
     path: "/balcony-invisible-grills",
+  },
+  {
+    id: "child-safety-grills",
+    title: "Invisible Grills for Child Safety",
+    shortDesc: "Premium child-safe invisible grills designed to protect your little ones.",
+    path: "/child-safety-invisible-grills",
+  },
+  {
+    id: "pigeon-safe-grills",
+    title: "Pigeon-Safe Balcony Grills",
+    shortDesc: "Keep pigeons away while maintaining your premium transparent view.",
+    path: "/pigeon-safe-invisible-grills",
   },
   {
     id: "window-grills",

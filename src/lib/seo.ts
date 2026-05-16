@@ -173,12 +173,33 @@ export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
   })),
 });
 
+export const offerSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  name: "Free Ceiling Cloth Hanger with Invisible Grill Installation",
+  description: "Get free ceiling cloth hanger with installation on Invisible grill installation worth Rs.20,000 or more.",
+  image: `${SITE_URL}/assets/Offer-Poster.jpg`,
+  priceCurrency: "INR",
+  price: "0",
+  availability: "https://schema.org/OnlineOnly",
+  url: `${SITE_URL}/`,
+  offeredBy: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  eligibleCustomerType: "Residential",
+  applicableCountry: "IN",
+  eligibleRegion: SERVICE_AREAS.map((a) => a.name).join(", "),
+});
+
 export const homeGraph = () => ({
   "@context": "https://schema.org",
   "@graph": [
     websiteSchema(),
     orgSchema(),
     localBusinessSchema(),
+    offerSchema(),
     {
       "@context": "https://schema.org",
       "@type": "ItemList",

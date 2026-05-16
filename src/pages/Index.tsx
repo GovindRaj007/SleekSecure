@@ -9,6 +9,7 @@ import BeforeAfterShowcase from "@/components/home/BeforeAfterShowcase";
 import ServiceAreas from "@/components/home/ServiceAreas";
 import Testimonials from "@/components/home/Testimonials";
 import CTASection from "@/components/home/CTASection";
+import offerPoster from "@/assets/Offer-Poster.jpg";
 import { useState, useEffect, useRef } from "react";
 
 const Index = () => {
@@ -48,8 +49,18 @@ const Index = () => {
       <div aria-hidden className="h-[80svh]" />
 
       {/* Floating premium content card — overlaps the bottom of the hero */}
-      <div className="relative z-10 -mt-[2svh] sm:-mt-[12svh] md:-mt-[8svh] pb-10 md:pb-16">
+      <div className="relative z-10 -mt-[15svh] sm:-mt-[20svh] md:-mt-[18svh] pb-10 md:pb-16">
         <div className="mx-auto max-w-7xl rounded-[1.75rem] md:rounded-[2.25rem] bg-background shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.25),0_30px_60px_-25px_rgba(0,0,0,0.25)] ring-1 ring-border/60 overflow-hidden animate-fade-in">
+          {/* Offer Poster */}
+          <div className="w-full">
+            <img 
+              src={offerPoster} 
+              alt="Exclusive Offer: Get free ceiling cloth hanger with invisible grill installation worth Rs.20,000 or more" 
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+          
           <div>
             <ServiceShowcase />
             <BeforeAfterShowcase />

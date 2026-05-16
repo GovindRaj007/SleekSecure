@@ -11,6 +11,8 @@ import NotFound from "./pages/NotFound";
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const BalconyGrillsPage = lazy(() => import("./pages/BalconyGrillsPage"));
+const ChildSafetyGrillsPage = lazy(() => import("./pages/ChildSafetyGrillsPage"));
+const PigeonSafeGrillsPage = lazy(() => import("./pages/PigeonSafeGrillsPage"));
 const WindowGrillsPage = lazy(() => import("./pages/WindowGrillsPage"));
 const CeilingClothHangersPage = lazy(() => import("./pages/CeilingClothHangersPage"));
 const CityPage = lazy(() => import("./pages/CityPage"));
@@ -40,6 +42,10 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/balcony-invisible-grills" element={<BalconyGrillsPage />} />
             <Route path="/services/balcony-grills" element={<BalconyGrillsPage />} />
+            <Route path="/child-safety-invisible-grills" element={<ChildSafetyGrillsPage />} />
+            <Route path="/services/child-safety-grills" element={<ChildSafetyGrillsPage />} />
+            <Route path="/pigeon-safe-invisible-grills" element={<PigeonSafeGrillsPage />} />
+            <Route path="/services/pigeon-safe-grills" element={<PigeonSafeGrillsPage />} />
             <Route path="/window-invisible-grills" element={<WindowGrillsPage />} />
             <Route path="/services/window-grills" element={<WindowGrillsPage />} />
             <Route path="/ceiling-cloth-hangers" element={<CeilingClothHangersPage />} />
@@ -49,7 +55,7 @@ const App = () => (
             {[
               "gachibowli","madhapur","hitech-city","kondapur","kukatpally","miyapur",
               "manikonda","kokapet","tellapur","jubilee-hills","banjara-hills","secunderabad",
-              "uppal","lb-nagar","kompally","attapur","malkajgiri","mehboobnagar",
+              "uppal","lb-nagar","kompally","attapur","malkajgiri","patancheruvu","sangareddy","medchal","mehboobnagar",
               "visakhapatnam","vijayawada","kadapa",
             ].map((s) => (
               <Route key={s} path={`/invisible-grills-${s}`} element={<LocationPage />} />

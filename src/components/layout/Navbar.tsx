@@ -30,16 +30,25 @@ const fadeUp = {
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollOffset, setScrollOffset] = useState(0);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [expandedLocationCategory, setExpandedLocationCategory] = useState<string | null>(null);
   const [expandedDesktopLocationCategory, setExpandedDesktopLocationCategory] = useState<string | null>(null);
   const [isLocationsDropdownOpen, setIsLocationsDropdownOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const announcementHeight = 40; // Must match TopAnnouncementBar height
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      // Calculate how much navbar should scroll with announcement
+      // Once announcement is hidden (scrollY >= announcementHeight), navbar stays at top
+      const offset = Math.min(window.scrollY, announcementHeight);
+      setScrollOffset(offset);
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -62,11 +71,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 rounded-t-3xl ${
+      className={`fixed left-0 right-0 z-50 transition-colors duration-300 rounded-t-3xl ${
         scrolled
           ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50"
           : "bg-transparent"
       }`}
+      style={{
+        top: 0,
+        transform: `translateY(${announcementHeight - scrollOffset}px)`,
+      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">

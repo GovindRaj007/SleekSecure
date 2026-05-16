@@ -13,12 +13,6 @@ import {
   Phone,
   ArrowRight,
   MapPin,
-  ArrowUpDown,
-  Maximize2,
-  Droplets,
-  Hammer,
-  Shirt,
-  Timer,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import Layout from "@/components/layout/Layout";
@@ -26,6 +20,7 @@ import Seo, { SITE_URL } from "@/components/shared/Seo";
 import { breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema } from "@/lib/seo";
 import FAQAccordion from "@/components/shared/FAQAccordian";
 import LayeredImageGallery from "@/components/service/LayeredImageGallery";
+import BeforeAfterSlider from "@/components/service/BeforeAfterSlider";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -40,30 +35,6 @@ import { SERVICE_CONTENT } from "@/lib/serviceContent";
 
 const trustIcons = [Shield, Eye, Award, CloudSun, Wrench, Sparkles];
 
-const benefits = [
-  "Space-saving pulley system for small balconies",
-  "Heavy-duty capacity - holds 40+ kg of wet clothes",
-  "Rust-proof stainless steel construction",
-  "Easy lift-and-lower mechanism",
-  "Dries clothes faster with ceiling height airflow",
-  "5-year warranty on all components",
-];
-
-const features = [
-  { icon: ArrowUpDown, title: "Pulley Lift System", description: "Smooth pulley mechanism to easily raise and lower the hanger." },
-  { icon: Maximize2, title: "Space Optimization", description: "Utilize ceiling space efficiently for small apartments." },
-  { icon: Droplets, title: "Quick Drying", description: "Elevated position allows better air circulation." },
-  { icon: Hammer, title: "Durable Construction", description: "Heavy-gauge stainless steel pipes with rust-proof finish." },
-  { icon: Shirt, title: "Multiple Rods", description: "Available in 4-rod, 6-rod, and 8-rod configurations." },
-  { icon: Timer, title: "Quick Installation", description: "Professional installation completed in 2-3 hours." },
-];
-
-const configurations = [
-  { title: "4-Rod Economy", size: "4 feet × 2 feet", capacity: "Up to 25 kg", ideal: "1-2 BHK apartments" },
-  { title: "6-Rod Standard", size: "5 feet × 2.5 feet", capacity: "Up to 35 kg", ideal: "2-3 BHK apartments" },
-  { title: "8-Rod Premium", size: "6 feet × 3 feet", capacity: "Up to 50 kg", ideal: "Large families/villas" },
-];
-
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -71,8 +42,8 @@ const fadeUp = {
   transition: { duration: 0.55, ease: "easeOut" as const },
 };
 
-const CeilingClothHangersPage = () => {
-  const data = SERVICE_CONTENT["ceiling-cloth-hangers"];
+const PigeonSafeGrillsPage = () => {
+  const data = SERVICE_CONTENT["pigeon-safe-grills"];
   
   if (!data) {
     return (
@@ -98,7 +69,7 @@ const CeilingClothHangersPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/assets/cloth-hanger.jpg`}
+        ogImage={`${SITE_URL}/assets/balcony-invisible-grills2.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[
@@ -116,7 +87,7 @@ const CeilingClothHangersPage = () => {
       {/* HERO */}
       <section className="relative min-h-[88vh] md:min-h-[92vh] flex items-end overflow-hidden pb-20 md:pb-24 pt-24">
         <div className="absolute inset-0">
-          <img src={data.heroImage} alt={`${data.title} — premium Ceiling Cloth Hangers`} className="w-full h-full object-cover" />
+          <img src={data.heroImage} alt={`${data.title} — pigeon-proof invisible balcony grills`} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/70 to-foreground/30" />
         </div>
 
@@ -128,13 +99,13 @@ const CeilingClothHangersPage = () => {
                   <Link to="/" className="text-primary-foreground/70 hover:text-primary-foreground text-xs">Home</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-primary-foreground/40" />
+              <BreadcrumbSeparator className="text-primary-foreground/50" />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
                   <Link to="/#services" className="text-primary-foreground/70 hover:text-primary-foreground text-xs">Services</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="text-primary-foreground/40" />
+              <BreadcrumbSeparator className="text-primary-foreground/50" />
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-primary-foreground text-xs">{data.title}</BreadcrumbPage>
               </BreadcrumbItem>
@@ -173,64 +144,23 @@ const CeilingClothHangersPage = () => {
 
       {/* INTRO SECTION */}
       <section className="py-14 md:py-20 bg-background">
-        <div className="container-custom">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <motion.div {...fadeUp}>
-              <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">Why Cloth Hangers</span>
-              <h2 className="mb-6 font-heading text-3xl font-bold text-foreground md:text-4xl">Smart Drying Solution for Modern Homes</h2>
-              <p className="mb-8 text-lg text-muted-foreground">Our ceiling cloth hangers are the perfect solution for apartments with limited balcony space.</p>
-              <ul className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                    <span className="text-foreground">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div {...fadeUp} className="grid gap-4 sm:grid-cols-2">
-              {features.slice(0, 4).map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={index} className="rounded-xl bg-gradient-to-br from-primary/5 via-primary/3 to-accent/5 p-6 border border-primary/20 hover:border-accent/40 transition-colors">
-                    <Icon className="mb-4 h-8 w-8 text-primary" />
-                    <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </div>
-                );
-              })}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONFIGURATIONS SECTION */}
-      <section className="py-14 md:py-20 bg-background">
-        <div className="container-custom">
-          <motion.div {...fadeUp} className="mx-auto mb-12 max-w-3xl text-center">
-            <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">Configurations</span>
-            <h2 className="mb-4 font-heading text-3xl font-bold text-foreground md:text-4xl">Choose Your Perfect Size</h2>
+        <div className="container-custom max-w-4xl">
+          <motion.div {...fadeUp} className="mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
+              Anti-Pigeon Invisible Grills – 99% View Retention With Complete Bird Protection
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
+              Sleek Secure Grills provides <strong>premium anti-pigeon invisible grills in Hyderabad</strong> that offer <strong>complete bird protection</strong> while preserving your unobstructed views. Our <strong>micro-mesh stainless steel solutions</strong> are perfect for high-rise apartments, penthouses, and premium properties across the city.
+            </p>
           </motion.div>
-          <motion.div {...fadeUp} className="grid gap-6 md:grid-cols-3">
-            {configurations.map((config, index) => (
-              <div key={index} className="rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10 p-6 border border-primary/20 hover:border-accent/50 hover:shadow-lg transition-all">
-                <h3 className="mb-4 font-heading text-xl font-semibold text-foreground">{config.title}</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Size:</span>
-                    <span className="text-foreground font-medium">{config.size}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Capacity:</span>
-                    <span className="text-foreground font-medium">{config.capacity}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Ideal for:</span>
-                    <span className="text-foreground font-medium">{config.ideal}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+
+          <motion.div {...fadeUp} className="space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-4">
+              Hyderabad's Trusted Pigeon-Safe Grill Specialists
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              As <strong>leading anti-pigeon grill experts in Hyderabad</strong>, we specialize in <strong>premium balcony and window grills</strong> that keep birds away while maintaining your home's luxury aesthetic. Our grills offer a <strong>seamless blend of bird protection and premium aesthetics</strong> for upscale residential properties across Telangana and Andhra Pradesh.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -245,10 +175,10 @@ const CeilingClothHangersPage = () => {
       <section className="py-14 md:py-20 bg-background">
         <div className="container-custom">
           <motion.h2 {...fadeUp} className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground text-center mb-3">
-            Why Families Trust Us
+            Why Property Owners Trust Us
           </motion.h2>
           <motion.p {...fadeUp} className="text-muted-foreground text-center max-w-xl mx-auto mb-10 text-sm md:text-base">
-            Premium materials. Certified installation. Built for the way you live today.
+            Premium materials. Expert installation. Built for pigeon-free living.
           </motion.p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
             {data.trustItems.map((t, i) => {
@@ -275,12 +205,12 @@ const CeilingClothHangersPage = () => {
       </section>
 
       {/* PROBLEM / SOLUTION */}
-      <section className="pt-14 md:pt-20 bg-secondary">
+      <section className="py-14 md:py-20 bg-secondary">
         <div className="container-custom">
           <motion.div {...fadeUp} className="text-center mb-10">
             <span className="text-xs font-semibold text-accent uppercase tracking-wider">The Upgrade</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
-              From Risky & Outdated → Safe & Beautiful
+              From Bird Invasions → Complete Pigeon-Free Protection
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
@@ -314,11 +244,54 @@ const CeilingClothHangersPage = () => {
         </div>
       </section>
 
-      {/* BENEFITS - APPLICATIONS & SPECIFICATIONS */}
+      {/* BEFORE / AFTER */}
+      <section className="bg-secondary">
+        <div className="container-custom">
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Before and After</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
+              See the Transformation
+            </h2>
+          </motion.div>
+          <div className="w-full md:w-4/5 lg:w-3/5 mx-auto">
+            <BeforeAfterSlider
+              beforeImg={data.beforeAfter.before}
+              afterImg={data.beforeAfter.after}
+              beforeLabel="Before"
+              afterLabel="After"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* BENEFITS */}
       <section className="py-14 md:py-20 bg-secondary">
         <div className="container-custom">
+          <motion.div {...fadeUp} className="text-center mb-10">
+            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Why It's Worth It</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
+              Premium Benefits, Built In
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {data.benefits.map((b, i) => (
+              <motion.div
+                key={b.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}
+                className="card-gradient rounded-2xl p-5 md:p-6 hover-lift"
+              >
+                <CheckCircle2 className="w-6 h-6 text-primary mb-3" />
+                <h3 className="font-heading font-bold text-foreground text-base md:text-lg mb-1.5">{b.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
           {/* Applications */}
-          <motion.div {...fadeUp} className="">
+          <motion.div {...fadeUp} className="mt-16">
             <h3 className="font-heading font-bold text-foreground text-xl md:text-2xl mb-6 text-center">Common Applications</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
               {data.applications.map((a) => (
@@ -392,9 +365,9 @@ const CeilingClothHangersPage = () => {
       <section className="py-14 md:py-20 bg-background">
         <div className="container-custom">
           <motion.div {...fadeUp} className="text-center mb-10">
-            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Loved by Families</span>
+            <span className="text-xs font-semibold text-accent uppercase tracking-wider">Loved by Property Owners</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">
-              4.9★ from 320+ Happy Homes
+              4.9★ from Satisfied Customers
             </h2>
           </motion.div>
           <div className="-mx-4 px-4 md:mx-0 md:px-0 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
@@ -474,7 +447,7 @@ const CeilingClothHangersPage = () => {
         <div className="relative z-10 container-custom text-center">
           <motion.div {...fadeUp}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-4 leading-tight">
-              Upgrade Your Safety Today
+              Get Pigeon-Free Living Today
             </h2>
             <p className="text-base md:text-lg text-primary-foreground/85 max-w-xl mx-auto mb-8">
               Book your free site visit & quote in under 60 seconds. No obligation, fully transparent pricing.
@@ -499,8 +472,207 @@ const CeilingClothHangersPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* WHY CHOOSE US / TRUST ITEMS */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-3 gap-6">
+            {data.trustItems.map((item, i) => {
+              const Icon = trustIcons[i % trustIcons.length];
+              return (
+                <motion.div key={i} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.1 }} className="p-6 bg-background rounded-xl border border-border/50">
+                  <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-gold" />
+                  </div>
+                  <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-foreground/80">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* PROBLEMS & SOLUTIONS */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div {...fadeUp}>
+              <h2 className="text-3xl font-heading font-bold mb-6">The Problem</h2>
+              <ul className="space-y-4">
+                {data.problems.map((problem, i) => (
+                  <motion.li key={i} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.05 }} className="flex gap-3">
+                    <XCircle className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground/80">{problem}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+              <h2 className="text-3xl font-heading font-bold mb-6">Our Solution</h2>
+              <ul className="space-y-4">
+                {data.solutions.map((solution, i) => (
+                  <motion.li key={i} {...fadeUp} transition={{ ...fadeUp.transition, delay: (i + 3) * 0.05 }} className="flex gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-gold flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground/80">{solution}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* BEFORE/AFTER */}
+      <section className="py-16 md:py-24 bg-card">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">See the Difference</motion.h2>
+          <BeforeAfterSlider before={data.beforeAfter.before} after={data.beforeAfter.after} />
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Premium Installations</motion.h2>
+          <LayeredImageGallery images={data.gallery} />
+        </div>
+      </section>
+
+      {/* BENEFITS */}
+      <section className="py-16 md:py-24 bg-card">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Key Benefits</motion.h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {data.benefits.map((benefit, i) => (
+              <motion.div key={i} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.08 }} className="p-6 bg-background rounded-xl border border-border/50">
+                <CheckCircle2 className="w-8 h-8 text-gold mb-4" />
+                <h3 className="font-bold text-lg text-foreground mb-2">{benefit.title}</h3>
+                <p className="text-foreground/80">{benefit.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INSTALLATION STEPS */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">How It Works</motion.h2>
+          <div className="grid md:grid-cols-5 gap-4 md:gap-2">
+            {data.installationSteps.map((item, i) => (
+              <motion.div key={i} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.1 }} className="relative">
+                <div className="bg-card p-6 rounded-xl border border-border/50 text-center min-h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
+                      <span className="font-bold text-gold text-sm">{i + 1}</span>
+                    </div>
+                    <h3 className="font-bold text-foreground mb-2">{item.step}</h3>
+                    <p className="text-sm text-foreground/80">{item.desc}</p>
+                  </div>
+                </div>
+                {i < data.installationSteps.length - 1 && (
+                  <div className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2">
+                    <ArrowRight className="w-4 h-4 text-gold" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="py-16 md:py-24 bg-card">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Why Choose Sleek Secure?</motion.h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {data.whyChooseUs.map((item, i) => (
+              <motion.div key={i} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.08 }} className="p-6 bg-background rounded-xl border border-border/50">
+                <Sparkles className="w-8 h-8 text-gold mb-4" />
+                <h3 className="font-bold text-lg text-foreground mb-2">{item.title}</h3>
+                <p className="text-foreground/80">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">What Our Customers Say</motion.h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {data.testimonials.slice(0, 4).map((testimonial, i) => (
+              <motion.div key={i} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.1 }} className="p-6 bg-card rounded-xl border border-border/50">
+                <div className="flex gap-1 mb-4">
+                  {Array(testimonial.rating).fill(0).map((_, j) => (
+                    <Star key={j} className="w-5 h-5 fill-gold text-gold" />
+                  ))}
+                </div>
+                <p className="text-foreground/80 mb-4 italic">"{testimonial.text}"</p>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
+                  <div>
+                    <p className="font-bold text-foreground text-sm">{testimonial.name}</p>
+                    <p className="text-xs text-foreground/60">{testimonial.location}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 md:py-24 bg-card">
+        <div className="container-custom max-w-3xl mx-auto">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Frequently Asked Questions</motion.h2>
+          <FAQAccordion faqs={data.faqs} />
+        </div>
+      </section>
+
+      {/* SERVICE AREAS */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container-custom">
+          <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Service Areas</motion.h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {SERVICE_PAGES_DISPLAY_AREAS.map((area, i) => (
+              <motion.div key={area.slug} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.03 }}>
+                <Link to={`/invisible-grills-${area.slug}`} className="block p-4 bg-card rounded-lg border border-border/50 hover:border-gold hover:bg-card/80 transition-all">
+                  <p className="font-semibold text-foreground text-sm">{area.name}</p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-foreground/95 via-foreground/85 to-primary/85">
+        <div className="container-custom text-center">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Keep Your Balcony Pigeon-Free</h2>
+            <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">Get a free consultation for pigeon-proof invisible grills. Maintain your premium view while keeping birds completely out. Installation within 5–7 days.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href={wa} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="gap-2 bg-gold text-gold-foreground hover:bg-gold/90">
+                  <WhatsAppIcon className="w-5 h-5" />
+                  WhatsApp Us
+                </Button>
+              </a>
+              <a href={`tel:${BUSINESS.phone}`}>
+                <Button size="lg" className="gap-2 bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 border border-primary-foreground/50">
+                  <Phone className="w-5 h-5" />
+                  {BUSINESS.phone}
+                </Button>
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
 };
 
-export default CeilingClothHangersPage;
+export default PigeonSafeGrillsPage;

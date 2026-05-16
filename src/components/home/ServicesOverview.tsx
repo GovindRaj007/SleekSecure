@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Fence, Wind, Shirt } from "lucide-react";
+import { ArrowRight, Fence, Wind, Shirt, Shield, Bird } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import balconyImg from "@/assets/hero-balcony-invisible-grills.jpg";
 import windowImg from "@/assets/window-invisible-grills.jpg";
 import clothImg from "@/assets/cloth-hanger.jpg";
+import childSafetyImg from "@/assets/showcase-children-safety.jpg";
+import pigeonImg1 from "@/assets/invisible-grills-pigeons1.jpg";
 
 const services = [
   {
@@ -14,6 +16,24 @@ const services = [
     href: "/services/balcony-grills",
     features: ["Crystal Clear Views", "Custom Fit", "Child-Safe"],
     image: balconyImg,
+  },
+  {
+    icon: Shield,
+    title: "Invisible Grills for Child Safety",
+    description:
+      "Certified child-safe invisible grills protecting your little ones with ISO 13126 tested spacing and unobstructed views.",
+    href: "/services/child-safety-grills",
+    features: ["ISO Certified", "25mm Safe Spacing", "Peace of Mind"],
+    image: childSafetyImg,
+  },
+  {
+    icon: Bird,
+    title: "Pigeon-Safe Balcony Grills",
+    description:
+      "Advanced micro-mesh invisible grills keeping pigeons away while maintaining 99% view clarity for premium apartments.",
+    href: "/services/pigeon-safe-grills",
+    features: ["Pigeon-Proof", "99% View Clarity", "Premium Finish"],
+    image: pigeonImg1,
   },
   {
     icon: Wind,
