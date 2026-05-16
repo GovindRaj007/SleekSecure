@@ -16,19 +16,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const assetsDir = path.join(__dirname, '../src/assets');
 const backupDir = path.join(__dirname, '../src/assets-backup');
 
-// Image optimization settings - ORIGINAL compression
-const JPEG_QUALITY = 75; // 0-100, default compression for most images
+// Image optimization settings
+const JPEG_QUALITY = 75; // 0-100, default compression
 const WEBP_QUALITY = 75;
 const PNG_QUALITY = 80;
 
-// Images with PREMIUM quality settings (less compression, maintain highest quality)
-const PREMIUM_QUALITY_IMAGES = [
-  'Offer-Poster.jpg',
+// Images that should NOT be compressed (used as-is)
+const EXCLUDE_FROM_COMPRESSION = [
   'home-after-installation.jpg'
 ];
-
-const PREMIUM_JPEG_QUALITY = 80; // Premium quality for important images
-const PREMIUM_WEBP_QUALITY = 80;
 
 async function ensureBackupDir() {
   if (!fs.existsSync(backupDir)) {
@@ -60,32 +56,22 @@ async function compressImage(filename) {
   const nameWithoutExt = path.basename(filename, ext);
 
   try {
-    // Get original size
     const originalStats = await getImageStats(inputPath);
     
-    // Check if this image gets premium quality (less compression, better quality)
-    const isPremiumImage = PREMIUM_QUALITY_IMAGES.includes(filename);
-    
-    // Determine quality based on file size and image type
-    let quality = isPremiumImage ? PREMIUM_JPEG_QUALITY : JPEG_QUALITY;
-    
-    // For non-premium images, apply size-based adjustments
-    if (!isPremiumImage) {
-      if (parseFloat(originalStats.sizeMb) > 1.5) {
-        quality = 65; // Reduce quality for very large files
-      } else if (parseFloat(originalStats.sizeMb) > 1) {
-        quality = 70;
-      }
+    // Determine quality based on file size
+    let quality = JPEG_QUALITY;
+    if (parseFloat(originalStats.sizeMb) > 1.5) {
+      quality = 65; // Reduce quality for very large files
+    } else if (parseFloat(originalStats.sizeMb) > 1) {
+      quality = 70;
     }
 
     // Compress JPEG
     if (['.jpg', '.jpeg'].includes(ext)) {
-      const outputPath = inputPath; // Overwrite original
-      
-      const webpQuality = isPremiumImage ? PREMIUM_WEBP_QUALITY : WEBP_QUALITY;
+      const outputPath = inputPath;
       
       await sharp(inputPath)
-        .resize(1920, 1440, { // Max dimensions
+        .resize(1920, 1440, {
           fit: 'inside',
           withoutEnlargement: true
         })
@@ -97,14 +83,13 @@ async function compressImage(filename) {
       const compressedStats = await getImageStats(outputPath);
       const savings = ((1 - compressedStats.sizeKb / originalStats.sizeKb) * 100).toFixed(1);
       
-      const qualityLabel = isPremiumImage ? ' [PREMIUM QUALITY]' : '';
-      console.log(`✓ ${filename}${qualityLabel}`);
+      console.log(`✓ ${filename}`);
       console.log(`  Original: ${originalStats.sizeKb} KB → Compressed: ${compressedStats.sizeKb} KB (${savings}% saved)`);
 
       // Create WebP version
       const webpPath = path.join(assetsDir, nameWithoutExt + '.webp');
       await sharp(outputPath)
-        .webp({ quality: webpQuality })
+        .webp({ quality: WEBP_QUALITY })
         .toFile(webpPath);
       
       const webpStats = await getImageStats(webpPath);
@@ -148,9 +133,9 @@ async function main() {
   const files = fs.readdirSync(assetsDir);
   const imageFiles = files.filter(file => {
     const ext = path.extname(file).toLowerCase();
-    // Exclude logo files to preserve transparency
     const isLogo = file.includes('logo');
-    return ['.jpg', '.jpeg', '.png'].includes(ext) && !isLogo;
+    const isExcluded = EXCLUDE_FROM_COMPRESSION.includes(file);
+    return ['.jpg', '.jpeg', '.png'].includes(ext) && !isLogo && !isExcluded;
   });
 
   if (imageFiles.length === 0) {
@@ -159,7 +144,7 @@ async function main() {
   }
 
   console.log(`Found ${imageFiles.length} images to optimize`);
-  console.log('(Logo files are excluded to preserve transparency)\n');
+  console.log('(Logo files and excluded images are skipped)\n');
 
   // Backup all images first
   console.log('Creating backups...');

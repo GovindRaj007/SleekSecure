@@ -9,7 +9,7 @@ import windowImg3 from "@/assets/window-invisible-grills3.jpg";
 import clothImg from "@/assets/cloth-hanger.jpg";
 import clothImg2 from "@/assets/cloth-hanger2.jpg";
 import clothImg3 from "@/assets/cloth-hanger3.jpg";
-import balconyBeforeImg from "@/assets/balcony-before-installation.jpg";
+import balconyBeforeImg from "@/assets/balcony-before-installation.webp";
 import balconyAfterImg from "@/assets/balcony-after-installation.jpg";
 import windowBeforeImg from "@/assets/window-before-installation.jpg";
 import childSafetyImg from "@/assets/showcase-children-safety.jpg";
@@ -277,7 +277,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     metaDescription: "Pigeon-proof invisible balcony grills in Hyderabad, Telangana & Andhra Pradesh. SS316 + anti-pigeon mesh. Keeps pigeons out, view completely clear. 10-year warranty.",
     keywords: "pigeon-safe balcony grills, anti-pigeon invisible grills, pigeon mesh grills, balcony pigeon protection, invisible pigeon-proof grills, pigeon control solution, balcony bird protection, transparent pigeon mesh, pigeon deterrent grills, bird-safe balcony grills",
     heroImage: pigeonImg1,
-    gallery: [pigeonImg2],
+    gallery: [childSafety2Img, pigeonImg1, pigeonImg2],
     features: ["Pigeon-Proof", "Anti-Bird Mesh", "Crystal View", "10-Yr Warranty"],
     trustBadges: ["SS316 Marine Steel", "Micro Mesh Tech", "99% Transparent", "Pro Installed"],
     trustItems: [

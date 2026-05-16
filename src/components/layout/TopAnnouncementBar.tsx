@@ -10,7 +10,7 @@ const TopAnnouncementBar = () => {
     "Free on-site inspection & consultation",
     "Premium SS316 marine-grade stainless steel grills",
     "Child-safe 25mm mesh spacing — ISO 13126 certified",
-    "10-year warranty on every installation",
+    "Warranty on all installations",
     "8+ years of trusted expertise",
     "Invisible grills that preserve your home's look",
     "Ceiling cloth hangers — smart space-saving solution",

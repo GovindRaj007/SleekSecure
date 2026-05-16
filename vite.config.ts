@@ -18,45 +18,40 @@ const imageOptimizationPlugin = {
     
     if (!fs.existsSync(assetsDir)) return;
 
-    // Images with PREMIUM quality settings (less compression, maintain highest quality)
-    const PREMIUM_QUALITY_IMAGES = [
-      'Offer-Poster.jpg',
+    // Images that should NOT be compressed
+    const EXCLUDE_FROM_COMPRESSION = [
       'home-after-installation.jpg'
     ];
 
     const files = fs.readdirSync(assetsDir);
-    const imageFiles = files.filter(f => /\.(jpg|jpeg|png)$/i.test(f));
+    const imageFiles = files.filter(f => {
+      const ext = path.extname(f).toLowerCase();
+      const isLogo = f.includes('logo');
+      const isExcluded = EXCLUDE_FROM_COMPRESSION.includes(f);
+      return /\.(jpg|jpeg|png)$/i.test(f) && !isLogo && !isExcluded;
+    });
 
     for (const file of imageFiles) {
       const filePath = path.join(assetsDir, file);
       const fileExt = path.extname(file).toLowerCase();
-      const fileNameWithoutExt = path.basename(file, fileExt);
-      const isPremiumImage = PREMIUM_QUALITY_IMAGES.includes(file);
 
       try {
-        // Default compression settings
-        // Premium images: 80% quality (less compression, maintain quality)
-        // Other images: 75% quality (original compression)
         if (['.jpg', '.jpeg'].includes(fileExt)) {
-          const quality = isPremiumImage ? 80 : 75;
-          const qualityLabel = isPremiumImage ? ' [PREMIUM]' : '';
-          
           await sharp(filePath)
-            .resize(2048, 1536, {
+            .resize(1920, 1440, {
               fit: 'inside',
               withoutEnlargement: true
             })
-            .jpeg({ quality, progressive: true, mozjpeg: true })
+            .jpeg({ quality: 75, progressive: true, mozjpeg: true })
             .toFile(filePath + '.opt');
 
           fs.renameSync(filePath + '.opt', filePath);
           
           const stats = fs.statSync(filePath);
-          console.log(`✓ Optimized: ${file}${qualityLabel} → ${(stats.size / 1024).toFixed(2)} KB`);
+          console.log(`✓ Optimized: ${file} → ${(stats.size / 1024).toFixed(2)} KB`);
         } else if (fileExt === '.png') {
-          // PNG compression: keep at original 80% quality
           await sharp(filePath)
-            .resize(2048, 1536, {
+            .resize(1920, 1440, {
               fit: 'inside',
               withoutEnlargement: true
             })
