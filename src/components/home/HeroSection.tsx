@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BUSINESS } from "@/lib/constants";
 import heroImage from "@/assets/hero-luxury-balcony.jpg";
 
 const HeroSection = () => {
+  const whatsappLink = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`;
   return (
     <section className="relative h-[80svh] min-h-[560px] flex items-center overflow-hidden">
       {/* Background */}
@@ -35,11 +36,11 @@ const HeroSection = () => {
           </p>
 
           <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <Link to="/contact">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="gradient-gold text-accent-foreground border-0 font-semibold gap-2 text-base px-8">
                 Get Free Quote <ArrowRight className="w-5 h-5" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

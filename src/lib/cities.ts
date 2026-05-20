@@ -16,7 +16,7 @@ export const CITIES: CityData[] = [
     state: "Andhra Pradesh",
     region: "Coastal Andhra",
     intro:
-      "Visakhapatnam's coastal climate and high-rise apartment culture make invisible grills the smartest safety upgrade. SafeView Grills delivers SS316 marine-grade installations engineered for salt air, monsoon winds, and unobstructed sea views.",
+      "Visakhapatnam's coastal climate and high-rise apartment culture make invisible grills the smartest safety upgrade. SleekSecure invisible Grills delivers SS316 marine-grade installations engineered for salt air, monsoon winds, and unobstructed sea views.",
     highlights: [
       "Marine-grade SS316 wires resist salt-air corrosion",
       "Tested wind resistance for high-rise sea-facing apartments",
@@ -24,7 +24,7 @@ export const CITIES: CityData[] = [
       "100+ apartment communities served in Vizag",
     ],
     localContext:
-      "From sea-facing high-rises in Rushikonda to gated communities in Madhurawada and PM Palem, families across Visakhapatnam trust SafeView Grills for child-safe, view-preserving balcony and window safety.",
+      "From sea-facing high-rises in Rushikonda to gated communities in Madhurawada and PM Palem, families across Visakhapatnam trust SleekSecure invisible Grills for child-safe, view-preserving balcony and window safety.",
     popularAreas: [
       "MVP Colony",
       "Madhurawada",
@@ -41,7 +41,7 @@ export const CITIES: CityData[] = [
     state: "Andhra Pradesh",
     region: "Krishna District",
     intro:
-      "Vijayawada's growing skyline of premium apartments demands invisible grill solutions that protect families without blocking the view. SafeView Grills offers expert installation across Benz Circle, Auto Nagar, and Tadepalli.",
+      "Vijayawada's growing skyline of premium apartments demands invisible grill solutions that protect families without blocking the view. SleekSecure invisible Grills offers expert installation across Benz Circle, Auto Nagar, and Tadepalli.",
     highlights: [
       "Custom SS316 grills for high-rise apartments",
       "Heat- and dust-resistant finishes for Vijayawada summers",
@@ -66,7 +66,7 @@ export const CITIES: CityData[] = [
     state: "Andhra Pradesh",
     region: "Rayalaseema",
     intro:
-      "Kadapa's growing residential sector deserves premium safety upgrades. SafeView Grills delivers SS316 invisible grills and ceiling cloth hangers built for the region's hot, dry climate.",
+      "Kadapa's growing residential sector deserves premium safety upgrades. SleekSecure invisible Grills delivers SS316 invisible grills and ceiling cloth hangers built for the region's hot, dry climate.",
     highlights: [
       "SS316 marine-grade wires built for Rayalaseema heat",
       "Custom-fit balcony, window and staircase grills",
@@ -74,7 +74,7 @@ export const CITIES: CityData[] = [
       "Trusted by families across Kadapa town and outskirts",
     ],
     localContext:
-      "From YSR Circle and One Town to Almaspeta and Nagarajupet, Kadapa families trust SafeView Grills for child-safe, view-preserving balcony and window safety.",
+      "From YSR Circle and One Town to Almaspeta and Nagarajupet, Kadapa families trust SleekSecure invisible Grills for child-safe, view-preserving balcony and window safety.",
     popularAreas: [
       "YSR Circle",
       "One Town",

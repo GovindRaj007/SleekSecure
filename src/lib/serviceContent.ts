@@ -58,10 +58,10 @@ const sharedTrust = [
 ];
 
 const sharedTestimonials = [
-  { name: "Priya Sharma", location: "Gachibowli, Hyderabad", text: "Finally a balcony I can trust with my toddler. The grills are practically invisible — guests don't even notice.", rating: 5 },
-  { name: "Rakesh Kumar", location: "MVP Colony, Visakhapatnam", text: "Premium quality SS316 wires, professional install, and the view from my 14th floor is untouched. Best decision.", rating: 5 },
-  { name: "Anjali Reddy", location: "Banjara Hills, Hyderabad", text: "The team was punctual, neat, and the finish looks luxurious. Worth every rupee for the peace of mind.", rating: 5 },
-  { name: "Sandeep Naidu", location: "Vijayawada", text: "Got it installed for my parents' apartment. Mom loves that her plants get full sunlight. Highly recommended.", rating: 5 },
+  { name: "Priya Sharma", location: "Hyderabad", text: "Finally a balcony I can trust with my toddler. The grills are practically invisible — guests don't even notice.", rating: 5 },
+  { name: "Rakesh Kumar", location: "Visakhapatnam", text: "Premium quality SS316 wires, professional install, and the view from my 14th floor is untouched. Best decision.", rating: 5 },
+  { name: "Anjali Reddy", location: "Hyderabad", text: "The team was punctual, neat, and the finish looks luxurious. Worth every rupee for the peace of mind.", rating: 5 },
+  { name: "Sandeep Naidu", location: "Mehboobnagar", text: "Got it installed for my parents' apartment. Mom loves that her plants get full sunlight. Highly recommended.", rating: 5 },
 ];
 
 const balconyWhyChooseUs = [
@@ -129,7 +129,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     emotionalHeadline: "Invisible Grills in Hyderabad – Stylish Safety & Strong Security Solutions",
     emotionalSub: "Premium SS316 invisible grills designed for modern high-rise apartments. Child-safe. Pet-safe. Practically invisible.",
     metaTitle: "Best Invisible Grills in Hyderabad | Premium Balcony Safety | Sleek Secure",
-    metaDescription: "Best invisible grills for balconies in Hyderabad, Telangana & Andhra Pradesh. Premium SS316, child-safe, rust-proof. Safe, transparent, rust-free. Call 7893387715 for free quote.",
+    metaDescription: "Best invisible grills for balconies in Hyderabad, Telangana & Andhra Pradesh. Premium SS316, child-safe, rust-proof. Safe, transparent, rust-free. Call 9966909927 for free quote.",
     keywords: "best invisible grills Hyderabad,invisible grill contractors near me, balcony invisible grills, invisible grills for balcony, SS316 invisible grills, premium balcony safety grills, child-safe invisible grills, apartment balcony safety, invisible grill installation Hyderabad,invisible grills mehboobanagar, invisible grills vishakapatnam,invisible grills vijayawada, invisible grills kadapa, premium SS316 grills, transparent safety grills, balcony safety solution",
     heroImage: balconyImg,
     gallery: [balconyImg2, homeAfterImg, petSafetyImg],
@@ -195,7 +195,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     emotionalHeadline: "Your Child's Safety Without Caging In Their World",
     emotionalSub: "Premium SS316 invisible grills tested to international child-safety standards. Give your kids the freedom to play safely, indoors and outdoors.",
     metaTitle: "Best Child-Safe Invisible Grills in Hyderabad | Certified Safety | Sleek Secure",
-    metaDescription: "Premium child-safe invisible grills for balconies & windows in Hyderabad, Telangana & Andhra Pradesh. Certified to 25mm child-safe spacing. 10-year warranty. Call 7893387715.",
+    metaDescription: "Premium child-safe invisible grills for balconies & windows in Hyderabad, Telangana & Andhra Pradesh. Certified to 25mm child-safe spacing. 10-year warranty. Call 9966909927."
     keywords: "child-safe invisible grills, child safety window grills, balcony child safety, invisible grills kids, child-proof balcony grills, certified child safety grills, baby-safe invisible grills, child accident prevention, window child safety solutions, toddler-safe grills",
     heroImage: childSafetyImg,
     gallery: [childSafety2Img, childSafetyImg, childSafety3Img],
@@ -239,10 +239,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     whyChooseUs: childSafetyWhyChooseUs,
     testimonials: [
-      { name: "Deepika Sharma", location: "Hitech City, Hyderabad", text: "My 2-year-old loves playing on the balcony now. I can relax knowing he's 100% protected. The grills are invisible — guests don't even know they're there.", rating: 5 },
-      { name: "Arjun Patel", location: "MVP Colony, Visakhapatnam", text: "The team explained every safety detail. We got the ISO certification document & I show it to my pediatrician. Best investment for peace of mind.", rating: 5 },
-      { name: "Radha Kumar", location: "Banjara Hills, Hyderabad", text: "My kids can now play freely without me worrying. Professional, safe & beautiful. Highly recommended for every parent.", rating: 5 },
-      { name: "Ravi Naidu", location: "Vijayawada", text: "We have three kids. These grills gave us the confidence to let them play on the balcony safely. Worth every penny.", rating: 5 },
+      { name: "Deepika Sharma", location: "Hyderabad", text: "My 2-year-old loves playing on the balcony now. I can relax knowing he's 100% protected. The grills are invisible — guests don't even know they're there.", rating: 5 },
+      { name: "Arjun Patel", location: "Visakhapatnam", text: "The team explained every safety detail. We got the ISO certification document & I show it to my pediatrician. Best investment for peace of mind.", rating: 5 },
+      { name: "Radha Kumar", location: "Hyderabad", text: "My kids can now play freely without me worrying. Professional, safe & beautiful. Highly recommended for every parent.", rating: 5 },
+      { name: "Ravi Naidu", location: "Kompally", text: "We have three kids. These grills gave us the confidence to let them play on the balcony safely. Worth every penny.", rating: 5 },
     ],
     faqs: [
       { question: "What makes your child-safe grills better than regular grills?", answer: "Every installation is certified to ISO 13126 international child-safety standards. We test 25mm spacing & 250kg per-wire tensile strength on every project — with documentation." },
@@ -320,10 +320,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     ],
     whyChooseUs: pigeonSafeWhyChooseUs,
     testimonials: [
-      { name: "Neha Gupta", location: "Kondapur, Hyderabad", text: "Pigeons used to be a nightmare — droppings everywhere, noise at dawn. Now? Completely bird-free. The mesh is barely visible. Best decision ever.", rating: 5 },
-      { name: "Vikram Reddy", location: "Madhapur, Hyderabad", text: "Our building had pigeon problems. After our unit got these grills, the difference was night & day. No mess, no stress. Recommended to all neighbors.", rating: 5 },
+      { name: "Neha Gupta", location: "Hyderabad", text: "Pigeons used to be a nightmare — droppings everywhere, noise at dawn. Now? Completely bird-free. The mesh is barely visible. Best decision ever.", rating: 5 },
+      { name: "Vikram Reddy", location: "Hyderabad", text: "Our building had pigeon problems. After our unit got these grills, the difference was night & day. No mess, no stress. Recommended to all neighbors.", rating: 5 },
       { name: "Ananya Sharma", location: "Visakhapatnam", text: "Living on the 18th floor was great until pigeons became an issue. This solved it 100%. Still get perfect light & view. Amazing.", rating: 5 },
-      { name: "Suresh Kumar", location: "Jubilee Hills, Hyderabad", text: "Luxury apartment means open balconies — but pigeons destroyed the dream. These grills maintain the luxury feel while keeping birds completely out.", rating: 5 },
+      { name: "Suresh Kumar", location: "Kadapa", text: "Luxury apartment means open balconies — but pigeons destroyed the dream. These grills maintain the luxury feel while keeping birds completely out.", rating: 5 },
     ],
     faqs: [
       { question: "Will the pigeon mesh block my view?", answer: "No — our micro-mesh is engineered to block birds while maintaining 99% view clarity. The invisible SS316 wires are virtually undetectable from normal viewing distance." },
@@ -355,7 +355,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     emotionalHeadline: "Open Windows. Total Safety.",
     emotionalSub: "Premium SS316 invisible window grills that protect your children while preserving every ray of light and every breath of fresh air.",
     metaTitle: "Best Invisible Grills for Windows in Hyderabad | Child-Safe | Sleek Secure",
-    metaDescription: "Best invisible window grills in Hyderabad, Telangana & Andhra Pradesh. Child-safe, fire-safe SS316 grills. Safe, transparent, rust-free. Call 7893387715 for free quote.",
+    metaDescription: "Best invisible window grills in Hyderabad, Telangana & Andhra Pradesh. Child-safe, fire-safe SS316 grills. Safe, transparent, rust-free. Call 9966909927 for free quote."
     keywords: "best invisible grills for windows, window invisible grills hyderabad, invisible grills for windows, child-safe window grills, SS316 window safety grills, premium window invisible grills, child-proof window safety, window grill installation Hyderabad, invisible grill installation,invisible grills mehboobanagar, invisible grills vishakapatnam,invisible grills vijayawada, invisible grills kadapa",
     heroImage: windowImg,
     gallery: [windowImg2, windowImg3, windowImg],

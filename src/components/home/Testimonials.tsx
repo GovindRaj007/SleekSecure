@@ -11,39 +11,84 @@ const testimonials = [
   },
   {
     name: "Priya Sharma",
-    location: "Vijayawada",
+    location: "Hyderabad",
     text: "We got invisible grills installed for all our windows. The team was professional, punctual, and the quality is outstanding. Great value for money.",
     rating: 5,
   },
   {
     name: "Venkat Rao",
-    location: "Rajahmundry",
-    text: "The ceiling cloth hanger has been a game-changer for our apartment. Saves so much space and looks very neat. Thank you SafeView Grills!",
+    location: "Mehboobnagar",
+    text: "The ceiling cloth hanger has been a game-changer for our apartment. Saves so much space and looks very neat. Thank you SleekSecure invisible grills!",
     rating: 5,
   },
   {
     name: "Lakshmi Devi",
-    location: "Tirupati",
+    location: "Kompally",
     text: "Very impressed with the quality and service. The grills are truly invisible and our apartment looks beautiful. The warranty gives us peace of mind.",
+    rating: 5,
+  },
+  {
+    name: "Mohammed Khan",
+    location: "Kadapa",
+    text: "Invisible grills is very good quality. My family is using it for two year now and no problem is coming. Installation team was very fast and clean work they do.",
+    rating: 5,
+  },
+  {
+    name: "Sangeetha Reddy",
+    location: "Hyderabad",
+    text: "I am very happy with this grills. My daughter is playing in balcony and I am not worried now. Safety is most important for us and they are providing good product.",
     rating: 5,
   },
 ];
 
 const Testimonials = () => {
   const extendedTestimonials = [...testimonials, ...testimonials];
-  const [current, setCurrent] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const divRef = useRef<HTMLDivElement>(null);
   const holdingRef = useRef(false);
+  
   const setHolding = (v: boolean) => { holdingRef.current = v; };
-  const { onTouchStart, onTouchMove, onTouchEnd } = useSliderTouch(setCurrent, extendedTestimonials.length, setHolding);
 
+  const { onTouchStart, onTouchMove, onTouchEnd } = useSliderTouch(
+    (updateFn) => {
+      setCurrentIndex((prev) => {
+        const next = typeof updateFn === 'function' ? updateFn(prev) : updateFn;
+        return next;
+      });
+    },
+    extendedTestimonials.length,
+    setHolding
+  );
+
+  // Auto-advance
   useEffect(() => {
     const timer = setInterval(() => {
       if (!holdingRef.current) {
-        setCurrent((prev) => prev + 1);
+        setCurrentIndex((prev) => prev + 1);
       }
     }, 4000);
     return () => clearInterval(timer);
   }, []);
+
+  // Handle infinite loop: when reaching duplicate section, snap back to start
+  useEffect(() => {
+    if (currentIndex >= testimonials.length && divRef.current) {
+      // Disable transition before jumping
+      divRef.current.style.transition = 'none';
+      // Force reflow to apply the style
+      void divRef.current.offsetHeight;
+      
+      // Jump back to start
+      setCurrentIndex(0);
+      
+      // Re-enable transition on next frame
+      requestAnimationFrame(() => {
+        if (divRef.current) {
+          divRef.current.style.transition = 'transform 500ms ease-in-out';
+        }
+      });
+    }
+  }, [currentIndex]);
 
   return (
     <section className="section-padding gradient-dark">
@@ -65,8 +110,12 @@ const Testimonials = () => {
           onTouchEnd={onTouchEnd}
         >
           <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
+            ref={divRef}
+            className="flex"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+              transition: 'transform 500ms ease-in-out'
+            }}
           >
             {extendedTestimonials.map((t, idx) => (
               <div key={`${t.name}-${idx}`} className="min-w-full px-1">
@@ -91,9 +140,9 @@ const Testimonials = () => {
           {testimonials.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
+              onClick={() => setCurrentIndex(i)}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === (current % testimonials.length) ? "bg-accent w-6" : "bg-primary-foreground/30"
+                i === (currentIndex % testimonials.length) ? "bg-accent w-6" : "bg-primary-foreground/30"
               }`}
             />
           ))}
