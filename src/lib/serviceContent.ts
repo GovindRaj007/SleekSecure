@@ -195,7 +195,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     emotionalHeadline: "Your Child's Safety Without Caging In Their World",
     emotionalSub: "Premium SS316 invisible grills tested to international child-safety standards. Give your kids the freedom to play safely, indoors and outdoors.",
     metaTitle: "Best Child-Safe Invisible Grills in Hyderabad | Certified Safety | Sleek Secure",
-    metaDescription: "Premium child-safe invisible grills for balconies & windows in Hyderabad, Telangana & Andhra Pradesh. Certified to 25mm child-safe spacing. 10-year warranty. Call 9966909927."
+    metaDescription: "Premium child-safe invisible grills for balconies & windows in Hyderabad, Telangana & Andhra Pradesh. Certified to 25mm child-safe spacing. 10-year warranty. Call 9966909927.",
     keywords: "child-safe invisible grills, child safety window grills, balcony child safety, invisible grills kids, child-proof balcony grills, certified child safety grills, baby-safe invisible grills, child accident prevention, window child safety solutions, toddler-safe grills",
     heroImage: childSafetyImg,
     gallery: [childSafety2Img, childSafetyImg, childSafety3Img],
@@ -355,7 +355,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     emotionalHeadline: "Open Windows. Total Safety.",
     emotionalSub: "Premium SS316 invisible window grills that protect your children while preserving every ray of light and every breath of fresh air.",
     metaTitle: "Best Invisible Grills for Windows in Hyderabad | Child-Safe | Sleek Secure",
-    metaDescription: "Best invisible window grills in Hyderabad, Telangana & Andhra Pradesh. Child-safe, fire-safe SS316 grills. Safe, transparent, rust-free. Call 9966909927 for free quote."
+    metaDescription: "Best invisible window grills in Hyderabad, Telangana & Andhra Pradesh. Child-safe, fire-safe SS316 grills. Safe, transparent, rust-free. Call 9966909927 for free quote.",
     keywords: "best invisible grills for windows, window invisible grills hyderabad, invisible grills for windows, child-safe window grills, SS316 window safety grills, premium window invisible grills, child-proof window safety, window grill installation Hyderabad, invisible grill installation,invisible grills mehboobanagar, invisible grills vishakapatnam,invisible grills vijayawada, invisible grills kadapa",
     heroImage: windowImg,
     gallery: [windowImg2, windowImg3, windowImg],
