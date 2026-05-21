@@ -5,7 +5,7 @@ export const BUSINESS = {
   phoneFormatted: "+91 9966909927",
   whatsapp: "919966909927",
   whatsappMessage: "Hi, I'm interested in your invisible grills and safety solutions. Please provide more details and a free quote for my requirements.",
-  email: "info@sleeksecuregrills.in",
+  email: "info@sleeksecure.in",
   address: "101, Saraswathi Heights, 937, JV Hills, Street Number 8, Raja Rajeswari Nagar, Kondapur - 500084",
   addressShort: "Kondapur, Hyderabad - 500084",
   city: "Hyderabad",
@@ -15,7 +15,7 @@ export const BUSINESS = {
   latitude: 17.47371524335536,
   longitude: 78.35293856107153,
   workingHours: "Mon - Sat: 9:00 AM - 7:00 PM",
-  website: "https://www.sleeksecuregrills.in",
+  website: "https://www.sleeksecure.in",
   author: "SleekSecure Invisible Grills",
   publisher: "SleekSecure Invisible Grills",
 };

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://safeviewgrills.com/sitemap.xml
+Sitemap: https://www.sleeksecure.in/sitemap.xml
+

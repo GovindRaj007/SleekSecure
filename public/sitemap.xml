@@ -1,32 +1,261 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://safeviewgrills.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://safeviewgrills.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://safeviewgrills.com/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://safeviewgrills.com/balcony-invisible-grills</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://safeviewgrills.com/window-invisible-grills</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://safeviewgrills.com/ceiling-cloth-hangers</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://safeviewgrills.com/areas/visakhapatnam</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/areas/vijayawada</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/areas/kadapa</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-gachibowli</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-madhapur</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-hitech-city</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-kondapur</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-kukatpally</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-miyapur</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-manikonda</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-kokapet</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-tellapur</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-jubilee-hills</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-banjara-hills</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-secunderabad</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-uppal</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-lb-nagar</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-kompally</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-attapur</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-malkajgiri</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/invisible-grills-mehboobnagar</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://safeviewgrills.com/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <!-- Homepage - Most Important -->
+  <url>
+    <loc>https://www.sleeksecure.in/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Core Pages -->
+  <url>
+    <loc>https://www.sleeksecure.in/about</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/contact</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Main Service Pages (Canonical URLs) -->
+  <url>
+    <loc>https://www.sleeksecure.in/balcony-invisible-grills</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/child-safety-invisible-grills</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/pigeon-safe-invisible-grills</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/window-invisible-grills</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/ceiling-cloth-hangers</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Main City Pages -->
+  <url>
+    <loc>https://www.sleeksecure.in/areas/visakhapatnam</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/areas/vijayawada</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/areas/kadapa</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Location-Specific Pages (Hyderabad Areas) -->
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-gachibowli</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-madhapur</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-hitech-city</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-kondapur</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-kukatpally</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-miyapur</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-manikonda</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-kokapet</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-tellapur</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-jubilee-hills</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-banjara-hills</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-secunderabad</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-uppal</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-lb-nagar</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-kompally</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-attapur</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-malkajgiri</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-patancheruvu</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-sangareddy</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-medchal</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-mehboobnagar</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Other Cities -->
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-visakhapatnam</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-vijayawada</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.sleeksecure.in/invisible-grills-kadapa</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://www.sleeksecure.in/privacy-policy</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

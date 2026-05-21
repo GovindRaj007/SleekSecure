@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-export const SITE_URL = "https://www.sleeksecuregrills.in";
+export const SITE_URL = "https://www.sleeksecure.in";
 export const SITE_NAME = "SleekSecure Invisible Grills";
 export const GOOGLE_SITE_VERIFICATION = "your-google-verification-code"; // Update with actual code
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;

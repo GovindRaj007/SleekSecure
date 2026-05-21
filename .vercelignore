@@ -1,0 +1,12 @@
+.git
+.gitignore
+README.md
+.env.example
+.env.local
+.vercel
+node_modules
+.DS_Store
+*.log
+scripts/
+public/sitemap.xml.bak
+assets-backup/

@@ -35,16 +35,21 @@ export default async function handler(req, res) {
     }
 
     // Format Telegram message with professional styling
-    const telegramMessage = `🔥 New Website Lead
+    let telegramMessage = `🔥 New Website Lead
 
 👤 Name: ${name}
 
 📞 Phone: ${phone}
 
-🛠️ Service: ${service}
+🛠️ Service: ${service}`;
+
+    // Only add message section if message is provided
+    if (message && message.trim()) {
+      telegramMessage += `
 
 📝 Message:
-${message || '(No message provided)'}`;
+${message}`;
+    }
 
     // Send message to Telegram using Telegram Bot API
     const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;

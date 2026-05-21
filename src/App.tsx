@@ -41,15 +41,10 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/balcony-invisible-grills" element={<BalconyGrillsPage />} />
-            <Route path="/services/balcony-grills" element={<BalconyGrillsPage />} />
             <Route path="/child-safety-invisible-grills" element={<ChildSafetyGrillsPage />} />
-            <Route path="/services/child-safety-grills" element={<ChildSafetyGrillsPage />} />
             <Route path="/pigeon-safe-invisible-grills" element={<PigeonSafeGrillsPage />} />
-            <Route path="/services/pigeon-safe-grills" element={<PigeonSafeGrillsPage />} />
             <Route path="/window-invisible-grills" element={<WindowGrillsPage />} />
-            <Route path="/services/window-grills" element={<WindowGrillsPage />} />
             <Route path="/ceiling-cloth-hangers" element={<CeilingClothHangersPage />} />
-            <Route path="/services/ceiling-cloth-hangers" element={<CeilingClothHangersPage />} />
             <Route path="/areas/:citySlug" element={<CityPage />} />
             
             {[
