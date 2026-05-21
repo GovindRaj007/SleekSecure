@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export const SITE_URL = "https://www.sleeksecure.in";
 export const SITE_NAME = "SleekSecure Invisible Grills";
-export const GOOGLE_SITE_VERIFICATION = "your-google-verification-code"; // Update with actual code
+export const GOOGLE_SITE_VERIFICATION = "YI1y8PbIq4NuURiqAGfW8-irOQThtfSu6DJa3N6XjSQ";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 interface SeoProps {
