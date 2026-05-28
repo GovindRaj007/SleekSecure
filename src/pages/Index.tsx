@@ -32,7 +32,7 @@ const Index = () => {
         description="Secure your home with premium SS316 invisible grills in Hyderabad. We provide balcony invisible grills, stainless steel window grills, ceiling cloth hangers, child safety solutions, and modern safety installations across Telangana & Andhra Pradesh."
         keywords="invisible grills Hyderabad, what are invisible grills, SS316 invisible grills, balcony invisible grills, stainless steel window grills, balcony safety grills, invisible grills for windows, ceiling cloth hangers Hyderabad, invisible grill installation Hyderabad, SleekSecure Invisible Grills, invisible grills near me, best invisible grills in hyderabad"
         canonicalPath="/"
-        ogImage={`${SITE_URL}/src/assets/hero-balcony-invisible-grills.jpg`}
+        ogImage={`${SITE_URL}/assets/hero-balcony-invisible-grills.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={homeGraph()}

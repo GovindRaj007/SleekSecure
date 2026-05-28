@@ -165,6 +165,12 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Allow Tawk.to floating message to overflow and be fully visible */
+  #tawkToFlatContainer,
+  [id^="tawk"] {
+    overflow: visible !important;
+  }
 }
 
 /* Hide scrollbar on mobile */

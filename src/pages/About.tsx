@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import Seo from "@/components/shared/Seo";
+import Seo, { SITE_URL } from "@/components/shared/Seo";
 import { breadcrumbSchema, orgSchema } from "@/lib/seo";
 import PageHero from "@/components/shared/PageHero";
 import { Shield, Users, Award, Target } from "lucide-react";
@@ -23,6 +23,7 @@ const About = () => {
         title="About Sleek Secure — Trusted Invisible Grill Experts in Hyderabad, Telangana & Andhra Pradesh"
         description="6+ years of experience and 2,500+ successful installations. Learn about Sleek Secure's mission to deliver premium SS316 invisible grills and ceiling cloth hangers across Hyderabad, Telangana & Andhra Pradesh."
         canonicalPath="/about"
+        ogImage={`${SITE_URL}/assets/hero-luxury-balcony.jpg`}
         jsonLd={[
           orgSchema(),
           breadcrumbSchema([

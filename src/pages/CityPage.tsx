@@ -1,6 +1,6 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import Seo from "@/components/shared/Seo";
+import Seo, { SITE_URL } from "@/components/shared/Seo";
 import PageHero from "@/components/shared/PageHero";
 import ContactForm from "@/components/shared/ContactForm";
 import CTASection from "@/components/home/CTASection";
@@ -53,6 +53,7 @@ const CityPage = () => {
         title={title}
         description={description}
         canonicalPath={path}
+        ogImage={`https://www.sleeksecure.in/assets/hero-luxury-balcony.jpg`}
         jsonLd={[
           cityBusinessSchema({ name: city.name, slug: city.slug, state: city.state }),
           breadcrumbSchema([

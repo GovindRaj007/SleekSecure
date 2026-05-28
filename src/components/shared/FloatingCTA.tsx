@@ -20,7 +20,7 @@ export function FloatingCTA() {
   const label = showWhatsApp ? "Chat on WhatsApp" : "Call Now";
 
   return (
-    <div className="fixed bottom-6 left-6 z-40">
+    <div className="fixed bottom-24 right-6 z-40">
       <a
         href={href}
         data-track={showWhatsApp ? "whatsapp" : "call"}

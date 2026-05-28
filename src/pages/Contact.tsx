@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import Seo from "@/components/shared/Seo";
+import Seo, { SITE_URL } from "@/components/shared/Seo";
 import { breadcrumbSchema, localBusinessSchema } from "@/lib/seo";
 import PageHero from "@/components/shared/PageHero";
 import ContactForm from "@/components/shared/ContactForm";
@@ -26,6 +26,7 @@ const Contact = () => {
         title="Contact Sleek Secure — Free Quote for Invisible Grills | Hyderabad, Telangana & Andhra Pradesh"
         description="Call, WhatsApp or message Sleek Secure for a free site visit and quote on invisible grills, balcony & window grills, and ceiling cloth hangers across Hyderabad, Telangana & Andhra Pradesh."
         canonicalPath="/contact"
+        ogImage={`${SITE_URL}/assets/hero-luxury-balcony.jpg`}
         jsonLd={[
           localBusinessSchema(),
           breadcrumbSchema([

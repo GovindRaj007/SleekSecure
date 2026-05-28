@@ -85,7 +85,7 @@ const ChildSafetyGrillsPage = () => {
       />
 
       {/* HERO */}
-      <section className="relative min-h-[88vh] md:min-h-[92vh] flex items-end overflow-hidden pb-20 md:pb-24 pt-24">
+      <section className="relative min-h-[88vh] md:min-h-[92vh] flex items-end overflow-hidden pb-[4rem] md:pb-24 pt-[2rem] md:pt-0">
         <div className="absolute inset-0">
           <img src={data.heroImage} alt={`${data.title} — certified child-safe invisible grills`} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/70 to-foreground/30" />

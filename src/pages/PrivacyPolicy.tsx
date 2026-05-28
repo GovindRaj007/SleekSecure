@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import Seo from "@/components/shared/Seo";
+import Seo, { SITE_URL } from "@/components/shared/Seo";
 import PageHero from "@/components/shared/PageHero";
 import { BUSINESS } from "@/lib/constants";
 
@@ -10,6 +10,7 @@ const PrivacyPolicy = () => {
         title="Privacy Policy — SleekSecure Invisible Grills"
         description="Read the SleekSecure Invisible Grills privacy policy to learn how we collect, use, and protect your personal information when you visit our website or request a quote."
         canonicalPath="/privacy-policy"
+        ogImage={`${SITE_URL}/assets/hero-luxury-balcony.jpg`}
       />
       <PageHero title="Privacy Policy" subtitle="Your privacy matters to us. Learn how we handle your information." />
 
