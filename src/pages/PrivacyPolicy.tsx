@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
             <div>
               <h2 className="text-2xl font-heading font-bold text-foreground mb-4">Third-Party Sharing</h2>
               <p className="leading-relaxed">
-                We do not sell, trade, or rent your personal information to third parties. We may share information with trusted partners who assist us in operating our website or conducting our business, as long as they agree to keep your information confidential.
+                We do not sell, trade, or rent your personal information to any third parties. We may share information with trusted partners who assist us in operating our website or conducting our business, as long as they agree to keep your information confidential.
               </p>
             </div>
 
