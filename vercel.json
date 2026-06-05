@@ -62,7 +62,7 @@
       "destination": "/api/$1"
     },
     {
-      "source": "/(?!.*\\.)",
+      "source": "/:path((?!api|assets|_next).*)",
       "destination": "/index.html"
     }
   ]
