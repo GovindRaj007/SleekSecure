@@ -1,5 +1,6 @@
 import { Phone, MessageCircle, FileText } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
+import { trackWhatsAppClick, trackCallClick } from "@/lib/gtm-tracking";
 
 interface StickyMobileCTAProps {
   serviceTitle: string;
@@ -15,6 +16,7 @@ const StickyMobileCTA = ({ serviceTitle }: StickyMobileCTAProps) => {
       <div className="grid grid-cols-3 gap-px bg-border/60">
         <a
           href={wa}
+          onClick={() => trackWhatsAppClick('sticky_mobile_cta', 'whatsapp_button')}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center py-2.5 bg-[hsl(142,70%,40%)] text-primary-foreground active:scale-95 transition-transform"
@@ -24,6 +26,7 @@ const StickyMobileCTA = ({ serviceTitle }: StickyMobileCTAProps) => {
         </a>
         <a
           href={`tel:${BUSINESS.phone}`}
+          onClick={() => trackCallClick('sticky_mobile_cta', 'call_button')}
           className="flex flex-col items-center justify-center py-2.5 bg-primary text-primary-foreground active:scale-95 transition-transform"
         >
           <Phone className="w-5 h-5 mb-0.5" />

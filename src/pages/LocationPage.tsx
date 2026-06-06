@@ -11,6 +11,7 @@ import {
 import { BUSINESS, getLocationBusinessData } from "@/lib/constants";
 import { getLocationBySlug, getNearbyLocations } from "@/lib/locations";
 import { breadcrumbSchema, cityBusinessSchema, serviceSchema } from "@/lib/seo";
+import { trackWhatsAppClick, trackCallClick } from "@/lib/gtm-tracking";
 import heroImg from "@/assets/hero-luxury-balcony.jpg";
 
 const benefits = [
@@ -120,12 +121,12 @@ const LocationPage = () => {
               Modern SS316 invisible grill and ceiling cloth hanger installation services for apartments and homes in {loc.name}.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={wa} target="_blank" rel="noopener noreferrer">
+              <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('location_page_hero', 'whatsapp_button')}>
                 <Button size="lg" className="w-full sm:w-auto bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-primary-foreground gap-2">
                   <WhatsAppIcon className="w-5 h-5" /> WhatsApp Now
                 </Button>
               </a>
-              <a href={`tel:${displayPhone}`}>
+              <a href={`tel:${displayPhone}`} onClick={() => trackCallClick('location_page_hero', 'call_button')}>
                 <Button size="lg" className="w-full sm:w-auto bg-primary/80 hover:bg-primary text-primary-foreground font-semibold gap-2">
                   <Phone className="w-5 h-5" /> Call Now
                 </Button>
@@ -253,12 +254,12 @@ const LocationPage = () => {
             Free site visit in {loc.name}. Transparent quote within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href={wa} target="_blank" rel="noopener noreferrer">
+            <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('location_page_cta', 'whatsapp_button')}>
               <Button size="lg" className="w-full sm:w-auto bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-primary-foreground font-semibold gap-2">
                 <WhatsAppIcon className="w-5 h-5" /> WhatsApp Now
               </Button>
             </a>
-            <a href={`tel:${displayPhone}`}>
+            <a href={`tel:${displayPhone}`} onClick={() => trackCallClick('location_page_cta', 'call_button')}>
               <Button size="lg" variant="outline" className="w-full sm:w-auto bg-primary-foreground/5 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/15 backdrop-blur-md font-semibold gap-2">
                 <Phone className="w-5 h-5" /> Call Now
               </Button>

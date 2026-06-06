@@ -4,6 +4,7 @@ import { ChevronDown, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS, BUSINESS, TELANGANA_LOCATIONS, ANDHRA_PRADESH_LOCATIONS } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { trackCallClick } from "@/lib/gtm-tracking";
 import {
   Drawer,
   DrawerContent,
@@ -226,7 +227,7 @@ const Navbar = () => {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href={`tel:${BUSINESS.phone}`}>
+            <a href={`tel:${BUSINESS.phone}`} onClick={() => trackCallClick('navbar', 'desktop_call_button')}>
               <Button size="sm" className={`gap-2 ${scrolled ? "bg-primary/80 text-primary-foreground hover:bg-primary" : "bg-primary-foreground/15 text-primary-foreground hover:bg-primary-foreground/25 border border-primary-foreground/30" }`}>
                 <Phone className="w-4 h-4" />
                 Call Now
@@ -445,7 +446,7 @@ const Navbar = () => {
                   animate={fadeUp.animate} 
                   transition={{ ...fadeUp.transition, delay: NAV_LINKS.length * 0.05 }}
                 >
-                  <a href={`tel:${BUSINESS.phone}`} onClick={() => setIsDrawerOpen(false)}>
+                  <a href={`tel:${BUSINESS.phone}`} onClick={() => { trackCallClick('navbar', 'mobile_call_button'); setIsDrawerOpen(false); }}>
                     <button className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
                       <Phone className="w-4 h-4" />
                       Call: {BUSINESS.phone}

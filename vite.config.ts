@@ -23,6 +23,8 @@ export default defineConfig({
     target: "esnext",
     minify: "terser",
     sourcemap: false,
+    outDir: "dist",
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         manualChunks: {

@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock, Heart, ChevronDown } from "lucide-react";
 import { BUSINESS, SERVICES, TELANGANA_LOCATIONS, ANDHRA_PRADESH_LOCATIONS } from "@/lib/constants";
+import { trackCallClick } from "@/lib/gtm-tracking";
 import { useState } from "react";
 import logo from "@/assets/sleek-secure-invisible-grills-logo.jpg";
 
@@ -93,7 +94,7 @@ const Footer = () => {
               Premium invisible grills and safety solutions for modern homes and apartments. Trusted by thousands of families.
             </p>
             <div className="space-y-3">
-              <a href={`tel:${BUSINESS.phone}`} className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors">
+              <a href={`tel:${BUSINESS.phone}`} onClick={() => trackCallClick('footer', 'phone_link')} className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors">
                 <Phone className="w-4 h-4" /> {BUSINESS.phone}
               </a>
               <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors">

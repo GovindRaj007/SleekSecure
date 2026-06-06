@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS } from "@/lib/constants";
+import { trackCallClick } from "@/lib/gtm-tracking";
 
 const CTASection = () => {
   return (
@@ -20,7 +21,7 @@ const CTASection = () => {
                 Get Free Quote <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
-            <a href={`tel:${BUSINESS.phone}`}>
+            <a href={`tel:${BUSINESS.phone}`} onClick={() => trackCallClick('cta_section', 'call_button')}>
               <Button size="lg" className="bg-primary/80 hover:bg-primary text-primary-foreground font-semibold gap-2 text-base px-8">
                 <Phone className="w-5 h-5" /> {BUSINESS.phone}
               </Button>

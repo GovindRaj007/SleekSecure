@@ -2,6 +2,7 @@ import Layout from "@/components/layout/Layout";
 import Seo, { SITE_URL } from "@/components/shared/Seo";
 import PageHero from "@/components/shared/PageHero";
 import { BUSINESS } from "@/lib/constants";
+import { trackCallClick } from "@/lib/gtm-tracking";
 
 const PrivacyPolicy = () => {
   return (
@@ -79,7 +80,7 @@ const PrivacyPolicy = () => {
                 If you have any questions about this Privacy Policy, please contact us at{" "}
                 <a href={`mailto:${BUSINESS.email}`} className="text-primary hover:text-accent transition-colors">{BUSINESS.email}</a>{" "}
                 or call us at{" "}
-                <a href={`tel:${BUSINESS.phone}`} className="text-primary hover:text-accent transition-colors">{BUSINESS.phone}</a>.
+                <a href={`tel:${BUSINESS.phone}`} onClick={() => trackCallClick('privacy_policy', 'contact_link')} className="text-primary hover:text-accent transition-colors">{BUSINESS.phone}</a>.
               </p>
             </div>
 

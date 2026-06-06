@@ -32,6 +32,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { BUSINESS, SERVICE_AREAS, SERVICE_PAGES_DISPLAY_AREAS } from "@/lib/constants";
 import { SERVICE_CONTENT } from "@/lib/serviceContent";
+import { trackWhatsAppClick, trackCallClick } from "@/lib/gtm-tracking";
 
 const trustIcons = [Shield, Eye, Award, CloudSun, Wrench, Sparkles];
 
@@ -132,7 +133,7 @@ const PigeonSafeGrillsPage = () => {
             </div>
 
             <div className="flex gap-3">
-              <a href={wa} target="_blank" rel="noopener noreferrer">
+              <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('service_page_hero_section', 'demo_button')}>
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold gap-2 px-6">
                   Request a Demo <ArrowRight className="w-4 h-4" />
                 </Button>
@@ -453,12 +454,12 @@ const PigeonSafeGrillsPage = () => {
               Book your free site visit & quote in under 60 seconds. No obligation, fully transparent pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-xl mx-auto">
-              <a href={wa} target="_blank" rel="noopener noreferrer" className="flex-1">
+              <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('service_page_cta', 'whatsapp_button')} className="flex-1">
                 <Button size="lg" className="w-full bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-primary-foreground font-semibold gap-2">
                   <WhatsAppIcon className="w-5 h-5" /> WhatsApp Now
                 </Button>
               </a>
-              <a href={`tel:${BUSINESS.phone}`} className="flex-1">
+              <a href={`tel:${BUSINESS.phone}`} onClick={() => trackCallClick('service_page_cta', 'call_button')} className="flex-1">
                 <Button size="lg" className="w-full bg-primary-foreground/10 border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 backdrop-blur-md font-semibold gap-2">
                   <Phone className="w-5 h-5" /> Call Now
                 </Button>
@@ -655,13 +656,13 @@ const PigeonSafeGrillsPage = () => {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Keep Your Balcony Pigeon-Free</h2>
             <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">Get a free consultation for pigeon-proof invisible grills. Maintain your premium view while keeping birds completely out. Installation within 5–7 days.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={wa} target="_blank" rel="noopener noreferrer">
+              <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('service_page_footer_cta', 'whatsapp_button')}>
                 <Button size="lg" className="gap-2 bg-gold text-gold-foreground hover:bg-gold/90">
                   <WhatsAppIcon className="w-5 h-5" />
                   WhatsApp Us
                 </Button>
               </a>
-              <a href={`tel:${BUSINESS.phone}`}>
+              <a href={`tel:${BUSINESS.phone}`} onClick={() => trackCallClick('service_page_footer_cta', 'call_button')}>
                 <Button size="lg" className="gap-2 bg-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/30 border border-primary-foreground/50">
                   <Phone className="w-5 h-5" />
                   {BUSINESS.phone}

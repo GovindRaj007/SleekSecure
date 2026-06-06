@@ -12,6 +12,7 @@ import {
 import { CheckCircle2, MapPin, Phone, ArrowRight } from "lucide-react";
 import { getCityBySlug } from "@/lib/cities";
 import { SERVICES, BUSINESS } from "@/lib/constants";
+import { trackCallClick } from "@/lib/gtm-tracking";
 import {
   breadcrumbSchema,
   cityBusinessSchema,
@@ -107,7 +108,7 @@ const CityPage = () => {
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row gap-3 mt-8">
-                <a href={`tel:${BUSINESS.phone}`}>
+                <a href={`tel:${BUSINESS.phone}`} onClick={() => trackCallClick('city_page', 'call_button')}>
                   <Button size="lg" className="gradient-primary text-primary-foreground border-0 gap-2">
                     <Phone className="w-4 h-4" /> Call for Free Quote
                   </Button>

@@ -6,6 +6,7 @@ import PageHero from "@/components/shared/PageHero";
 import ContactForm from "@/components/shared/ContactForm";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
+import { trackWhatsAppClick, trackCallClick } from "@/lib/gtm-tracking";
 import {
   Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
   BreadcrumbPage, BreadcrumbSeparator,
@@ -20,6 +21,13 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+  const handleContactLinkClick = (label: string, href: string) => {
+    if (label === "Phone") {
+      trackCallClick('contact_page', 'contact_card');
+    } else if (label === "WhatsApp") {
+      trackWhatsAppClick('contact_page', 'contact_card');
+    }
+  };
   return (
     <Layout>
       <Seo
@@ -77,7 +85,7 @@ const Contact = () => {
                     <div>
                       <div className="text-sm text-muted-foreground">{c.label}</div>
                       {c.href ? (
-                        <a href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors">
+                        <a href={c.href} onClick={() => handleContactLinkClick(c.label, c.href)} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors">
                           {c.value}
                         </a>
                       ) : (
