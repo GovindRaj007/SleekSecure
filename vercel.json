@@ -177,7 +177,7 @@
       "destination": "/assets/$1"
     },
     {
-      "source": "/:path(.*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
