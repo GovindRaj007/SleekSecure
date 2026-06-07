@@ -157,26 +157,6 @@
       "destination": "/api/$1"
     },
     {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
-    },
-    {
-      "source": "/favicon.jpg",
-      "destination": "/favicon.jpg"
-    },
-    {
-      "source": "/og-image.jpg",
-      "destination": "/og-image.jpg"
-    },
-    {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
