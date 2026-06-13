@@ -1,6 +1,9 @@
 /**
  * Google Tag Manager Tracking Utility
  * Tracks WhatsApp, Call, and other important user interactions
+ * 
+ * Events are pushed to window.dataLayer where GTM Console captures them
+ * Requires: GTM triggers and tags configured in Google Tag Manager console
  */
 
 interface GTMEvent {
@@ -10,15 +13,34 @@ interface GTMEvent {
 
 /**
  * Push event to GTM dataLayer
+ * Events are immediately available in Tag Assistant for debugging
  */
 export const pushGTMEvent = (eventData: GTMEvent) => {
-  if (typeof window !== 'undefined' && (window as any).dataLayer) {
-    (window as any).dataLayer.push(eventData);
+  if (typeof window !== 'undefined') {
+    // Initialize dataLayer if it doesn't exist
+    if (!(window as any).dataLayer) {
+      (window as any).dataLayer = [];
+    }
+    
+    // Push event with timestamp if not already provided
+    const eventWithTimestamp = {
+      ...eventData,
+      timestamp: eventData.timestamp || new Date().toISOString(),
+    };
+    
+    (window as any).dataLayer.push(eventWithTimestamp);
+    
+    // Log in development for debugging
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[GTM Event Fired]', eventWithTimestamp);
+    }
   }
 };
 
 /**
  * Track WhatsApp link clicks
+ * @param location - Where the click occurred (e.g., 'hero_section', 'navbar', 'footer')
+ * @param source - Button identifier (e.g., 'whatsapp_button', 'get_free_quote_button')
  */
 export const trackWhatsAppClick = (
   location: string = 'general',
@@ -28,12 +50,13 @@ export const trackWhatsAppClick = (
     event: 'whatsapp_click',
     location: location,
     source: source,
-    timestamp: new Date().toISOString(),
   });
 };
 
 /**
  * Track Phone call link clicks
+ * @param location - Where the click occurred (e.g., 'navbar', 'footer', 'contact_page')
+ * @param source - Button identifier (e.g., 'call_button', 'phone_link')
  */
 export const trackCallClick = (
   location: string = 'general',
@@ -43,12 +66,13 @@ export const trackCallClick = (
     event: 'call_click',
     location: location,
     source: source,
-    timestamp: new Date().toISOString(),
   });
 };
 
 /**
  * Track form submissions
+ * @param formName - Name of the form (e.g., 'contact_form', 'quote_request')
+ * @param source - Where form is located (e.g., 'contact_page', 'sidebar')
  */
 export const trackFormSubmission = (
   formName: string,
@@ -58,45 +82,18 @@ export const trackFormSubmission = (
     event: 'form_submission',
     form_name: formName,
     source: source,
-    timestamp: new Date().toISOString(),
   });
 };
 
 /**
- * Track page views (enhanced)
+ * Track page views with custom metadata
+ * @param pageTitle - Page title
+ * @param pagePath - Page path (e.g., '/about', '/services')
  */
 export const trackPageView = (pageTitle: string, pagePath: string) => {
   pushGTMEvent({
     event: 'page_view',
     page_title: pageTitle,
     page_path: pagePath,
-    timestamp: new Date().toISOString(),
   });
-};
-
-/**
- * Create WhatsApp link with tracking
- */
-export const createTrackedWhatsAppLink = (
-  whatsappNumber: string,
-  message: string,
-  location: string = 'general'
-): { href: string; onClick: () => void } => {
-  return {
-    href: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-    onClick: () => trackWhatsAppClick(location),
-  };
-};
-
-/**
- * Create call link with tracking
- */
-export const createTrackedCallLink = (
-  phoneNumber: string,
-  location: string = 'general'
-): { href: string; onClick: () => void } => {
-  return {
-    href: `tel:${phoneNumber}`,
-    onClick: () => trackCallClick(location),
-  };
 };
