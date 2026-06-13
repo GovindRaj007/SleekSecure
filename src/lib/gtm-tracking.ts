@@ -20,6 +20,7 @@ export const pushGTMEvent = (eventData: GTMEvent) => {
     // Initialize dataLayer if it doesn't exist
     if (!(window as any).dataLayer) {
       (window as any).dataLayer = [];
+      console.log('[GTM] dataLayer initialized');
     }
     
     // Push event with timestamp if not already provided
@@ -30,10 +31,10 @@ export const pushGTMEvent = (eventData: GTMEvent) => {
     
     (window as any).dataLayer.push(eventWithTimestamp);
     
-    // Log in development for debugging
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[GTM Event Fired]', eventWithTimestamp);
-    }
+    // ALWAYS log in console (not just dev) - critical for debugging production issues
+    console.log('[GTM Event Pushed to dataLayer]', eventWithTimestamp);
+  } else {
+    console.error('[GTM] window object not available');
   }
 };
 
