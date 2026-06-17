@@ -32,7 +32,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { BUSINESS, SERVICE_AREAS, SERVICE_PAGES_DISPLAY_AREAS } from "@/lib/constants";
 import { SERVICE_CONTENT } from "@/lib/serviceContent";
-import { trackWhatsAppClick, trackCallClick } from "@/lib/gtm-tracking";
+import { trackWhatsAppClick, trackCallClick, trackPageView } from "@/lib/gtm-tracking";
 
 const trustIcons = [Shield, Eye, Award, CloudSun, Wrench, Sparkles];
 
@@ -464,7 +464,7 @@ const WindowGrillsPage = () => {
                   <Phone className="w-5 h-5" /> Call Now
                 </Button>
               </a>
-              <Link to="/contact" className="flex-1">
+              <Link to="/contact" className="flex-1" onClick={() => trackPageView('free_consultation_cta', 'service_page_cta')}>
                 <Button size="lg" className="w-full gradient-gold text-accent-foreground border-0 font-semibold gap-2">
                   Free Consultation <ArrowRight className="w-4 h-4" />
                 </Button>

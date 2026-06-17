@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { trackFormSubmission } from "@/lib/gtm-tracking";
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
@@ -88,6 +89,9 @@ const ContactForm = () => {
 
       // Show success message
       toast.success(data.message || "Thank you! We'll get back to you shortly.");
+
+      // Track form submission to GTM
+      trackFormSubmission('contact_form', 'contact_page');
 
       // Reset form fields
       setName("");
