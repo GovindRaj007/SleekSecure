@@ -78,18 +78,24 @@ const Contact = () => {
               <h2 className="text-2xl font-heading font-bold text-foreground mb-6">Contact Information</h2>
               <div className="space-y-4">
                 {contactInfo.map((c) => (
-                  <div key={c.label} className="card-gradient rounded-xl p-5 flex items-start gap-4 hover-lift">
+                  <div key={c.label} className="card-gradient rounded-xl p-4 sm:p-5 flex items-start gap-3 sm:gap-4 hover-lift">
                     <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center shrink-0 shadow-md">
                       <c.icon className="w-5 h-5 text-primary-foreground" />
                     </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">{c.label}</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-xs sm:text-sm text-muted-foreground">{c.label}</div>
                       {c.href ? (
-                        <a href={c.href} onClick={() => handleContactLinkClick(c.label, c.href)} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors">
+                        <a 
+                          href={c.href} 
+                          onClick={c.label !== "Email" ? () => handleContactLinkClick(c.label, c.href) : undefined}
+                          target={c.href.startsWith("http") ? "_blank" : undefined} 
+                          rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined} 
+                          className="font-medium text-xs sm:text-sm md:text-base text-foreground hover:text-primary transition-colors break-words"
+                        >
                           {c.value}
                         </a>
                       ) : (
-                        <div className="font-medium text-foreground">{c.value}</div>
+                        <div className="font-medium text-xs sm:text-sm md:text-base text-foreground break-words">{c.value}</div>
                       )}
                     </div>
                   </div>
