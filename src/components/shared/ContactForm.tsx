@@ -44,6 +44,39 @@ const ContactForm = () => {
     }
   };
 
+  const sendToTelegram = async (formData: {
+    name: string;
+    phone: string;
+    service: string;
+    message: string;
+  }) => {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+      const response = await fetch("/api/send-telegram", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        console.warn("Telegram notification failed:", response.status);
+      }
+    } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        console.warn("Telegram notification timeout");
+      } else {
+        console.warn("Telegram notification error:", error);
+      }
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -66,29 +99,45 @@ const ContactForm = () => {
 
     setLoading(true);
 
+    const formData = {
+      name: name.trim(),
+      phone: phoneNumber,
+      service: service,
+      message: message.trim() || "",
+    };
+
     try {
-      // Send form data to Telegram Bot API via serverless function
-      const response = await fetch("/api/send-telegram", {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+      const formspreeResponse = await fetch("https://formspree.io/f/xbdeveqp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
-        body: JSON.stringify({
-          name: name.trim(),
-          phone: phoneNumber,
-          service: service,
-          message: message.trim() || "",
-        }),
+        body: JSON.stringify(formData),
+        signal: controller.signal,
       });
 
-      const data = await response.json();
+      clearTimeout(timeoutId);
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to send inquiry");
+      if (!formspreeResponse.ok) {
+        let errorMessage = "Failed to send inquiry via email";
+        try {
+          const error = await formspreeResponse.json();
+          errorMessage = error.errors?.[0]?.message || errorMessage;
+        } catch (parseError) {
+          console.warn("Could not parse Formspree error response:", formspreeResponse.status);
+          errorMessage = `Server error (${formspreeResponse.status}). Please try again.`;
+        }
+        throw new Error(errorMessage);
       }
 
+      sendToTelegram(formData);
+
       // Show success message
-      toast.success(data.message || "Thank you! We'll get back to you shortly.");
+      toast.success("Thank you! We'll get back to you shortly.");
 
       // Track form submission to GTM
       trackFormSubmission('contact_form', 'contact_page');
@@ -106,11 +155,18 @@ const ContactForm = () => {
 
     } catch (error) {
       console.error("Form submission error:", error);
-      toast.error(
-        error instanceof Error 
-          ? error.message 
-          : "An error occurred. Please try again."
-      );
+      
+      let userMessage = "An error occurred. Please try again.";
+      
+      if (error instanceof Error) {
+        if (error.name === 'AbortError') {
+          userMessage = "Request timed out. Please check your connection and try again.";
+        } else {
+          userMessage = error.message;
+        }
+      }
+      
+      toast.error(userMessage);
     } finally {
       setLoading(false);
     }

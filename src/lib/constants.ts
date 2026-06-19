@@ -5,7 +5,7 @@ export const BUSINESS = {
   phoneFormatted: "+91 9966909927",
   whatsapp: "919966909927",
   whatsappMessage: "Hi, I'm interested in your invisible grills and safety solutions. Please provide more details and a free quote for my requirements.",
-  email: "info@sleeksecure.in",
+  email: "sleeksecuresolutions@gmail.com",
   address: "101, Saraswathi Heights, 937, JV Hills, Street Number 8, Raja Rajeswari Nagar, Kondapur - 500084",
   addressShort: "Kondapur, Hyderabad - 500084",
   city: "Hyderabad",
