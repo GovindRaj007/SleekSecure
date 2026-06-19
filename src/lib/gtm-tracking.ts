@@ -48,7 +48,8 @@ export const trackWhatsAppClick = (
   source: string = 'button'
 ) => {
   pushGTMEvent({
-    event: 'whatsapp_click',
+    event: 'click_tracking',
+    click_type: 'whatsapp',
     location: location,
     source: source,
   });
@@ -64,7 +65,8 @@ export const trackCallClick = (
   source: string = 'button'
 ) => {
   pushGTMEvent({
-    event: 'call_click',
+    event: 'click_tracking',
+    click_type: 'call',
     location: location,
     source: source,
   });
