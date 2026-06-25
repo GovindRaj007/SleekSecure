@@ -137,4 +137,11 @@ ${message}`;
         details: error.name === 'AbortError' ? 'Request timeout' : error.message,
       });
     }
+  } catch (error) {
+    console.error('Outer error:', error);
+    return res.status(500).json({
+      error: 'Internal server error',
+      message: error.message,
+    });
+  }
 }
