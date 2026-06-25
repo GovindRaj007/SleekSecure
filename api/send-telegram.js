@@ -32,7 +32,10 @@ export default async function handler(req, res) {
     }
 
     if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
-      console.log('Telegram integration disabled - environment variables not set');
+      console.error('Telegram env vars missing:', {
+        hasToken: !!process.env.TELEGRAM_BOT_TOKEN,
+        hasChat: !!process.env.TELEGRAM_CHAT_ID,
+      });
       return res.status(200).json({
         success: true,
         message: 'Telegram not configured - skipping notification',
@@ -73,7 +76,6 @@ ${message}`;
         body: JSON.stringify({
           chat_id: process.env.TELEGRAM_CHAT_ID,
           text: telegramMessage,
-          parse_mode: 'HTML',
         }),
         signal: controller.signal,
       });

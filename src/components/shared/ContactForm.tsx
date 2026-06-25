@@ -51,6 +51,7 @@ const ContactForm = () => {
     message: string;
   }) => {
     try {
+      console.log("Sending to Telegram:", formData);
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000);
 
@@ -67,6 +68,9 @@ const ContactForm = () => {
 
       if (!response.ok) {
         console.warn("Telegram notification failed:", response.status);
+      } else {
+        const result = await response.json();
+        console.log("Telegram response:", result);
       }
     } catch (error) {
       if (error instanceof Error && error.name === 'AbortError') {

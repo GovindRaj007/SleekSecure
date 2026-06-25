@@ -27,19 +27,25 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, beforeLabel = "Before", afterL
       onTouchMove={(e) => updateFromClientX(e.touches[0].clientX)}
       onClick={(e) => updateFromClientX(e.clientX)}
     >
-      {/* After (full) */}
-      <img src={afterImg} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      {/* After (full) - Using original JPG to preserve quality */}
+      <picture>
+        <source srcSet={afterImg} type="image/jpeg" />
+        <img src={afterImg} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      </picture>
       <span className="absolute top-3 right-3 z-20 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-[11px] font-semibold uppercase tracking-wide">{afterLabel}</span>
 
-      {/* Before (clipped) */}
+      {/* Before (clipped) - Using original JPG to preserve quality */}
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <img
-          src={beforeImg}
-          alt={beforeLabel}
-          className="absolute inset-0 h-full object-cover"
-          style={{ width: `${(100 / pos) * 100}%`, maxWidth: "none" }}
-          loading="lazy"
-        />
+        <picture>
+          <source srcSet={beforeImg} type="image/jpeg" />
+          <img
+            src={beforeImg}
+            alt={beforeLabel}
+            className="absolute inset-0 h-full object-cover"
+            style={{ width: `${(100 / pos) * 100}%`, maxWidth: "none" }}
+            loading="lazy"
+          />
+        </picture>
         <span className="absolute top-3 left-3 z-20 px-3 py-1 rounded-full bg-foreground/80 text-background text-[11px] font-semibold uppercase tracking-wide">{beforeLabel}</span>
       </div>
 
