@@ -21,13 +21,19 @@ export const orgSchema = () => ({
     postalCode: BUSINESS.postalCode,
     addressCountry: BUSINESS.country,
   },
+  hasMap: BUSINESS.googleBusinessProfile?.mapsUrl,
   contactPoint: {
     "@type": "ContactPoint",
     telephone: `+91 ${BUSINESS.phone}`,
     contactType: "Customer Service",
     areaServed: SERVICE_AREAS.map((a) => a.name),
   },
-  sameAs: [],
+  sameAs: BUSINESS.googleBusinessProfile
+    ? [
+        BUSINESS.googleBusinessProfile.shortReviewUrl,
+        BUSINESS.googleBusinessProfile.mapsUrl,
+      ]
+    : [],
 });
 
 export const localBusinessSchema = () => ({
@@ -111,12 +117,20 @@ export const cityBusinessSchema = (city: {
     addressCountry: "IN",
   },
   areaServed: { "@type": "City", name: city.name },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "09:00",
-    closes: "19:00",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "10:00",
+      closes: "17:00",
+    },
+  ],
 });
 
 export const websiteSchema = () => ({

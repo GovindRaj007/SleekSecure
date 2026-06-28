@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock, Heart, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Heart, ChevronDown, Star } from "lucide-react";
 import { BUSINESS, SERVICES, TELANGANA_LOCATIONS, ANDHRA_PRADESH_LOCATIONS } from "@/lib/constants";
 import { trackCallClick } from "@/lib/gtm-tracking";
 import { useState } from "react";
@@ -106,6 +106,25 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-sm text-primary-foreground/70">
                 <Clock className="w-4 h-4" /> {BUSINESS.workingHours}
               </div>
+            </div>
+
+            <div className="mt-5 rounded-lg border border-gold/30 bg-primary-foreground/5 p-3 space-y-2.5">
+              <a
+                href={BUSINESS.googleBusinessProfile.reviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              >
+                <Star className="w-4 h-4 fill-current text-accent" /> Leave a Google Review
+              </a>
+              <a
+                href={BUSINESS.googleBusinessProfile.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              >
+                <MapPin className="w-4 h-4 text-accent" /> Get Directions
+              </a>
             </div>
           </div>
 

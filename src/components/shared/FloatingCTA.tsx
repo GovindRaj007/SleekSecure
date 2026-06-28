@@ -1,59 +1,34 @@
-import { useState, useEffect } from "react";
 import { Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { BUSINESS } from "@/lib/constants";
 import { trackWhatsAppClick, trackCallClick } from "@/lib/gtm-tracking";
 
+const whatsappHref = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in your invisible grills and safety solutions services.")}`;
+const callHref = `tel:${BUSINESS.phone}`;
+
 export function FloatingCTA() {
-  const [showWhatsApp, setShowWhatsApp] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowWhatsApp((prev) => !prev);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const href = showWhatsApp
-    ? `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in your invisible grills and safety solutions services.")}`
-    : `tel:${BUSINESS.phone}`;
-
-  const label = showWhatsApp ? "Chat on WhatsApp" : "Call Now";
-
   return (
-    <div className="fixed bottom-24 right-6 z-40">
+    <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-3 sm:bottom-6 sm:right-6">
       <a
-        href={href}
-        data-track={showWhatsApp ? "whatsapp" : "call"}
-        onClick={() => showWhatsApp ? trackWhatsAppClick('floating_cta', 'button') : trackCallClick('floating_cta', 'button')}
-        target={showWhatsApp ? "_blank" : undefined}
-        rel={showWhatsApp ? "noopener noreferrer" : undefined}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 hover:shadow-xl overflow-hidden"
-        style={{
-          background: showWhatsApp
-            ? "#25D366"
-            : "hsl(38 85% 55%)",
-        }}
-        aria-label={label}
+        href={whatsappHref}
+        data-track="whatsapp"
+        onClick={() => trackWhatsAppClick("floating_cta", "button")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-all hover:scale-110 hover:shadow-xl"
+        aria-label="Chat on WhatsApp"
       >
-        <div
-          className="absolute inset-0 flex items-center justify-center transition-all duration-500"
-          style={{
-            opacity: showWhatsApp ? 1 : 0,
-            transform: showWhatsApp ? "scale(1) rotate(0deg)" : "scale(0.5) rotate(-90deg)",
-          }}
-        >
-          <WhatsAppIcon className="h-7 w-7 text-white" />
-        </div>
-        <div
-          className="absolute inset-0 flex items-center justify-center transition-all duration-500"
-          style={{
-            opacity: showWhatsApp ? 0 : 1,
-            transform: showWhatsApp ? "scale(0.5) rotate(90deg)" : "scale(1) rotate(0deg)",
-          }}
-        >
-          <Phone className="h-6 w-6 text-white" />
-        </div>
+        <WhatsAppIcon className="h-7 w-7 text-white" />
+      </a>
+
+      <a
+        href={callHref}
+        data-track="call"
+        onClick={() => trackCallClick("floating_cta", "button")}
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[hsl(38_85%_55%)] shadow-lg transition-all hover:scale-110 hover:shadow-xl"
+        aria-label="Call Now"
+      >
+        <Phone className="h-6 w-6 text-white" />
       </a>
     </div>
   );

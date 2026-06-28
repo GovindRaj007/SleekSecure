@@ -108,10 +108,30 @@ const Contact = () => {
 
       <section className="pb-16 bg-white">
         <div className="container-custom">
-          <h2 className="text-2xl font-heading font-bold text-foreground mb-8 text-center">Find Us on the Map</h2>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+            <h2 className="text-2xl font-heading font-bold text-foreground">Find Us on the Map</h2>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={BUSINESS.googleBusinessProfile.reviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+              >
+                ⭐ Leave a Google Review
+              </a>
+              <a
+                href={BUSINESS.googleBusinessProfile.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-primary/20 bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              >
+                🗺 Get Directions
+              </a>
+            </div>
+          </div>
           <div className="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-200 h-72 sm:h-80 md:h-96 lg:h-[450px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.720304970648!2d78.35087862462886!3d17.47309610033148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9300351aa505%3A0x3c5c65d1f98b0288!2sSaraswathi%20Heights%20Kondapur!5e0!3m2!1sen!2sin!4v1778497561924!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.720304970648!2d78.3529521!3d17.4735626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9300351aa505%3A0x3c5c65d1f98b0288!2sSaraswathi%20Heights%20Kondapur!5e0!3m2!1sen!2sin!4v1778497561924!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
