@@ -99,7 +99,7 @@ const Testimonials = () => {
             What Our Customers Say
           </h2>
           <p className="text-primary-foreground/60">
-            Join 2,500+ satisfied homeowners who trust us for their safety needs.
+            Join 1,100+ satisfied homeowners who trust us for their safety needs.
           </p>
         </div>
 
@@ -141,6 +141,7 @@ const Testimonials = () => {
             <button
               key={i}
               onClick={() => setCurrentIndex(i)}
+              aria-label={`Show testimonial ${i + 1}`}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                 i === (currentIndex % testimonials.length) ? "bg-accent w-6" : "bg-primary-foreground/30"
               }`}

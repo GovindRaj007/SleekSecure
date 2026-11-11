@@ -70,7 +70,7 @@ const ChildSafetyGrillsPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/assets/showcase-pet-safety.jpg`}
+        ogImage={`${SITE_URL}/images/child-safety-invisible-grills.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[

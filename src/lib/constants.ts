@@ -33,6 +33,12 @@ export const LOCATION_BUSINESS_DATA: Record<string, {
   phone: string;
   whatsapp: string;
 }> = {
+  hyderabad: { name: "SleekSecure Hyderabad", phone: "9966909927", whatsapp: "919966909927" },
+  nallagandla: { name: "SleekSecure Nallagandla", phone: "9966909927", whatsapp: "919966909927" },
+  bachupally: { name: "SleekSecure Bachupally", phone: "9966909927", whatsapp: "919966909927" },
+  narsingi: { name: "SleekSecure Narsingi", phone: "9966909927", whatsapp: "919966909927" },
+  nizampet: { name: "SleekSecure Nizampet", phone: "9966909927", whatsapp: "919966909927" },
+  "financial-district": { name: "SleekSecure Financial District", phone: "9966909927", whatsapp: "919966909927" },
   gachibowli: { name: "SleekSecure Gachibowli", phone: "9966909927", whatsapp: "919966909927" },
   madhapur: { name: "SleekSecure Madhapur", phone: "9966909927", whatsapp: "919966909927" },
   "hitech-city": { name: "SleekSecure HITEC City", phone: "9966909927", whatsapp: "919966909927" },
@@ -86,6 +92,11 @@ export const SERVICE_AREAS = [
   { name: "Sangareddy", slug: "sangareddy" },
   { name: "Medchal", slug: "medchal" },
   { name: "Mehboobnagar", slug: "mehboobnagar" },
+  { name: "Nallagandla", slug: "nallagandla" },
+  { name: "Bachupally", slug: "bachupally" },
+  { name: "Narsingi", slug: "narsingi" },
+  { name: "Nizampet", slug: "nizampet" },
+  { name: "Financial District", slug: "financial-district" },
   // Regional Service Areas
   { name: "Hyderabad", slug: "hyderabad" },
   { name: "Telangana", slug: "telangana" },
@@ -138,6 +149,11 @@ export const TELANGANA_LOCATIONS = [
   { name: "Sangareddy", slug: "sangareddy" },
   { name: "Medchal", slug: "medchal" },
   { name: "Mehboobnagar", slug: "mehboobnagar" },
+  { name: "Nallagandla", slug: "nallagandla" },
+  { name: "Bachupally", slug: "bachupally" },
+  { name: "Narsingi", slug: "narsingi" },
+  { name: "Nizampet", slug: "nizampet" },
+  { name: "Financial District", slug: "financial-district" },
 ];
 
 export const ANDHRA_PRADESH_LOCATIONS = [
@@ -191,9 +207,11 @@ export const NAV_LINKS = [
     label: "Locations",
     path: null,
     children: [
+      { label: "All of Hyderabad", path: "/invisible-grills-hyderabad" },
       ...TELANGANA_LOCATIONS.map((l) => ({ label: l.name, path: `/invisible-grills-${l.slug}` })),
       ...ANDHRA_PRADESH_LOCATIONS.map((l) => ({ label: l.name, path: `/invisible-grills-${l.slug}` })),
     ],
   },
+  { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
 ];

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export const SITE_URL = "https://www.sleeksecure.in";
@@ -28,6 +28,23 @@ interface SeoProps {
   /** Optional locale for Open Graph */
   locale?: string;
 }
+
+/** Head data captured during server-side prerendering (see src/entry-server.tsx). */
+export interface HeadData {
+  title: string;
+  description: string;
+  url: string;
+  ogImage: string;
+  ogType: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex: boolean;
+  keywords?: string;
+  author?: string;
+  publisher?: string;
+  twitterHandle: string;
+  locale: string;
+}
+export const HeadCollectorContext = createContext<{ head?: HeadData } | null>(null);
 
 const upsertMeta = (
   selector: string,
@@ -69,7 +86,16 @@ const Seo = ({
 }: SeoProps) => {
   const { pathname } = useLocation();
   const path = canonicalPath ?? pathname;
-  const url = `${SITE_URL}${path === "/" ? "" : path}`;
+  const url = path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}`;
+
+  // During prerendering there is no DOM: hand the tags to the collector instead.
+  const collector = useContext(HeadCollectorContext);
+  if (collector) {
+    collector.head = {
+      title, description, url, ogImage, ogType, jsonLd, noindex,
+      keywords, author, publisher, twitterHandle, locale,
+    };
+  }
 
   useEffect(() => {
     // Title

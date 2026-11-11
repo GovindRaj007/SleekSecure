@@ -10,9 +10,10 @@ import {
 } from "@/components/ui/breadcrumb";
 import { BUSINESS, getLocationBusinessData } from "@/lib/constants";
 import { getLocationBySlug, getNearbyLocations } from "@/lib/locations";
-import { breadcrumbSchema, cityBusinessSchema, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, cityBusinessSchema, serviceSchema, faqSchema } from "@/lib/seo";
+import { BLOG_POSTS } from "@/content/blog";
 import { trackWhatsAppClick, trackCallClick } from "@/lib/gtm-tracking";
-import heroImg from "@/assets/hero-luxury-balcony.jpg";
+import heroImg from "@/assets/hero-luxury-balcony.webp";
 
 const benefits = [
   { icon: ShieldCheck, title: "Child Safety", desc: "Tested 25mm child-safe spacing." },
@@ -43,16 +44,53 @@ const LocationPage = () => {
   const isAP = loc.state === "Andhra Pradesh";
 
   const path = `/invisible-grills-${loc.slug}`;
-  const title = `Best Invisible Grills in ${loc.name} | Premium SS316 Safety Solutions - SleekSecure`;
+  const title = loc.slug === "hyderabad"
+    ? "Invisible Grills Near Me in Hyderabad | Every Area Covered - SleekSecure"
+    : `Invisible Grills in ${loc.name}${isAP ? "" : ", Hyderabad"} | SS316, 10-Yr Warranty - SleekSecure`;
   const description = `Premium invisible grills & ceiling cloth hangers in ${loc.name}. SS316 marine-grade, child-safe 25mm spacing, 10-year warranty. Free site visit & quote. Call ${displayPhone}.`;
   const keywords = `invisible grills ${loc.name}, best invisible grills, SS316 grills ${loc.name}, child-safe grills, ceiling cloth hangers, balcony safety, apartment grills installation ${loc.name}`;
 
   const nearby = getNearbyLocations(loc.slug, 4);
+  const isHub = loc.slug === "hyderabad";
 
-  const ogImageUrl = `${SITE_URL}/assets/hero-luxury-balcony.jpg`;
+  // Answer-first facts: short, quotable statements that search and AI engines can lift verbatim.
+  const keyFacts = [
+    { k: "Material", v: "SS316 marine-grade stainless steel cable, 2mm, nylon-coated" },
+    { k: "Child-safe spacing", v: "25mm standard (customisable up to 40mm)" },
+    { k: "Cable strength", v: "250kg breaking strength per cable, tension-tested on site" },
+    { k: "Warranty", v: "10-year written warranty on invisible grills" },
+    { k: "Installation time", v: "Usually 1 day per flat after measurement" },
+    { k: "Price", v: "₹100 – ₹145 per sq ft (SS316)" },
+    { k: "Site visit", v: `Free site visit and measured quote in ${loc.name}` },
+  ];
+
+  const localFaqs = [
+    {
+      question: `What is the cost of invisible grills in ${loc.name}?`,
+      answer: `SleekSecure's SS316 invisible grills in ${loc.name} cost ₹100 to ₹145 per sq ft of the opening. A typical 10 ft × 9 ft balcony (90 sq ft) works out to about ₹9,000 to ₹13,050. The exact rate depends on spacing, opening size and shape, and floor access, and is confirmed in writing after a free site visit.`,
+    },
+    {
+      question: `Who installs invisible grills near me in ${loc.name}?`,
+      answer: `SleekSecure Invisible Grills installs SS316 invisible grills across ${isAP ? loc.state : `${loc.name} and the rest of Hyderabad`} with its own trained team, based in Kondapur, Hyderabad. Call or WhatsApp +91 99669 09927 for a free site visit.`,
+    },
+    {
+      question: `Are invisible grills safe for children in ${loc.name} high-rise apartments?`,
+      answer: `Yes, when they are installed correctly. SleekSecure uses 25mm cable spacing so a child's head or hand cannot pass through, and every 2mm SS316 cable has 250kg breaking strength. Invisible grills are a fall-protection barrier and should be used together with adult supervision.`,
+    },
+    {
+      question: `Will my apartment society in ${loc.name} allow invisible grills?`,
+      answer: `Most gated communities allow invisible grills because they do not change the building's elevation the way box grills do. Always check your association's facade rules first. SleekSecure can share specifications and photos for your committee's approval.`,
+    },
+    {
+      question: `How long does invisible grill installation take in ${loc.name}?`,
+      answer: `A typical 2BHK or 3BHK apartment in ${loc.name} is finished in one day after measurement. Large balconies or several flats in one tower can take 1 to 2 days.`,
+    },
+  ];
+
+  const ogImageUrl = `${SITE_URL}/images/luxury-balcony-invisible-grills.jpg`;
   const wa = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi, I'm interested in invisible grills and ceiling cloth hangers for ${loc.name}. Please share details and quote.`)}`;
 
-  const locationLabel = isAP ? `${loc.name}, ${loc.state}` : `${loc.name}, Hyderabad`;
+  const locationLabel = isAP ? `${loc.name}, ${loc.state}` : loc.slug === "hyderabad" ? "Hyderabad, Telangana" : `${loc.name}, Hyderabad`;
 
   return (
     <Layout>
@@ -68,6 +106,7 @@ const LocationPage = () => {
         locale="en_IN"
         jsonLd={[
           cityBusinessSchema({ name: locationLabel, slug: `${isAP ? 'ap' : 'hyd'}-${loc.slug}`, state: loc.state || "Telangana" }),
+          faqSchema(localFaqs),
           serviceSchema({
             name: `Invisible Grills & Ceiling Cloth Hangers in ${loc.name}`,
             description,
@@ -146,6 +185,54 @@ const LocationPage = () => {
           <p>
             Pair it with our <strong className="text-foreground">ceiling cloth hangers</strong> — a clean, space-saving alternative to floor stands. Together, they make every {loc.name} apartment safer, smarter and more liveable.
           </p>
+        </div>
+      </section>
+
+      {/* KEY FACTS + LOCAL FAQ — answer-first content for search & AI overviews */}
+      <section className="py-12 md:py-16 bg-secondary" aria-labelledby="key-facts">
+        <div className="container-custom max-w-4xl">
+          <h2 id="key-facts" className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
+            Invisible Grills in {loc.name}: Key Facts
+          </h2>
+          <p className="text-foreground/90 mb-6">
+            <strong className="text-foreground">Short answer:</strong> SleekSecure installs SS316 marine-grade invisible grills in {locationLabel} with 2mm cables, 25mm child-safe spacing, 250kg per-cable strength and a 10-year warranty, priced at ₹100–₹145 per sq ft. Site visits and quotes are free.
+          </p>
+          <dl className="grid sm:grid-cols-2 gap-3 mb-12">
+            {keyFacts.map((f) => (
+              <div key={f.k} className="rounded-xl border border-border/60 bg-background p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wider text-primary">{f.k}</dt>
+                <dd className="text-foreground mt-1">{f.v}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-6">
+            Invisible Grills in {loc.name}: FAQs
+          </h2>
+          <div className="space-y-3">
+            {localFaqs.map((f) => (
+              <details key={f.question} className="group rounded-xl border border-border/60 bg-background p-4 open:shadow-sm">
+                <summary className="cursor-pointer font-heading font-semibold text-foreground list-none [&::-webkit-details-marker]:hidden flex justify-between gap-4">
+                  <h3 className="text-base">{f.question}</h3>
+                  <span aria-hidden className="text-primary group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="mt-3 text-muted-foreground leading-relaxed">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <h2 className="text-xl font-heading font-bold text-foreground mb-4">
+              {isHub ? "Invisible grills guides for Hyderabad homes" : `Helpful guides for ${loc.name} homeowners`}
+            </h2>
+            <ul className="grid sm:grid-cols-2 gap-2">
+              {BLOG_POSTS.slice(0, 6).map((p) => (
+                <li key={p.slug}>
+                  <Link to={`/blog/${p.slug}`} className="text-primary hover:underline">{p.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -271,7 +358,7 @@ const LocationPage = () => {
             </Link>
           </div>
           <p className="mt-6 text-xs text-primary-foreground/70 inline-flex items-center gap-1.5 justify-center">
-            <CheckCircle2 className="w-3.5 h-3.5 text-primary-foreground" /> 10-year warranty · Certified installers · 2,500+ homes secured
+            <CheckCircle2 className="w-3.5 h-3.5 text-primary-foreground" /> 10-year warranty · Certified installers · 1,100+ installations
           </p>
         </div>
       </section>

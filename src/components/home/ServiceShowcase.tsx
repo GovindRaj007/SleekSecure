@@ -4,13 +4,13 @@ import { Play } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
 import thumbnailImg from "@/assets/hero-balcony-invisible-grills.jpg";
 import wireImg from "@/assets/invisible-grill-wire.jpg";
-import heroImg from "@/assets/hero-luxury-balcony.jpg";
-import elegantImg from "@/assets/showcase-elegant-view.jpg";
-import familySafeImg from "@/assets/showcase-family-safe-balcony.jpg";
+import heroImg from "@/assets/hero-luxury-balcony.webp";
+import elegantImg from "@/assets/showcase-elegant-view.webp";
+import familySafeImg from "@/assets/showcase-family-safe-balcony.webp";
 import childrenSafetyImg from "@/assets/showcase-children-safety.jpg";
-import petSafetyImg from "@/assets/showcase-pet-safety.jpg";
-import outerProtectionImg from "@/assets/showcase-outer-protection.jpg";
-import weatherProofImg from "@/assets/showcase-weather-proof.jpg";
+import petSafetyImg from "@/assets/showcase-pet-safety.webp";
+import outerProtectionImg from "@/assets/showcase-outer-protection.webp";
+import weatherProofImg from "@/assets/showcase-weather-proof.webp";
 
 type AnimKey = "slideRight" | "slideLeft" | "slideDown" | "slideUp" | "fadeIn";
 
@@ -180,6 +180,7 @@ const ServiceShowcase = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     onClick={() => setIsPlaying(true)}
+                    aria-label="Play invisible grills showcase"
                     className="absolute inset-0 flex items-center justify-center z-30 group"
                   >
                     <motion.div

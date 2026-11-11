@@ -11,8 +11,8 @@ import {
   DrawerTrigger,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import logo from "@/assets/sleek-secure-invisible-grills-logo.jpg";
-import logoAlt from "@/assets/sleek-secure-invisible-grills-logo2.jpg";
+import logo from "@/assets/sleek-secure-invisible-grills-logo.webp";
+import logoAlt from "@/assets/sleek-secure-invisible-grills-logo2.webp";
 import heroImage from "@/assets/hero-balcony-invisible-grills.jpg";
 
 // Menu Icon
@@ -88,6 +88,8 @@ const Navbar = () => {
           <a href="/" onClick={handleLogoClick} className="flex items-center gap-2">
             <img 
               src={scrolled ? logoAlt : logo}
+              width={224}
+              height={64}
               alt="Sleek Secure Logo"
               className={`h-[4rem] w-auto transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-90"}`}
               loading="lazy"

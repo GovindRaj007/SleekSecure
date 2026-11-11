@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS } from "@/lib/constants";
 import { trackWhatsAppClick } from "@/lib/gtm-tracking";
-import heroImage from "@/assets/hero-luxury-balcony.jpg";
+import heroImage from "@/assets/hero-luxury-balcony.webp";
 
 const HeroSection = () => {
   const whatsappLink = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`;
@@ -15,6 +15,8 @@ const HeroSection = () => {
           alt="Modern apartment balcony with invisible safety grills"
           className="w-full h-full object-cover"
           loading="eager"
+          {...{ fetchpriority: "high" }}
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
       </div>
@@ -28,12 +30,12 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground leading-tight mb-4 animate-fade-in">
-            Invisible Grills in Hyderabad for Balconies & Windows Serving Telangana & Andhra Pradesh
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground leading-tight mb-4">
+            Invisible Grills in Hyderabad for Balconies & Windows
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 animate-fade-in font-light" style={{ animationDelay: "0.05s" }}>
-            Get Premium SS316 Stainless Steel Invisible Grill & Ceiling Cloth Hanger Installation Services
+          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 font-light">
+            SS316 stainless steel invisible grills from ₹100–₹145 per sq ft, installed across Hyderabad, Telangana & Andhra Pradesh
           </p>
 
           <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.1s" }}>

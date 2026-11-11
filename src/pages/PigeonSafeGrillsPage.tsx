@@ -70,7 +70,7 @@ const PigeonSafeGrillsPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/assets/balcony-invisible-grills2.jpg`}
+        ogImage={`${SITE_URL}/images/pigeon-safe-invisible-grills.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[
@@ -528,7 +528,7 @@ const PigeonSafeGrillsPage = () => {
       <section className="py-16 md:py-24 bg-card">
         <div className="container-custom">
           <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">See the Difference</motion.h2>
-          <BeforeAfterSlider before={data.beforeAfter.before} after={data.beforeAfter.after} />
+          <BeforeAfterSlider beforeImg={data.beforeAfter.before} afterImg={data.beforeAfter.after} />
         </div>
       </section>
 
@@ -536,7 +536,7 @@ const PigeonSafeGrillsPage = () => {
       <section className="py-16 md:py-24 bg-background">
         <div className="container-custom">
           <motion.h2 {...fadeUp} className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Premium Installations</motion.h2>
-          <LayeredImageGallery images={data.gallery} />
+          <LayeredImageGallery images={data.gallery.map((src, i) => ({ src, alt: `Pigeon-safe invisible grills installation ${i + 1} in Hyderabad` }))} />
         </div>
       </section>
 

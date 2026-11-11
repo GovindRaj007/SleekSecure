@@ -6,7 +6,7 @@ const features = [
   { icon: Award, title: "Premium Quality", desc: "316-grade marine stainless steel wires that resist corrosion and last for decades." },
   { icon: Wrench, title: "Expert Installation", desc: "Professional installation by trained technicians with minimal disruption to your daily life." },
   { icon: Clock, title: "10-Year Warranty", desc: "Comprehensive warranty on materials and installation for your complete peace of mind." },
-  { icon: HeartHandshake, title: "2,500+ Happy Families", desc: "Trusted by thousands of homeowners across Hyderabad, Telangana & Andhra Pradesh for reliable safety solutions." },
+  { icon: HeartHandshake, title: "1,100+ Happy Families", desc: "Trusted by thousands of homeowners across Hyderabad, Telangana & Andhra Pradesh for reliable safety solutions." },
 ];
 
 const WhyChooseUs = () => {

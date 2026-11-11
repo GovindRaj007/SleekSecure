@@ -53,8 +53,9 @@ const CityPage = () => {
       <Seo
         title={title}
         description={description}
-        canonicalPath={path}
-        ogImage={`https://www.sleeksecure.in/assets/hero-luxury-balcony.jpg`}
+        // Same intent as /invisible-grills-<city>; consolidate signals there to avoid cannibalisation.
+        canonicalPath={`/invisible-grills-${city.slug}`}
+        ogImage={`https://www.sleeksecure.in/images/luxury-balcony-invisible-grills.jpg`}
         jsonLd={[
           cityBusinessSchema({ name: city.name, slug: city.slug, state: city.state }),
           breadcrumbSchema([

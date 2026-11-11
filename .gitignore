@@ -32,3 +32,8 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Google service-account keys (Search Console MCP) — never commit
+*-gsc.json
+gsc-credentials*.json
+*service-account*.json

@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, Heart, ChevronDown, Star } from "lucide-rea
 import { BUSINESS, SERVICES, TELANGANA_LOCATIONS, ANDHRA_PRADESH_LOCATIONS } from "@/lib/constants";
 import { trackCallClick } from "@/lib/gtm-tracking";
 import { useState } from "react";
-import logo from "@/assets/sleek-secure-invisible-grills-logo.jpg";
+import logo from "@/assets/sleek-secure-invisible-grills-logo.webp";
 
 const Footer = () => {
   const location = useLocation();
@@ -86,6 +86,8 @@ const Footer = () => {
             <a href="/" onClick={handleLogoClick} className="flex items-center gap-2 mb-4 cursor-pointer">
               <img 
                 src={logo}
+                width={224}
+                height={64}
                 alt="Sleek Secure Logo"
                 className="h-16 w-auto "
               />
@@ -130,7 +132,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">Our Services</h4>
+            <h2 className="font-heading font-semibold text-lg mb-4">Our Services</h2>
             <ul className="space-y-2.5">
               {SERVICES.map((s) => (
                 <li key={s.id} className="flex items-center gap-2">
@@ -147,7 +149,7 @@ const Footer = () => {
 
           {/* Service Areas - Accordion */}
           <div className="md:col-span-2 lg:col-span-1">
-            <h4 className="font-heading font-semibold text-lg mb-4">Service Areas</h4>
+            <h2 className="font-heading font-semibold text-lg mb-4">Service Areas</h2>
             <div className="border border-primary-foreground/20 rounded-lg overflow-hidden">
               <AccordionSection 
                 title="Telangana" 
@@ -164,10 +166,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="md:col-span-2 lg:col-span-1">
-            <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+            <h2 className="font-heading font-semibold text-lg mb-4">Quick Links</h2>
             <ul className="space-y-2.5">
               {[
                 { label: "Home", path: "/" },
+                { label: "Invisible Grills in Hyderabad", path: "/invisible-grills-hyderabad" },
+                { label: "Invisible Grills Price Guide", path: "/blog/invisible-grills-price-hyderabad" },
+                { label: "Blog & Guides", path: "/blog" },
                 { label: "About Us", path: "/about" },
                 { label: "Contact", path: "/contact" },
                 { label: "Privacy Policy", path: "/privacy-policy" },

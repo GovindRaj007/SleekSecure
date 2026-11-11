@@ -21,9 +21,9 @@ const About = () => {
     <Layout>
       <Seo
         title="About Sleek Secure — Trusted Invisible Grill Experts in Hyderabad, Telangana & Andhra Pradesh"
-        description="6+ years of experience and 2,500+ successful installations. Learn about Sleek Secure's mission to deliver premium SS316 invisible grills and ceiling cloth hangers across Hyderabad, Telangana & Andhra Pradesh."
+        description="6+ years of experience and 1,100+ successful installations. Learn about Sleek Secure's mission to deliver premium SS316 invisible grills and ceiling cloth hangers across Hyderabad, Telangana & Andhra Pradesh."
         canonicalPath="/about"
-        ogImage={`${SITE_URL}/assets/hero-luxury-balcony.jpg`}
+        ogImage={`${SITE_URL}/images/luxury-balcony-invisible-grills.jpg`}
         jsonLd={[
           orgSchema(),
           breadcrumbSchema([
@@ -75,7 +75,7 @@ const About = () => {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "2,500+", label: "Installations" },
+                { value: "1,100+", label: "Installations" },
                 { value: "8+", label: "Years Experience" },
                 { value: "5", label: "Cities" },
                 { value: "100%", label: "Safety Record" },

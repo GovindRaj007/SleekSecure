@@ -34,7 +34,7 @@ const Contact = () => {
         title="Contact Sleek Secure — Free Quote for Invisible Grills | Hyderabad, Telangana & Andhra Pradesh"
         description="Call, WhatsApp or message Sleek Secure for a free site visit and quote on invisible grills, balcony & window grills, and ceiling cloth hangers across Hyderabad, Telangana & Andhra Pradesh."
         canonicalPath="/contact"
-        ogImage={`${SITE_URL}/assets/hero-luxury-balcony.jpg`}
+        ogImage={`${SITE_URL}/images/luxury-balcony-invisible-grills.jpg`}
         jsonLd={[
           localBusinessSchema(),
           breadcrumbSchema([

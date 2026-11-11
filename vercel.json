@@ -2,12 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -48,6 +42,19 @@
           "value": "index, follow"
         }
       ]
+    }
+  ],
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/areas/hyd-:slug",
+      "destination": "/invisible-grills-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:slug",
+      "destination": "/invisible-grills-:slug",
+      "permanent": true
     }
   ]
 }

@@ -8,7 +8,7 @@ export const orgSchema = () => ({
   name: SITE_NAME,
   alternateName: "SleekSecure",
   url: SITE_URL,
-  logo: `${SITE_URL}/favicon.png`,
+  logo: `${SITE_URL}/logo.png`,
   image: `${SITE_URL}/og-image.jpg`,
   telephone: `+91 ${BUSINESS.phone}`,
   email: BUSINESS.email,
@@ -43,12 +43,12 @@ export const localBusinessSchema = () => ({
   name: SITE_NAME,
   alternateName: "SleekSecure",
   image: `${SITE_URL}/og-image.jpg`,
-  logo: `${SITE_URL}/favicon.png`,
+  logo: `${SITE_URL}/logo.png`,
   url: SITE_URL,
   telephone: `+91 ${BUSINESS.phone}`,
   email: BUSINESS.email,
   description: "Premium SS316 invisible grills and ceiling cloth hanger installation services.",
-  priceRange: "₹₹",
+  priceRange: "₹100-₹145 per sq ft",
   geo: {
     "@type": "GeoCoordinates",
     latitude: BUSINESS.latitude,
@@ -73,13 +73,6 @@ export const localBusinessSchema = () => ({
     opens: "09:00",
     closes: "19:00",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "320",
-    bestRating: "5",
-    worstRating: "1",
-  },
   serviceArea: SERVICE_AREAS.map((a) => ({ 
     "@type": "City", 
     name: a.name 
@@ -101,15 +94,15 @@ export const cityBusinessSchema = (city: {
 }) => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": `${SITE_URL}/areas/${city.slug}#localbusiness`,
+  "@id": `${SITE_URL}/invisible-grills-${city.slug}#localbusiness`,
   name: `${SITE_NAME} — ${city.name}`,
-  url: `${SITE_URL}/areas/${city.slug}`,
+  url: `${SITE_URL}/invisible-grills-${city.slug}`,
   image: `${SITE_URL}/og-image.jpg`,
-  logo: `${SITE_URL}/favicon.png`,
+  logo: `${SITE_URL}/logo.png`,
   telephone: `+91 ${BUSINESS.phone}`,
   email: BUSINESS.email,
   description: `Premium SS316 invisible grills and ceiling cloth hangers in ${city.name}`,
-  priceRange: "₹₹",
+  priceRange: "₹100-₹145 per sq ft",
   address: {
     "@type": "PostalAddress",
     addressLocality: city.name,
@@ -145,7 +138,7 @@ export const websiteSchema = () => ({
   publisher: {
     "@type": "Organization",
     name: SITE_NAME,
-    logo: `${SITE_URL}/favicon.png`,
+    logo: `${SITE_URL}/logo.png`,
   },
 });
 
@@ -162,10 +155,40 @@ export const breadcrumbSchema = (
   })),
 });
 
+/** Machine-readable prices (quoted by search and AI answers for "cost" queries). */
+const GRILL_OFFER = {
+  "@type": "Offer",
+  priceCurrency: "INR",
+  availability: "https://schema.org/InStock",
+  priceSpecification: {
+    "@type": "UnitPriceSpecification",
+    minPrice: 100,
+    maxPrice: 145,
+    priceCurrency: "INR",
+    unitText: "per square foot",
+    unitCode: "FTK",
+  },
+  description: "SS316 invisible grills, 2mm cable, 25mm child-safe spacing, 10-year warranty. Exact rate confirmed after a free site visit.",
+};
+
+const HANGER_OFFER = {
+  "@type": "Offer",
+  priceCurrency: "INR",
+  availability: "https://schema.org/InStock",
+  priceSpecification: {
+    "@type": "PriceSpecification",
+    minPrice: 3500,
+    priceCurrency: "INR",
+  },
+  description: "Standard 6-feet, 6-rod ceiling cloth hanger, from ₹3,500.",
+};
+
 export const serviceSchema = (params: {
   name: string;
   description: string;
   path: string;
+  /** Which price to publish; defaults to invisible grill pricing. */
+  pricing?: "grills" | "hanger" | "none";
 }) => ({
   "@context": "https://schema.org",
   "@type": "Service",
@@ -175,6 +198,9 @@ export const serviceSchema = (params: {
   provider: { "@id": `${SITE_URL}/#organization` },
   areaServed: SERVICE_AREAS.map((a) => a.name),
   serviceType: params.name,
+  ...(params.pricing === "none"
+    ? {}
+    : { offers: params.pricing === "hanger" ? HANGER_OFFER : GRILL_OFFER }),
 });
 
 export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
@@ -192,7 +218,7 @@ export const offerSchema = () => ({
   "@type": "Offer",
   name: "Free Ceiling Cloth Hanger with Invisible Grill Installation",
   description: "Get free ceiling cloth hanger with installation on Invisible grill installation worth Rs.20,000 or more.",
-  image: `${SITE_URL}/assets/Offer-Poster.jpg`,
+  image: `${SITE_URL}/images/offer-poster.jpg`,
   priceCurrency: "INR",
   price: "0",
   availability: "https://schema.org/OnlineOnly",

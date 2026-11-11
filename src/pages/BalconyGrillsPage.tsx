@@ -70,7 +70,7 @@ const BalconyGrillsPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/assets/showcase-pet-safety.jpg`}
+        ogImage={`${SITE_URL}/images/balcony-invisible-grills-hyderabad.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[

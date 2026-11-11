@@ -39,7 +39,7 @@ const LayeredImageGallery = ({ images, title }: LayeredImageGalleryProps) => {
   };
 
   const getVisibleImages = () => {
-    const visible = [];
+    const visible: { src: string; alt: string }[] = [];
     for (let i = 0; i < visibleCount; i++) {
       visible.push(images[(current + i) % images.length]);
     }

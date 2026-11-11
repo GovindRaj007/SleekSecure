@@ -25,7 +25,7 @@ const ContactForm = () => {
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value;
+    const value = e.target.value;
     // Remove all non-numeric characters
     const numericOnly = value.replace(/\D/g, "");
     // Restrict to 10 digits maximum

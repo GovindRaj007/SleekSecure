@@ -16,6 +16,7 @@ import {
   MapPin,
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import Seo, { SITE_URL } from "@/components/shared/Seo";
 import { breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema } from "@/lib/seo";
 import FAQAccordion from "@/components/shared/FAQAccordian";
@@ -70,7 +71,7 @@ const WindowGrillsPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/assets/window-invisible-grills2.jpg`}
+        ogImage={`${SITE_URL}/images/window-invisible-grills.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[

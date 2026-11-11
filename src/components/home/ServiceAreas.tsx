@@ -10,7 +10,7 @@ const ServiceAreas = () => {
   
   const apAreas = ANDHRA_PRADESH_LOCATIONS.map((a) => ({
     name: a.name,
-    to: `/areas/${a.slug}`,
+    to: `/invisible-grills-${a.slug}`,
   }));
 
   const Pill = ({ name, to }: { name: string; to: string }) => (

@@ -2,7 +2,7 @@ import heroImg from "@/assets/hero-balcony-invisible-grills.jpg";
 import balconyImg from "@/assets/hero-balcony-invisible-grills.jpg";
 import balconyImg2 from "@/assets/balcony-invisible-grills2.jpg";
 import homeAfterImg from "@/assets/home-after-installation.jpg";
-import petSafetyImg from "@/assets/showcase-pet-safety.jpg";
+import petSafetyImg from "@/assets/showcase-pet-safety.webp";
 import windowImg from "@/assets/window-invisible-grills.jpg";
 import windowImg2 from "@/assets/window-invisible-grills2.jpg";
 import windowImg3 from "@/assets/window-invisible-grills3.jpg";
@@ -54,7 +54,7 @@ const sharedTrust = [
   { title: "Premium SS316", desc: "Marine-grade stainless steel construction." },
   { title: "Weather Resistant", desc: "Coastal-tested. Zero rust, zero fade." },
   { title: "Pro Installation", desc: "Certified technicians. Clean & fast." },
-  { title: "Trusted Across Telangana & AP", desc: "2,500+ homes & businesses served." },
+  { title: "Trusted Across Telangana & AP", desc: "1,100+ homes & businesses served." },
 ];
 
 const sharedTestimonials = [
@@ -65,7 +65,7 @@ const sharedTestimonials = [
 ];
 
 const balconyWhyChooseUs = [
-  { title: "6+ Years Experience", desc: "2,500+ premium balcony installations across luxury apartments in Hyderabad, Telangana & Andhra Pradesh." },
+  { title: "6+ Years Experience", desc: "1,100+ premium balcony installations across luxury apartments in Hyderabad, Telangana & Andhra Pradesh." },
   { title: "Transparent Pricing", desc: "No hidden costs. Free balcony assessment & fixed quote within 24 hours." },
   { title: "SS316 Marine Grade", desc: "Genuine marine-grade stainless steel — not the cheaper SS304 alternatives." },
   { title: "Aesthetic Excellence", desc: "Preserves panoramic views — clients say grills disappear from 1m away." },
@@ -77,7 +77,7 @@ const childSafetyWhyChooseUs = [
   { title: "ISO 13126 Certified", desc: "Every installation tested & certified to international child-safety standards with documentation." },
   { title: "Professional Safety Testing", desc: "Our technicians personally tension-test every wire to 250kg+ on-site before handover." },
   { title: "Peace of Mind Guarantee", desc: "Comprehensive safety documentation + lifetime support so parents can relax." },
-  { title: "Pediatrician Recommended", desc: "Trusted by 20+ schools, hospitals & 1,000+ families across Telangana & Andhra Pradesh." },
+  { title: "Pediatrician Recommended", desc: "Trusted by 20+ schools, hospitals & 1,100+ families across Telangana & Andhra Pradesh." },
   { title: "Quick Installation", desc: "Expert safety consultation to handover in 5–7 days without rushing quality." },
   { title: "Complete Transparency", desc: "All safety certificates, test reports & specifications provided at handover." },
 ];
@@ -115,7 +115,7 @@ const invisibleGrillsWhyChooseUs = [
   { title: "Precision Installation Process", desc: "Our proprietary tension-testing & finishing process ensures 15+ year durability." },
   { title: "Multi-Application Expertise", desc: "Expert in balconies, windows, staircases, railings & terraces across any building type." },
   { title: "Transparent Pricing & Warranty", desc: "No hidden costs. Fixed quotes. 10-year comprehensive warranty on all installations." },
-  { title: "Premium Apartment Portfolio", desc: "Trusted by 2,500+ premium apartments, villas & commercial properties across AP." },
+  { title: "Premium Apartment Portfolio", desc: "Trusted by 1,100+ premium apartments, villas & commercial properties across AP." },
 ];
 
 export const SERVICE_CONTENT: Record<string, ServiceContent> = {
@@ -128,7 +128,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     subtitle: "Apartment-grade invisible safety grills — full view, full safety.",
     emotionalHeadline: "Invisible Grills in Hyderabad – Stylish Safety & Strong Security Solutions",
     emotionalSub: "Premium SS316 invisible grills designed for modern high-rise apartments. Child-safe. Pet-safe. Practically invisible.",
-    metaTitle: "Best Invisible Grills in Hyderabad | Premium Balcony Safety | Sleek Secure",
+    metaTitle: "Balcony Invisible Grills in Hyderabad | SS316, 10-Yr Warranty | SleekSecure",
     metaDescription: "Best invisible grills for balconies in Hyderabad, Telangana & Andhra Pradesh. Premium SS316, child-safe, rust-proof. Safe, transparent, rust-free. Call 9966909927 for free quote.",
     keywords: "best invisible grills Hyderabad,invisible grill contractors near me, balcony invisible grills, invisible grills for balcony, SS316 invisible grills, premium balcony safety grills, child-safe invisible grills, apartment balcony safety, invisible grill installation Hyderabad,invisible grills mehboobanagar, invisible grills vishakapatnam,invisible grills vijayawada, invisible grills kadapa, premium SS316 grills, transparent safety grills, balcony safety solution",
     heroImage: balconyImg,
@@ -170,7 +170,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { question: "Are balcony invisible grills safe for children?", answer: "Yes. Our SS316 wires are spaced at 25mm — meeting international child-safety standards. Each wire withstands 250kg of force, far exceeding any practical impact load." },
       { question: "What is SS316 invisible grill?", answer: "SS316 is marine-grade stainless steel containing molybdenum, making it highly resistant to corrosion, salt air and chlorides. It outperforms the common SS304 grade and is ideal for coastal AP and humid climates." },
       { question: "Are invisible grills rust resistant?", answer: "Yes. Our SS316 wires are virtually rust-proof and tested for 15+ years of coastal exposure with zero corrosion." },
-      { question: "What is the cost of balcony invisible grills?", answer: "Pricing is per square foot and depends on balcony size, wire spacing and frame style. Most apartments fall between ₹85–₹180 per sqft. We provide a free measurement and fixed quote." },
+      { question: "What is the cost of balcony invisible grills?", answer: "Pricing is per square foot and depends on balcony size, wire spacing and frame style. Our SS316 invisible grills cost ₹100–₹145 per sq ft; a typical 10 ft × 9 ft balcony (90 sq ft) is about ₹9,000–₹13,050. We provide a free measurement and fixed quote." },
       { question: "Which invisible grills are best for apartments?", answer: "For high-rise apartments, choose SS316 marine-grade wires with 25mm spacing and a powder-coated aluminium frame. This combination offers the best safety, durability and aesthetics." },
       { question: "How long does installation take?", answer: "A standard balcony is completed in 4–6 hours. The full project — measurement to handover — typically takes 5–7 days." },
     ],
@@ -194,7 +194,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     subtitle: "Certified child-safe invisible grills — engineered for maximum protection with unobstructed views.",
     emotionalHeadline: "Your Child's Safety Without Caging In Their World",
     emotionalSub: "Premium SS316 invisible grills tested to international child-safety standards. Give your kids the freedom to play safely, indoors and outdoors.",
-    metaTitle: "Best Child-Safe Invisible Grills in Hyderabad | Certified Safety | Sleek Secure",
+    metaTitle: "Child Safety Invisible Grills in Hyderabad | 25mm Spacing | SleekSecure",
     metaDescription: "Premium child-safe invisible grills for balconies & windows in Hyderabad, Telangana & Andhra Pradesh. Certified to 25mm child-safe spacing. 10-year warranty. Call 9966909927.",
     keywords: "child-safe invisible grills, child safety window grills, balcony child safety, invisible grills kids, child-proof balcony grills, certified child safety grills, baby-safe invisible grills, child accident prevention, window child safety solutions, toddler-safe grills",
     heroImage: childSafetyImg,
@@ -207,7 +207,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { title: "Premium SS316", desc: "Highest grade stainless steel — marine-tested for 15+ years." },
       { title: "Zero Fall Risk", desc: "Each wire withstands 250kg force — far exceeding child impact." },
       { title: "Professional Testing", desc: "Every installation personally tested by certified technicians." },
-      { title: "Parent Approved", desc: "Trusted by pediatricians, schools & 1000+ families in AP." },
+      { title: "Parent Approved", desc: "Trusted by pediatricians, schools & 1,100+ families in AP." },
     ],
     problems: [
       "Falls from balconies & open windows are leading childhood accidents",
@@ -273,7 +273,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     subtitle: "Advanced invisible grills with anti-pigeon mesh — keep pigeons away, keep your view pristine.",
     emotionalHeadline: "Beautiful Balconies. Free From Pigeons & Mess.",
     emotionalSub: "Premium SS316 invisible grills combined with micro anti-pigeon mesh — protect your balcony from birds while maintaining 99% transparency.",
-    metaTitle: "Best Pigeon-Safe Invisible Grills in Hyderabad | Premium Protection | Sleek Secure",
+    metaTitle: "Pigeon-Safe Invisible Grills in Hyderabad | Anti-Bird Balcony | SleekSecure",
     metaDescription: "Pigeon-proof invisible balcony grills in Hyderabad, Telangana & Andhra Pradesh. SS316 + anti-pigeon mesh. Keeps pigeons out, view completely clear. 10-year warranty.",
     keywords: "pigeon-safe balcony grills, anti-pigeon invisible grills, pigeon mesh grills, balcony pigeon protection, invisible pigeon-proof grills, pigeon control solution, balcony bird protection, transparent pigeon mesh, pigeon deterrent grills, bird-safe balcony grills",
     heroImage: pigeonImg1,
@@ -354,7 +354,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     subtitle: "Window safety without ugly iron bars — full light, full air.",
     emotionalHeadline: "Open Windows. Total Safety.",
     emotionalSub: "Premium SS316 invisible window grills that protect your children while preserving every ray of light and every breath of fresh air.",
-    metaTitle: "Best Invisible Grills for Windows in Hyderabad | Child-Safe | Sleek Secure",
+    metaTitle: "Window Invisible Grills in Hyderabad | Child-Safe SS316 | SleekSecure",
     metaDescription: "Best invisible window grills in Hyderabad, Telangana & Andhra Pradesh. Child-safe, fire-safe SS316 grills. Safe, transparent, rust-free. Call 9966909927 for free quote.",
     keywords: "best invisible grills for windows, window invisible grills hyderabad, invisible grills for windows, child-safe window grills, SS316 window safety grills, premium window invisible grills, child-proof window safety, window grill installation Hyderabad, invisible grill installation,invisible grills mehboobanagar, invisible grills vishakapatnam,invisible grills vijayawada, invisible grills kadapa",
     heroImage: windowImg,
@@ -397,7 +397,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
       { question: "Can I still open my windows after installation?", answer: "Absolutely. Our grills are designed around your existing window operation — sliding, casement and louvered windows continue to function normally." },
       { question: "Will they block the view from inside?", answer: "The 2mm wires are practically invisible from a normal viewing distance. Most clients say they forget the grills are there." },
       { question: "Are window invisible grills fire safe?", answer: "Yes — we offer a quick-release mechanism that allows the grill to be removed in under 30 seconds during emergencies." },
-      { question: "What is the cost of window invisible grills?", answer: "Pricing depends on window size and quantity. Standard windows typically cost ₹2,500–₹5,500 each. Free site visit & quote provided." },
+      { question: "What is the cost of window invisible grills?", answer: "Window invisible grills cost ₹100–₹145 per sq ft, so a standard window typically works out to ₹2,500–₹5,500 depending on size. Free site visit & quote provided." },
     ],
     applications: ["Children's bedrooms", "Living room windows", "Kitchen ventilation", "Bathroom windows", "School & hospital windows"],
     techDetails: [
@@ -416,12 +416,12 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     title: "Ceiling Cloth Hangers",
     h1: "Premium Ceiling-Mounted Cloth Hangers",
     badge: "Smart Living · Space Saving",
-    subtitle: "Ceiling-mounted pulley cloth drying systems for modern apartments.",
+    subtitle: "Ceiling-mounted pulley clothes drying racks for modern apartments.",
     emotionalHeadline: "Ceiling Cloth Hangers in Hyderabad – Smart Solutions",
     emotionalSub: "Premium ceiling-mounted cloth hangers with smooth pulley systems — utilise unused ceiling space and free up your balcony floor.",
-    metaTitle: "Ceiling Cloth Hanger Space-Saving Drying Rack for Apartments",
-    metaDescription: "Buy the best ceiling-mounted cloth hanger with pulley system. Rust-proof, space-saving drying rack for balconies & small apartments. Free installation!",
-    keywords: "ceiling cloth hanger, space-saving drying rack, balcony clothes hanger, pulley-based drying system, indoor clothes drying solution, rust-proof ceiling hanger, apartment drying rack, best ceiling-mounted clothes dryer, small space laundry solution, automatic ceiling clothes hanger",
+    metaTitle: "Ceiling Cloth Hangers & Ceiling Drying Racks in Hyderabad | From ₹3,500",
+    metaDescription: "Ceiling-mounted clothes drying rack (pulley cloth hanger) for Hyderabad balconies & utility areas, from ₹3,500. Rust-proof, space-saving, holds 30–40 garments. Free site visit.",
+    keywords: "ceiling cloth hanger, ceiling mounted drying rack, ceiling clothes drying rack, ceiling mounted clothes drying rack, ceiling drying system, ceiling cloth hanger system, space-saving drying rack, balcony clothes hanger, pulley-based drying system, indoor clothes drying solution, rust-proof ceiling hanger, apartment drying rack, best ceiling-mounted clothes dryer, small space laundry solution, automatic ceiling clothes hanger",
     heroImage: clothImg,
     gallery: [clothImg2, clothImg3, clothImg],
     features: ["Smooth Pulley", "Rust Proof", "30kg Capacity", "5-Yr Warranty"],
@@ -458,6 +458,7 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
     whyChooseUs: ceilingClothHangersWhyChooseUs,
     testimonials: sharedTestimonials,
     faqs: [
+      { question: "Is a ceiling cloth hanger the same as a ceiling-mounted drying rack?", answer: "Yes. A ceiling cloth hanger is a ceiling-mounted clothes drying rack: stainless-steel rods fixed to the ceiling that you lower with a pulley to load wet clothes, then raise out of the way to dry. In Hyderabad it is usually installed in the balcony or utility area." },
       { question: "How many clothes can a ceiling cloth hanger hold?", answer: "A standard 6-rod, 6-feet hanger holds approximately 30–40 garments and supports up to 30kg of wet clothes." },
       { question: "Will it damage my ceiling?", answer: "No — installation requires only 4–8 small anchor points using professional-grade ceiling anchors. Cosmetic impact is minimal." },
       { question: "Is the pulley mechanism durable?", answer: "Yes — we use high-grade nylon ropes and stainless-steel pulleys built for daily heavy use, backed by a 5-year warranty." },

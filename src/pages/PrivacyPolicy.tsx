@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
         title="Privacy Policy — SleekSecure Invisible Grills"
         description="Read the SleekSecure Invisible Grills privacy policy to learn how we collect, use, and protect your personal information when you visit our website or request a quote."
         canonicalPath="/privacy-policy"
-        ogImage={`${SITE_URL}/assets/hero-luxury-balcony.jpg`}
+        ogImage={`${SITE_URL}/images/luxury-balcony-invisible-grills.jpg`}
       />
       <PageHero title="Privacy Policy" subtitle="Your privacy matters to us. Learn how we handle your information." />
 

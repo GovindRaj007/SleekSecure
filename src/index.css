@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,8 +40,8 @@
     --gold-foreground: 30 60% 15%;
     --teal-light: 195 60% 95%;
 
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Playfair Display Variable', 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif;
   }
 
   .dark {
@@ -177,4 +175,21 @@
   body::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Blog article typography (content rendered by components/blog/Markdown.tsx) */
+@layer components {
+  .blog-prose { @apply text-base md:text-lg leading-relaxed text-muted-foreground; }
+  .blog-prose > * + * { @apply mt-5; }
+  .blog-prose h2 { @apply mt-12 text-2xl md:text-3xl font-heading font-bold text-foreground scroll-mt-28; }
+  .blog-prose h3 { @apply mt-8 text-xl font-heading font-semibold text-foreground scroll-mt-28; }
+  .blog-prose strong { @apply text-foreground font-semibold; }
+  .blog-prose a { @apply text-primary underline underline-offset-2 hover:no-underline; }
+  .blog-prose ul { @apply list-disc pl-6 space-y-2; }
+  .blog-prose ol { @apply list-decimal pl-6 space-y-2; }
+  .blog-prose blockquote { @apply rounded-xl border-l-4 border-accent bg-secondary px-5 py-4 text-foreground; }
+  .blog-prose .table-wrap { @apply overflow-x-auto rounded-xl border border-border/60; }
+  .blog-prose table { @apply w-full text-sm md:text-base border-collapse; }
+  .blog-prose th { @apply bg-secondary text-left font-semibold text-foreground px-4 py-3 whitespace-nowrap; }
+  .blog-prose td { @apply px-4 py-3 border-t border-border/60 align-top; }
 }

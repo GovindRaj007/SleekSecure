@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "gsc": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-server-gsc@0.3.0"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GSC_CREDENTIALS:-C:/Users/Govind Raj/.gsc/sleeksecure-gsc.json}"
+      }
+    }
+  }
+}

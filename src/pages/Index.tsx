@@ -28,11 +28,11 @@ const Index = () => {
   return (
     <Layout>
       <Seo
-        title="Premium SS316 Invisible Grills in Hyderabad | SleekSecure"
-        description="Secure your home with premium SS316 invisible grills in Hyderabad. We provide balcony invisible grills, stainless steel window grills, ceiling cloth hangers, child safety solutions, and modern safety installations across Telangana & Andhra Pradesh."
+        title="Invisible Grills in Hyderabad | ₹100–145/sq ft, SS316 | SleekSecure"
+        description="Invisible grills in Hyderabad from ₹100–₹145 per sq ft: SS316 marine-grade cable, 25mm child-safe spacing, 10-year warranty, 1,100+ installations. Free site visit near you. Call 9966909927."
         keywords="invisible grills Hyderabad, what are invisible grills, SS316 invisible grills, balcony invisible grills, stainless steel window grills, balcony safety grills, invisible grills for windows, ceiling cloth hangers Hyderabad, invisible grill installation Hyderabad, SleekSecure Invisible Grills, invisible grills near me, best invisible grills in hyderabad"
         canonicalPath="/"
-        ogImage={`${SITE_URL}/assets/hero-balcony-invisible-grills.jpg`}
+        ogImage={`${SITE_URL}/images/balcony-invisible-grills-hyderabad.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={homeGraph()}
@@ -54,7 +54,9 @@ const Index = () => {
           {/* Offer Poster */}
           <div className="w-full">
             <img 
-              src={offerPoster} 
+              src={offerPoster}
+              width={1024}
+              height={1536}
               alt="Exclusive Offer: Get free ceiling cloth hanger with invisible grill installation worth Rs.20,000 or more" 
               className="w-full h-auto object-cover"
               loading="lazy"

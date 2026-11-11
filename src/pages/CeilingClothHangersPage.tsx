@@ -99,11 +99,11 @@ const CeilingClothHangersPage = () => {
         description={data.metaDescription}
         canonicalPath={canonicalPath}
         keywords={data.keywords}
-        ogImage={`${SITE_URL}/assets/cloth-hanger.jpg`}
+        ogImage={`${SITE_URL}/images/ceiling-cloth-hanger.jpg`}
         author="SleekSecure Invisible Grills"
         publisher="SleekSecure Invisible Grills"
         jsonLd={[
-          serviceSchema({ name: data.title, description: data.subtitle, path: canonicalPath }),
+          serviceSchema({ pricing: "hanger", name: data.title, description: data.subtitle, path: canonicalPath }),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/#services" },
