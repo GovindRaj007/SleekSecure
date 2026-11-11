@@ -7,6 +7,6 @@ README.md
 node_modules
 .DS_Store
 *.log
-scripts/
+scripts/gsc-auth.mjs
 public/sitemap.xml.bak
 assets-backup/
