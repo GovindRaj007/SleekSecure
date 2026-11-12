@@ -1,6 +1,6 @@
 import BeforeAfterSlider from "@/components/service/BeforeAfterSlider";
-import balconyBefore from "@/assets/home-before-installation.jpg";
-import balconyAfter from "@/assets/home-after-installation.jpg";
+import balconyBefore from "@/assets/home-before-installation.webp";
+import balconyAfter from "@/assets/home-after-installation.webp";
 
 const BeforeAfterShowcase = () => {
   return (

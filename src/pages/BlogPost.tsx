@@ -159,7 +159,7 @@ const BlogPost = () => {
             </p>
             <p className="text-primary-foreground/70 mb-6">SS316 invisible grills · 25mm child-safe spacing · 10-year warranty</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#1ebe5a] text-white">
+              <Button asChild size="lg" className="bg-[hsl(142,70%,29%)] hover:bg-[hsl(142,70%,24%)] text-white">
                 <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick("blog_post")}>
                   <WhatsAppIcon className="w-5 h-5 mr-2" /> WhatsApp us
                 </a>

@@ -26,5 +26,5 @@ export const getPostBySlug = (slug: string) => BLOG_POSTS.find((p) => p.slug ===
 export const BLOG_AUTHOR = {
   name: "SleekSecure Installation Team",
   description:
-    "Invisible grill installers based in Kondapur, Hyderabad, with 6+ years of experience fitting SS316 invisible grills across Telangana and Andhra Pradesh.",
+    "Invisible grill installers based in Kondapur, Hyderabad, with 8+ years of experience fitting SS316 invisible grills across Telangana and Andhra Pradesh.",
 };

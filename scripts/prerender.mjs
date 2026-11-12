@@ -86,6 +86,11 @@ const writePage = async (route, file) => {
   const page = stripHead(template)
     .replace("</head>", `    ${headTags(head)}\n  </head>`)
     .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+  // Every local asset the page references must exist in the client build, or it 404s in production.
+  const missing = [...new Set([...page.matchAll(/(?:src|href)="(\/assets\/[^"?#]+)"/g)].map((m) => m[1]))].filter(
+    (a) => !fs.existsSync(path.join(dist, a)),
+  );
+  if (missing.length) throw new Error(`${route} references missing assets: ${missing.join(", ")}`);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, page);
   return head;
@@ -139,7 +144,7 @@ Key facts:
 - Strength: about 250kg breaking strength per cable, tension-tested on site
 - Warranty: 10-year written warranty on invisible grills
 - Price: ₹100 to ₹145 per sq ft of the opening for SS316 invisible grills (exact rate confirmed after a free site visit)
-- Experience: 6+ years and 1,100+ installations across Hyderabad, Telangana and Andhra Pradesh
+- Experience: 8+ years and 1,100+ installations across Hyderabad, Telangana and Andhra Pradesh
 - Free site visit and measured written quote
 - Typical installation time: about 1 day per apartment
 - Offer: free ceiling cloth hanger with invisible grill orders of ₹20,000 or more

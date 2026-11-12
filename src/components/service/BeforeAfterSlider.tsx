@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type PointerEvent } from "react";
 
 interface BeforeAfterSliderProps {
   beforeImg: string;
@@ -7,9 +7,13 @@ interface BeforeAfterSliderProps {
   afterLabel?: string;
 }
 
+/** Movement (px) before a touch gesture is classified as a horizontal slide or a vertical scroll. */
+const GESTURE_THRESHOLD = 8;
+
 const BeforeAfterSlider = ({ beforeImg, afterImg, beforeLabel = "Before", afterLabel = "After" }: BeforeAfterSliderProps) => {
   const [pos, setPos] = useState(50);
   const ref = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ id: number; x: number; y: number; sliding: boolean } | null>(null);
 
   const updateFromClientX = (clientX: number) => {
     const el = ref.current;
@@ -19,33 +23,72 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, beforeLabel = "Before", afterL
     setPos(Math.max(0, Math.min(100, p)));
   };
 
+  const onPointerDown = (e: PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "mouse") {
+      if (e.button !== 0) return;
+      drag.current = { id: e.pointerId, x: e.clientX, y: e.clientY, sliding: true };
+      e.currentTarget.setPointerCapture(e.pointerId);
+      updateFromClientX(e.clientX);
+      return;
+    }
+    // Touch / pen: don't move the bar yet; wait to see which way the finger goes.
+    drag.current = { id: e.pointerId, x: e.clientX, y: e.clientY, sliding: false };
+  };
+
+  const onPointerMove = (e: PointerEvent<HTMLDivElement>) => {
+    const d = drag.current;
+    if (!d || d.id !== e.pointerId) return;
+    if (!d.sliding) {
+      const dx = Math.abs(e.clientX - d.x);
+      const dy = Math.abs(e.clientY - d.y);
+      if (dx < GESTURE_THRESHOLD && dy < GESTURE_THRESHOLD) return;
+      if (dy >= dx) {
+        // Vertical gesture: leave it to the browser so the page scrolls (touch-action: pan-y).
+        drag.current = null;
+        return;
+      }
+      d.sliding = true;
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+    updateFromClientX(e.clientX);
+  };
+
+  const endDrag = (e: PointerEvent<HTMLDivElement>) => {
+    if (drag.current?.id === e.pointerId) drag.current = null;
+  };
+
   return (
     <div
       ref={ref}
-      className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3] lg:aspect-[16/10] overflow-hidden rounded-2xl shadow-xl select-none touch-none"
-      onMouseMove={(e) => e.buttons === 1 && updateFromClientX(e.clientX)}
-      onTouchMove={(e) => updateFromClientX(e.touches[0].clientX)}
-      onClick={(e) => updateFromClientX(e.clientX)}
+      // pan-y: the browser handles vertical scrolling natively; horizontal drags come to us.
+      className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3] lg:aspect-[16/10] overflow-hidden rounded-2xl shadow-xl select-none touch-pan-y cursor-ew-resize has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-primary has-[:focus-visible]:ring-offset-2"
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={endDrag}
+      onPointerCancel={endDrag}
     >
-      {/* After (full) - Using original JPG to preserve quality */}
-      <picture>
-        <source srcSet={afterImg} type="image/jpeg" />
-        <img src={afterImg} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-      </picture>
+      {/* After (full) */}
+      <img
+        src={afterImg}
+        alt={afterLabel}
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        decoding="async"
+        draggable={false}
+      />
       <span className="absolute top-3 right-3 z-20 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-[11px] font-semibold uppercase tracking-wide">{afterLabel}</span>
 
-      {/* Before (clipped) - Using original JPG to preserve quality */}
+      {/* Before (clipped) */}
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <picture>
-          <source srcSet={beforeImg} type="image/jpeg" />
-          <img
-            src={beforeImg}
-            alt={beforeLabel}
-            className="absolute inset-0 h-full object-cover"
-            style={{ width: `${(100 / pos) * 100}%`, maxWidth: "none" }}
-            loading="lazy"
-          />
-        </picture>
+        <img
+          src={beforeImg}
+          alt={beforeLabel}
+          className="absolute inset-0 h-full object-cover"
+          style={{ width: `${(100 / Math.max(pos, 0.01)) * 100}%`, maxWidth: "none" }}
+          loading="lazy"
+          decoding="async"
+          draggable={false}
+        />
         <span className="absolute top-3 left-3 z-20 px-3 py-1 rounded-full bg-foreground/80 text-background text-[11px] font-semibold uppercase tracking-wide">{beforeLabel}</span>
       </div>
 
@@ -60,15 +103,15 @@ const BeforeAfterSlider = ({ beforeImg, afterImg, beforeLabel = "Before", afterL
         </div>
       </div>
 
-      {/* Range input for accessibility */}
+      {/* Keyboard / screen-reader control (arrow keys). Pointer input is handled by the container. */}
       <input
         type="range"
         min={0}
         max={100}
-        value={pos}
+        value={Math.round(pos)}
         onChange={(e) => setPos(Number(e.target.value))}
         aria-label="Before / After comparison slider"
-        className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30"
+        className="absolute inset-0 w-full h-full opacity-0 pointer-events-none"
       />
     </div>
   );

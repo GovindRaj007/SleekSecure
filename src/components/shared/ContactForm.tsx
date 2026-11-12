@@ -181,6 +181,7 @@ const ContactForm = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Input
           placeholder="Your Name *"
+          aria-label="Your name"
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -189,6 +190,7 @@ const ContactForm = () => {
         <div className="flex flex-col">
           <Input
             placeholder="Phone Number *"
+            aria-label="Phone number"
             type="tel"
             required
             value={phoneNumber}
@@ -199,6 +201,7 @@ const ContactForm = () => {
         </div>
       </div>
       <select
+        aria-label="Service required"
         value={service}
         onChange={(e) => setService(e.target.value)}
         required
@@ -212,6 +215,7 @@ const ContactForm = () => {
       </select>
       <Textarea
         placeholder="Your Message"
+        aria-label="Your message"
         rows={4}
         value={message}
         onChange={(e) => setMessage(e.target.value)}

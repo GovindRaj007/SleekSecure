@@ -26,7 +26,9 @@ export default defineConfig(({ isSsrBuild }) => ({
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      output: isSsrBuild ? {} : {
+      // The SSR build must name assets exactly like the client build: prerendered HTML
+      // references the SSR asset URLs, but only the client's files are deployed.
+      output: isSsrBuild ? { assetFileNames: "assets/[name].[hash][extname]" } : {
         manualChunks: {
           vendor: ["react", "react-dom", "react-router-dom"],
           framer: ["framer-motion"],

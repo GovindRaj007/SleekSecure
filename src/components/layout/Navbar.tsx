@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/drawer";
 import logo from "@/assets/sleek-secure-invisible-grills-logo.webp";
 import logoAlt from "@/assets/sleek-secure-invisible-grills-logo2.webp";
-import heroImage from "@/assets/hero-balcony-invisible-grills.jpg";
+import heroImage from "@/assets/hero-balcony-invisible-grills.webp";
 
 // Menu Icon
 const MenuIcon = ({ className = "h-7 w-7" }) => (
@@ -92,7 +92,7 @@ const Navbar = () => {
               height={64}
               alt="Sleek Secure Logo"
               className={`h-[4rem] w-auto transition-opacity duration-300 ${scrolled ? "opacity-100" : "opacity-90"}`}
-              loading="lazy"
+              decoding="async"
             />
           </a>
 

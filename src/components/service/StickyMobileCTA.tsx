@@ -19,7 +19,7 @@ const StickyMobileCTA = ({ serviceTitle }: StickyMobileCTAProps) => {
           onClick={() => trackWhatsAppClick('sticky_mobile_cta', 'whatsapp_button')}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center py-2.5 bg-[hsl(142,70%,40%)] text-primary-foreground active:scale-95 transition-transform"
+          className="flex flex-col items-center justify-center py-2.5 bg-[hsl(142,70%,29%)] text-primary-foreground active:scale-95 transition-transform"
         >
           <MessageCircle className="w-5 h-5 mb-0.5" />
           <span className="text-[11px] font-semibold">WhatsApp</span>

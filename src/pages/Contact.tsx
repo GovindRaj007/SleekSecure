@@ -131,6 +131,7 @@ const Contact = () => {
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-200 h-72 sm:h-80 md:h-96 lg:h-[450px]">
             <iframe 
+              title="SleekSecure Invisible Grills location on Google Maps (Kondapur, Hyderabad)"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.720304970648!2d78.3529521!3d17.4735626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9300351aa505%3A0x3c5c65d1f98b0288!2sSaraswathi%20Heights%20Kondapur!5e0!3m2!1sen!2sin!4v1778497561924!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 

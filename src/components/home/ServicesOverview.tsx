@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Fence, Wind, Shirt, Shield, Bird } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/constants";
-import balconyImg from "@/assets/hero-balcony-invisible-grills.jpg";
-import windowImg from "@/assets/window-invisible-grills.jpg";
-import clothImg from "@/assets/cloth-hanger.jpg";
-import childSafetyImg from "@/assets/showcase-children-safety.jpg";
-import pigeonImg1 from "@/assets/invisible-grills-pigeons1.jpg";
+import balconyImg from "@/assets/hero-balcony-invisible-grills.webp";
+import windowImg from "@/assets/window-invisible-grills.webp";
+import clothImg from "@/assets/cloth-hanger.webp";
+import childSafetyImg from "@/assets/showcase-children-safety.webp";
+import pigeonImg1 from "@/assets/invisible-grills-pigeons1.webp";
 
 const iconMap = {
   balcony: Fence,

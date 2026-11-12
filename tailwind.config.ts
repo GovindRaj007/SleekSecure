@@ -13,6 +13,12 @@ export default {
       },
     },
     extend: {
+      textColor: {
+        accent: {
+          DEFAULT: "hsl(var(--accent-text) / <alpha-value>)",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+      },
       fontFamily: {
         heading: ['Playfair Display Variable', 'Playfair Display', 'Georgia', 'serif'],
         body: ['DM Sans Variable', 'DM Sans', 'system-ui', 'sans-serif'],

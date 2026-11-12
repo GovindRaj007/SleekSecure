@@ -72,7 +72,7 @@
     <!-- Fonts are self-hosted via @fontsource (imported in src/main.tsx) -->
     <link rel="dns-prefetch" href="https://wa.me" />
 
-    <!-- Google Tag Manager (deferred until after load/idle or first interaction, for Core Web Vitals) -->
+    <!-- Google Tag Manager (deferred until first interaction or 4s after load, for Core Web Vitals) -->
     <script>
     (function(w,d,id){
       w.dataLayer=w.dataLayer||[];w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
@@ -80,7 +80,7 @@
         var s=d.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id='+id;
         d.head.appendChild(s);}
       ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){w.addEventListener(e,load,{once:true,passive:true});});
-      w.addEventListener('load',function(){(w.requestIdleCallback||function(cb){setTimeout(cb,1500);})(load,{timeout:3000});});
+      w.addEventListener('load',function(){setTimeout(load,4000);});
     })(window,document,'GTM-PKXXV4HH');
     </script>
     <!-- End Google Tag Manager -->

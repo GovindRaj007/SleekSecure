@@ -482,7 +482,7 @@ const CeilingClothHangersPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-xl mx-auto">
               <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('service_page_cta', 'whatsapp_button')} className="flex-1">
-                <Button size="lg" className="w-full bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-primary-foreground font-semibold gap-2">
+                <Button size="lg" className="w-full bg-[hsl(142,70%,29%)] hover:bg-[hsl(142,70%,24%)] text-primary-foreground font-semibold gap-2">
                   <WhatsAppIcon className="w-5 h-5" /> WhatsApp Now
                 </Button>
               </a>

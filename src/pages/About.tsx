@@ -21,7 +21,7 @@ const About = () => {
     <Layout>
       <Seo
         title="About Sleek Secure — Trusted Invisible Grill Experts in Hyderabad, Telangana & Andhra Pradesh"
-        description="6+ years of experience and 1,100+ successful installations. Learn about Sleek Secure's mission to deliver premium SS316 invisible grills and ceiling cloth hangers across Hyderabad, Telangana & Andhra Pradesh."
+        description="8+ years of experience and 1,100+ successful installations. Learn about Sleek Secure's mission to deliver premium SS316 invisible grills and ceiling cloth hangers across Hyderabad, Telangana & Andhra Pradesh."
         canonicalPath="/about"
         ogImage={`${SITE_URL}/images/luxury-balcony-invisible-grills.jpg`}
         jsonLd={[
@@ -35,7 +35,7 @@ const About = () => {
       <PageHero
         badge="About Us"
         title="Your Trusted Safety Partner"
-        subtitle="With over 6 years of experience, we are the leading provider of invisible grills and home safety solutions across Hyderabad, Telangana & Andhra Pradesh."
+        subtitle="With over 8 years of experience, we are the leading provider of invisible grills and home safety solutions across Hyderabad, Telangana & Andhra Pradesh."
         breadcrumbs={
           <Breadcrumb>
             <BreadcrumbList>
@@ -66,7 +66,7 @@ const About = () => {
                   Sleek Secure was founded with a simple mission: to provide modern, aesthetically pleasing safety solutions that don't compromise the beauty of your living spaces.
                 </p>
                 <p>
-                  Over the past 6+ years, we have grown from a small team to the most trusted name in invisible grills installation across Hyderabad, Telangana and other major cities in Andhra Pradesh. Our commitment to quality, safety, and customer satisfaction has earned us the trust of over 2,500 families.
+                  Over the past 8+ years, we have grown from a small team to the most trusted name in invisible grills installation across Hyderabad, Telangana and other major cities in Andhra Pradesh. Our commitment to quality, safety, and customer satisfaction has earned us the trust of over 2,500 families.
                 </p>
                 <p>
                   We use only the finest 316-grade marine stainless steel wires and employ trained professionals who understand the importance of precision in every installation.

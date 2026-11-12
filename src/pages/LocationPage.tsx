@@ -161,7 +161,7 @@ const LocationPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('location_page_hero', 'whatsapp_button')}>
-                <Button size="lg" className="w-full sm:w-auto bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-primary-foreground gap-2">
+                <Button size="lg" className="w-full sm:w-auto bg-[hsl(142,70%,29%)] hover:bg-[hsl(142,70%,24%)] text-primary-foreground gap-2">
                   <WhatsAppIcon className="w-5 h-5" /> WhatsApp Now
                 </Button>
               </a>
@@ -342,7 +342,7 @@ const LocationPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href={wa} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppClick('location_page_cta', 'whatsapp_button')}>
-              <Button size="lg" className="w-full sm:w-auto bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-primary-foreground font-semibold gap-2">
+              <Button size="lg" className="w-full sm:w-auto bg-[hsl(142,70%,29%)] hover:bg-[hsl(142,70%,24%)] text-primary-foreground font-semibold gap-2">
                 <WhatsAppIcon className="w-5 h-5" /> WhatsApp Now
               </Button>
             </a>

@@ -20,10 +20,12 @@
     --secondary-foreground: 195 80% 28%;
 
     --muted: 210 15% 95%;
-    --muted-foreground: 200 10% 45%;
+    --muted-foreground: 200 10% 41%;
 
     --accent: 38 85% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 30 60% 15%;
+    /* Gold used as TEXT on light backgrounds (bright --accent is only 2:1 on white). */
+    --accent-text: 38 85% 30%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -58,7 +60,8 @@
     --muted: 200 15% 18%;
     --muted-foreground: 215 15% 60%;
     --accent: 38 80% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 30 60% 15%;
+    --accent-text: var(--accent);
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 200 15% 20%;
@@ -147,6 +150,14 @@
   }
 }
 
+@layer base {
+  /* On dark surfaces the bright gold already has strong contrast, so keep it there. */
+  .gradient-dark, .card-gradient-dark, .gradient-primary, .card-gradient-primary,
+  footer, .bg-foreground, .bg-primary, .gradient-hero-dark {
+    --accent-text: var(--accent);
+  }
+}
+
 @layer utilities {
   .font-heading {
     font-family: var(--font-heading);
@@ -192,4 +203,10 @@
   .blog-prose table { @apply w-full text-sm md:text-base border-collapse; }
   .blog-prose th { @apply bg-secondary text-left font-semibold text-foreground px-4 py-3 whitespace-nowrap; }
   .blog-prose td { @apply px-4 py-3 border-t border-border/60 align-top; }
+}
+
+/* Home page: below-the-fold sections render lazily (content is still in the DOM for crawlers). */
+.cv-sections > section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }

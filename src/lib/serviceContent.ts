@@ -1,21 +1,21 @@
-import heroImg from "@/assets/hero-balcony-invisible-grills.jpg";
-import balconyImg from "@/assets/hero-balcony-invisible-grills.jpg";
+import heroImg from "@/assets/hero-balcony-invisible-grills.webp";
+import balconyImg from "@/assets/hero-balcony-invisible-grills.webp";
 import balconyImg2 from "@/assets/balcony-invisible-grills2.jpg";
-import homeAfterImg from "@/assets/home-after-installation.jpg";
+import homeAfterImg from "@/assets/home-after-installation.webp";
 import petSafetyImg from "@/assets/showcase-pet-safety.webp";
-import windowImg from "@/assets/window-invisible-grills.jpg";
+import windowImg from "@/assets/window-invisible-grills.webp";
 import windowImg2 from "@/assets/window-invisible-grills2.jpg";
 import windowImg3 from "@/assets/window-invisible-grills3.jpg";
-import clothImg from "@/assets/cloth-hanger.jpg";
+import clothImg from "@/assets/cloth-hanger.webp";
 import clothImg2 from "@/assets/cloth-hanger2.jpg";
 import clothImg3 from "@/assets/cloth-hanger3.jpg";
 import balconyBeforeImg from "@/assets/balcony-before-installation.webp";
 import balconyAfterImg from "@/assets/balcony-after-installation.jpg";
 import windowBeforeImg from "@/assets/window-before-installation.jpg";
-import childSafetyImg from "@/assets/showcase-children-safety.jpg";
+import childSafetyImg from "@/assets/showcase-children-safety.webp";
 import childSafety2Img from "@/assets/invisible-grills-child-safety2.jpg";
 import childSafety3Img from "@/assets/invisible-grills-child-safety3.jpg";
-import pigeonImg1 from "@/assets/invisible-grills-pigeons1.jpg";
+import pigeonImg1 from "@/assets/invisible-grills-pigeons1.webp";
 import pigeonImg2 from "@/assets/invisible-grills-pigeons2.jpg";
 
 export interface ServiceContent {
@@ -65,7 +65,7 @@ const sharedTestimonials = [
 ];
 
 const balconyWhyChooseUs = [
-  { title: "6+ Years Experience", desc: "1,100+ premium balcony installations across luxury apartments in Hyderabad, Telangana & Andhra Pradesh." },
+  { title: "8+ Years Experience", desc: "1,100+ premium balcony installations across luxury apartments in Hyderabad, Telangana & Andhra Pradesh." },
   { title: "Transparent Pricing", desc: "No hidden costs. Free balcony assessment & fixed quote within 24 hours." },
   { title: "SS316 Marine Grade", desc: "Genuine marine-grade stainless steel — not the cheaper SS304 alternatives." },
   { title: "Aesthetic Excellence", desc: "Preserves panoramic views — clients say grills disappear from 1m away." },
@@ -110,7 +110,7 @@ const ceilingClothHangersWhyChooseUs = [
 ];
 
 const invisibleGrillsWhyChooseUs = [
-  { title: "Genuine SS316 Flagship Brand", desc: "6+ years specializing exclusively in premium marine-grade SS316 invisible grills." },
+  { title: "Genuine SS316 Flagship Brand", desc: "8+ years specializing exclusively in premium marine-grade SS316 invisible grills." },
   { title: "Material Certification Available", desc: "Full SS316 metallurgy certification on request — proven genuine material." },
   { title: "Precision Installation Process", desc: "Our proprietary tension-testing & finishing process ensures 15+ year durability." },
   { title: "Multi-Application Expertise", desc: "Expert in balconies, windows, staircases, railings & terraces across any building type." },

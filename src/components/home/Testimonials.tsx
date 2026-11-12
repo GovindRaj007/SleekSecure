@@ -136,16 +136,21 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-1 mt-8">
           {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentIndex(i)}
               aria-label={`Show testimonial ${i + 1}`}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === (currentIndex % testimonials.length) ? "bg-accent w-6" : "bg-primary-foreground/30"
-              }`}
-            />
+              aria-current={i === (currentIndex % testimonials.length) ? "true" : undefined}
+              className="group flex h-6 min-w-6 items-center justify-center px-1"
+            >
+              <span
+                className={`block h-2.5 rounded-full transition-all duration-300 ${
+                  i === (currentIndex % testimonials.length) ? "bg-accent w-6" : "w-2.5 bg-primary-foreground/30 group-hover:bg-primary-foreground/60"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>
